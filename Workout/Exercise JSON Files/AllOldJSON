@@ -1,0 +1,427 @@
+[
+    {
+        "name" : "Push-ups",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "Pushups"
+    },
+    {
+        "name" : "Tricep Push-ups",
+        "amount" : 8,
+        "isTimeBased" : false,
+        "videoURL" : "TricepPushups"
+    },
+    {
+        "name" : "Bentover Flys",
+        "amount" : 50,
+        "isTimeBased" : false,
+        "videoURL" : "BentoverFlys"
+    },
+    {
+        "name" : "Side Arm Raises",
+        "amount" : 50,
+        "isTimeBased" : false,
+        "videoURL" : "SideArmRaises"
+    },
+    {
+        "name" : "Front Arm Raises",
+        "amount" : 50,
+        "isTimeBased" : false,
+        "videoURL" : "FrontArmRaises"
+    },
+    {
+        "name" : "Decline Push-ups",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "DeclinePushups"
+    },
+    {
+        "name" : "Incline Push-ups",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "InclinePushups"
+    },
+    {
+        "name" : "Mountain Climbers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "MountainClimbers"
+    },
+    {
+        "name" : "Cross Body Mountain Climbers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "CrossBodyMountainClimbers"
+    },
+    {
+        "name" : "Down Dog Push-ups",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "DownDogPushups"
+    },
+    {
+        "name" : "Vinyassa Push-ups",
+        "amount" : 5,
+        "isTimeBased" : false,
+        "videoURL" : "VinyassaPushup"
+    },
+    {
+        "name" : "Handstand",
+        "amount" : 30,
+        "isTimeBased" : false,
+        "videoURL" : "Handstand"
+    }
+    
+]
+
+
+[
+    {
+        "name" : "Squat Hold",
+        "amount" : 60,
+        "isTimeBased" : true,
+        "videoURL" : "SquatHold"
+    },
+    {
+        "name" : "Squat Pulse",
+        "amount" : 60,
+        "isTimeBased" : true,
+        "videoURL" : "SquatPulse"
+    },
+    {
+        "name" : "One Leg Step-ups",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "OneLegStepUps"
+    },
+    {
+        "name" : "One Leg Back Lunges",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "BackwardsLunges"
+    },
+    {
+        "name" : "Air Squats",
+        "amount" : 20,
+        "isTimeBased" : false,
+        "videoURL" : "AirSquats"
+    },
+    {
+        "name" : "Squat Jumps",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "SquatJumps"
+    },
+    {
+        "name" : "Pistol Squats",
+        "amount" : 8,
+        "isTimeBased" : false,
+        "videoURL" : "PistolSquats"
+    },
+    {
+        "name" : "One Leg Forward Lunges",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "ForwardsLunges"
+    },
+    {
+        "name" : "One Leg Side Lunges",
+        "amount" : 10,
+        "isTimeBased" : false,
+        "videoURL" : "SideLunges"
+    },
+    {
+        "name" : "Burpees",
+        "amount" : 15,
+        "isTimeBased" : false,
+        "videoURL" : "desktop"
+    },
+    {
+        "name" : "Calf Lifts",
+        "amount" : 25,
+        "isTimeBased" : false,
+        "videoURL" : "CalfLifts"
+    },
+    {
+        "name" : "Toe Taps",
+        "amount" : 50,
+        "isTimeBased" : false,
+        "videoURL" : "ToeTaps"
+    }
+    
+]
+
+
+
+[
+    {
+        "name" : "Crunches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "Crunches"
+    },
+    {
+        "name" : "Flutter Kicks",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "FlutterKicks"
+    },
+    {
+        "name" : "Penguins",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "Penguins"
+    },
+    {
+        "name" : "Plank",
+        "amount" : 60,
+        "isTimeBased" : true,
+        "videoURL" : "Plank"
+    },
+    {
+        "name" : "Side Plank",
+        "amount" : 30,
+        "isTimeBased" : true,
+        "videoURL" : "SidePlank"
+    },
+    {
+        "name" : "Scissor Kicks",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "ScissorKicks"
+    },
+    {
+        "name" : "Toe Touches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "ToeTouches"
+    },
+    {
+        "name" : "Leg Lifts",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "desktop"
+    },
+    {
+        "name" : "Bicycles",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "Bicycles"
+    },
+    {
+        "name" : "Leg Extentions",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "LegExtentions"
+    },
+    {
+        "name" : "Rainbow Plank",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "RainbowPlank"
+    },
+    {
+        "name" : "Boat Hold",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "BoatHold"
+    },
+    {
+        "name" : "Rowers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "Rowers"
+    },
+    {
+        "name" : "Super Crunches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "desktop"
+    },
+    {
+        "name" : "Full Crunches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "FullCrunches"
+    },
+    {
+        "name" : "Dead Bugs",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "DeadBugs"
+    },
+    {
+        "name" : "Side Crunch Roll-ups",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideCrunchRollups"
+    },
+    {
+        "name" : "Side Sit-ups",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups"
+    },
+    {
+        "name" : "Alternating Cross Sit-ups",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "AlternatingCrossSitups"
+    },
+    {
+        "name" : "Torture Twists",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Bird Dog",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Knee Hover Shoulder Tap",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Butterfly Sit-ups",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Plank Saws",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Side Plank Hip Raises",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Hollow Body Rock",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "C-Curve Hold",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Plank Shoulder Tap",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Superwoman Hold",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Superwoman Pulse",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Crab Toe Touches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Hawks",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    }
+    
+]
+
+
+[
+    {
+        "name" : "Clams",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Center Leg Raises",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Front Leg Raises",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Back Leg Raises",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Leg Circles",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Front-Back Toe Taps",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Figure Eights",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Runners",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Runners with Leg Extentions",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Fire Hydrants",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Hurdlers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    },
+    {
+        "name" : "Donkey Kicks",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain"
+    }
+]
+

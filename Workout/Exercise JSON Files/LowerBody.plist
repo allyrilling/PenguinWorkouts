@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>Squat Hold</string>
+		<integer>60</integer>
+		<true/>
+		<string>1. Move feet shoulder length apart
+2. While keeping knees inline with feet and back straight, bend knees
+3. Hold in bent position</string>
+	</array>
+	<array>
+		<string>Squat Pulse</string>
+		<integer>60</integer>
+		<true/>
+		<string>1. Move feet shoulder length apart
+2. While keeping knees inline with feet and back straight, bend knees
+3. Move slightly up and down while keeping deep bend in knees</string>
+	</array>
+	<array>
+		<string>One Leg Step-Ups</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Find raised surface
+2. Place one foot on raised surface
+3. Transfer weight to foot on raised surface
+4. Once standing on raised surface, bring knee of non-weight bearing foot up so that femur is parallel to ground
+5. Step non-weight bearing foot back onto ground</string>
+	</array>
+	<array>
+		<string>One Leg Back Lunges</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Shift weight onto one foot
+2. Step backwards with non-weight bearing so that weight bearing knee is at 90 degree angle
+3. Press back to standing</string>
+	</array>
+	<array>
+		<string>Air Squats</string>
+		<integer>20</integer>
+		<false/>
+		<string>1. Move feet shoulder length apart
+2. While keeping knees inline with feet and back straight, bend knees
+3. Press back to straight legs</string>
+	</array>
+	<array>
+		<string>Squat Jumps</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Move feet shoulder length apart
+2. While keeping knees inline with feet and back straight, bend knees
+3. Press into feet to jump</string>
+	</array>
+	<array>
+		<string>Pistol Squats</string>
+		<integer>8</integer>
+		<false/>
+		<string>1. If needed, find raised surface
+2. Shift weight onto one leg
+3. Bend weight bearing leg as far as possible (or until touch raised surface), non-weight bearing foot hovers slightly above ground
+4. Press back to straight leg</string>
+	</array>
+	<array>
+		<string>One Leg Forward Lunges</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Shift weight onto one foot
+2. Step forwards with non-weight bearing so that forward knee is at 90 degree angle
+3. Press back to standing</string>
+	</array>
+	<array>
+		<string>One Leg Side Lunges</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Shift weight onto one foot
+2. Step sideways with non-weight bearing so that side stepping knee is at 90 degree angle
+3. Press back to standing</string>
+	</array>
+	<array>
+		<string>Burpees</string>
+		<integer>15</integer>
+		<false/>
+		<string>1. Begin in standing position
+2. Jump upwards
+3. Put hands onto ground
+4. Kick legs backwards into plank position
+5. Do a pushup
+6. Jump legs forward to hands
+7. Stand up</string>
+	</array>
+	<array>
+		<string>Calf Lifts</string>
+		<integer>25</integer>
+		<false/>
+		<string>1. Find a raised surface
+2. Stand on raised surface so that heals are hanging off edge
+3. Shift weight to one foot, hover non-weight bearing foot just over ground
+4. Press into toes of weight bearing foot to lift heal
+5. Lower heal back down</string>
+	</array>
+	<array>
+		<string>Box Jumps</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Find a raised surface
+2. With knees shoulder length apart, jump onto raised surface
+3. Jump back down, landing with feet shoulder length apart</string>
+	</array>
+	<array>
+		<string>Box Toe Touches</string>
+		<integer>50</integer>
+		<false/>
+		<string>1. Find raised surface
+2. Put toes of one foot on raised surface
+3. Quickly switch to toes of other foot touching raised surface</string>
+	</array>
+</array>
+</plist>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>Push-ups</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Start in plank position
+2. Bend arms to 90 degrees while remaining in plank position
+3. Press arms back to straight</string>
+	</array>
+	<array>
+		<string>Tricep Push-ups</string>
+		<integer>8</integer>
+		<false/>
+		<string>1. Start in plank position, hands directly under shoulders
+2. Bend arms to 90 degrees while keeping elbows pinned to ribs, shoulders should come forward so that forearms are perpendicular to the floor
+3. Press arms back to straight</string>
+	</array>
+	<array>
+		<string>Bentover Flys</string>
+		<integer>50</integer>
+		<false/>
+		<string>1. With a small bend in the knees, sit hips back and lean forward so that shoulders are aligned with knees
+2. Move arms straight out to a T
+3. Lift arms up and backwards so that muscles in upper back engage
+4. Release arms back to T shape</string>
+	</array>
+	<array>
+		<string>Side Arm Raises</string>
+		<integer>50</integer>
+		<false/>
+		<string>1. Move arms to make a T shape parallel to the ground
+2. Move arms slightly up and down in a pulsating motion</string>
+	</array>
+	<array>
+		<string>Front Arm Raises</string>
+		<integer>50</integer>
+		<false/>
+		<string>1. Move arms to be parallel with the ground out in front
+2. Move arms slightly up and down in pulsating motion</string>
+	</array>
+	<array>
+		<string>Decline Push-ups</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Find a raised surface
+2. Put feet on raised surface and move to a plank position
+3. Bend arms to 90 degrees while maintaining plank position
+4. Press arms back to straight
+</string>
+	</array>
+	<array>
+		<string>Incline Push-ups</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Find raised surface
+2. Put hands on raised surface and move to a plank position
+3. Bend arms to 90 degrees while maintaining plank position
+4. Press arms back to straight</string>
+	</array>
+	<array>
+		<string>Mountain Climbers</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Move to plank position
+2. Draw one leg in towards chest while maintaining plank form
+3. Return to plank position
+4. Repeat with other leg</string>
+	</array>
+	<array>
+		<string>Cross Body Mountain Climbers</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Move to plank position
+2. Draw one leg in towards opposite elbow while maintaining plank form
+3. Return to plank position
+4. Repeat with other leg</string>
+	</array>
+	<array>
+		<string>Down Dog Push-ups</string>
+		<integer>10</integer>
+		<false/>
+		<string>1. Move to downward dog position
+2. Bend elbows so that forearms lower and hover above ground
+3. Press back to straight arms</string>
+	</array>
+	<array>
+		<string>Vinyassa Push-ups</string>
+		<integer>5</integer>
+		<false/>
+		<string>1. Move to downward dog position
+2. Bend elbows keeping them tight to body
+3. Pause just above ground
+4. Push to up-dog with straight arms
+</string>
+	</array>
+	<array>
+		<string>Handstand</string>
+		<integer>30</integer>
+		<true/>
+		<string>1. Find wall if needed
+2. Place hands on floor
+3. Kick up to transfer weight onto hands</string>
+	</array>
+</array>
+</plist>

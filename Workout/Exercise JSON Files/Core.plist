@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>Crunches</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay on back with knees bent and facing sky
+2. Roll up so that top of head is facing sky and back is close to straight
+3. Roll back down so that back is flat on ground</string>
+	</array>
+	<array>
+		<string>Flutter Kicks</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay flat on back
+2. Lift feet slightly off ground
+3. Move feet up and down opposite of one another</string>
+	</array>
+	<array>
+		<string>Penguins</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay on back with knees bent and facing sky
+2. Curl up so that shoulder blades are of ground
+3. Extend arms straight along side of body
+4. Touch left hand to left heal then right hand to right heal and repeat</string>
+	</array>
+	<array>
+		<string>Plank</string>
+		<integer>60</integer>
+		<true/>
+		<string>1. Place hands and feet on ground
+2. Hands are shoulder length apart, back is straight, knees are straight
+3. Hold</string>
+	</array>
+	<array>
+		<string>Side Plank</string>
+		<integer>30</integer>
+		<true/>
+		<string>1. Place one hand on ground
+2. Stack feet on top of each other
+3. Shift weight to hand and open to the side</string>
+	</array>
+	<array>
+		<string>Scissor Kicks</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay flat on back
+2. Lift feet slightly off ground
+3. Move feet left and right opposite of one another</string>
+	</array>
+	<array>
+		<string>Toe Touches</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay on back with legs perpendicular to the ground and bottoms of feet facing sky
+2. Lift shoulder blades off ground and touch hands to toes
+3. Lower back down</string>
+	</array>
+	<array>
+		<string>Leg Lifts</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay flat on back
+2. Lift feet slightly off ground
+3. Lift legs perpendicular to ground 
+4. Lower legs to a few inches above ground</string>
+	</array>
+	<array>
+		<string>Bicycles</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Put hands behind head
+2. Extend legs so that feet are hovering slightly above ground
+3. Bend one knee and touch the opposite elbow to that knee
+4. Switch
+</string>
+	</array>
+	<array>
+		<string>Leg Extentions</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Put hands behind head
+2. Move knees to make a 90 degree angle with feet off ground and shins parallel to ground
+3. Extend one leg straight and hovering just off the ground
+4. Switch
+</string>
+	</array>
+	<array>
+		<string>Rainbow Plank</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Begin in a plank position
+2. Touch one hip to the ground
+3. Make a rainbow shape with your hips to touch the other hip to the ground</string>
+	</array>
+	<array>
+		<string>Boat Hold</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Make a V with body by balancing on tailbone
+2. Hold with straight back
+</string>
+	</array>
+	<array>
+		<string>Rowers</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Make a V with body by balancing on tailbone
+2. Extend feet outward while leaning slightly backwards
+3. Return to original V shape</string>
+	</array>
+	<array>
+		<string>Super Crunches</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Make a V with body by balancing on tailbone
+2. Extend feet outward to hover just over ground while leaning backwards so back is hovering just over ground
+3. Return to original V shape</string>
+	</array>
+	<array>
+		<string>Full Crunches</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Put hands behind head
+2. Move knees to make a 90 degree angle with feet off ground and shins parallel to ground
+3. Lift shoulder blades off ground, lift tailbone off ground at same time
+4. Lower shoulder blades and tailbone back to ground</string>
+	</array>
+	<array>
+		<string>Dead Bugs</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Begin on back
+2. Move knees to make a 90 degree angle with feet off ground and shins parallel to ground, extend arms perpendicular to ground
+3. Extend one leg straight to hover over ground, lower opposite arm to ground overhead
+4. Return to original position, repeat with other side</string>
+	</array>
+	<array>
+		<string>Side Crunch Roll-ups</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Begin in fetal position on one side 
+2. Without using arms roll over onto tailbone
+3. Sit up
+4. Return to fetal position without using arms</string>
+	</array>
+	<array>
+		<string>Side Sit-ups</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Begin in fetal position on one side 
+2. Lift bottom shoulder off ground by contracting oblique muscles
+3. Return to original position</string>
+	</array>
+	<array>
+		<string>Alternating Cross Sit-ups</string>
+		<integer>45</integer>
+		<true/>
+		<string>1. Lay on back with knees bent and facing sky
+2. Roll up so that top of head is facing sky and back is close to straight
+3. Rotate opposite elbow to opposite knee
+4. Roll back down so that back is flat on ground, repeat with other side</string>
+	</array>
+</array>
+</plist>
