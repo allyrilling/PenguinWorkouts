@@ -248,8 +248,21 @@
         "description" : "1. Shift weight into one hand and the opposite foot \n2. Lift non-weight bearing hand and foot (should be opposite sides) off ground to touch over stomach \n3. Return lifted foot and arm to ground \n4. Repeat on other side"
     },
     {
-        "test JSON object 2"
-        "this should be in 1.1 branch"
-    }
+        "name" : "Russian Twists",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape",
+        "description" : "1. With hands together, twist torso to one side while keeping feet in orginal position \n2. Return to starting position \n3. Repeat on other side"
+    },
+    {
+        "name" : "90 Degree Taps",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground, hands behind neck",
+        "description" : "1. While maintaining 90 degree bend in knees, lower feet to tap ground, keep lower back on ground \n2. Tap ground with feet \3. Return to starting position and repeat"
+    },
+    
     
 ]
