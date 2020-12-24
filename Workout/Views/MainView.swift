@@ -24,9 +24,7 @@ struct MainView: View {
     /*
      for segmented control labels
      */
-    //FIXME: - hips
-//    var types = ["Upper Body", "Lower Body", "Core"]
-    var types = ["Upper Body", "Lower Body", "Core", "Hips"]
+    var types = ["Core", "Upper Body", "Lower Body", "Hips"]
     
     var body: some View {
         /*
