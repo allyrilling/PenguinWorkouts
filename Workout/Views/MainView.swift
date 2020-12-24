@@ -27,6 +27,8 @@ struct MainView: View {
     var types = ["Core", "Upper Body", "Lower Body", "Hips"]
     
     var body: some View {
+        var newExerciseCounter = Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! + 1
+        
         /*
          the configure view to be navigated to when the user hits the configure button
          */
@@ -90,10 +92,46 @@ struct MainView: View {
                             motherView.viewState = ViewKeys.detailViewState.rawValue
                             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
+                        .onLongPressGesture(perform: {
+                            print(newExerciseCounter)
+                            print(generateView(index: newExerciseCounter))
+                            // this works but dont know how to make it update the text in the cell
+                            newExerciseCounter += 1
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        })
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
         }
     }
+    
+    func generateView(index: Int) -> AnyView {
+        return AnyView(
+            Group {
+            /*
+             displays exercise name in cell
+             */
+            Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name)
+                .fontWeight(.semibold)
+                .font(.system(size: 20))
+                .multilineTextAlignment(.leading)
+            Spacer()
+            /*
+             sets or reps based on specific exercise
+             */
+            if logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased {
+                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
+            } else {
+                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
+            }
+            /*
+             the arrow in the cell
+             */
+            Image(systemName: "chevron.right")
+                .padding(.leading)
+            })
+    }
+    
 }
+
 
