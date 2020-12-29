@@ -17,7 +17,7 @@ struct SetsRepsView: View {
     var currentExercise: Exercise
     @State var currentExerciseAmount: Int
     
-    @State var sliderValue: Double = 0
+    @State var sliderValue: Double
     
     var body: some View {
         VStack {
@@ -72,7 +72,7 @@ struct SetsRepsView: View {
             .padding()
             
             VStack {
-                Slider(value: $sliderValue, in: 0...3, step: 1)
+                Slider(value: $sliderValue, in: 0...3, step: 1) // set counter
                     .padding()
                 Text("\(Int(sliderValue)) of 3")
                     .font(.system(size: 30, weight: .bold))

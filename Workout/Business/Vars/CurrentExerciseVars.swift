@@ -12,5 +12,5 @@ import Foundation
  */
 class CurrentExerciseVars: ObservableObject {
     @Published var currentExerciseIndex = 0
-    @Published var currentExerciseType = "Upper Body"
+    @Published var currentExerciseType = "Core"
 }

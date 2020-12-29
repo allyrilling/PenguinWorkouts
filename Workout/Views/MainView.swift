@@ -24,9 +24,7 @@ struct MainView: View {
     /*
      for segmented control labels
      */
-    //FIXME: - hips
-//    var types = ["Upper Body", "Lower Body", "Core"]
-    var types = ["Upper Body", "Lower Body", "Core", "Hips"]
+    var types = ["Core", "Upper Body", "Lower Body", "Hips"]
     
     var body: some View {
         /*
@@ -37,7 +35,9 @@ struct MainView: View {
              the navigation bar that hosues the Randomize and configure buttons
              */
             MainViewTopBar(logic: logic, motherView: motherView, currentType: currentType)
-                .padding(.vertical)
+                .padding()
+                .padding(.horizontal, 5)
+                .padding(.vertical, 5)
 
             /*
              creates the segmented picker control w the specified array of exercise types

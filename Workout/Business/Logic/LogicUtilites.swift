@@ -19,7 +19,6 @@ class LogicUtilites {
         logic.upperBody.shuffle()
         logic.lowerBody.shuffle()
         logic.core.shuffle()
-        //FIXME: - hips
         logic.hips.shuffle()
     }
 
@@ -33,9 +32,7 @@ class LogicUtilites {
             return userConfigureVars.amtExLowerBody
         } else if currentType == "Core" {
             return userConfigureVars.amtExCore
-        }
-        //FIXME: - hips
-        else if currentType == "Hips" {
+        } else if currentType == "Hips" {
             return userConfigureVars.amtExHips
         }
         return "fail" // should never happen
@@ -51,12 +48,10 @@ class LogicUtilites {
                 return Int(userConfigureVars.amtExLowerBody)!
             } else if currentType == "Core" {
                 return Int(userConfigureVars.amtExCore)!
-            }
-        //FIXME: - hips
-            else if currentType == "Hips" {
+            } else if currentType == "Hips" {
                 return Int(userConfigureVars.amtExHips)!
             }
-            return 0
+            return 0 // should never happen
     }
     
     /*
@@ -69,9 +64,7 @@ class LogicUtilites {
             userConfigureVars.amtExLowerBody = varToUpdate
         } else if exerciseType == "Core" {
             userConfigureVars.amtExCore = varToUpdate
-        }
-        //FIXME: - hips
-        else if exerciseType == "Hips" {
+        } else if exerciseType == "Hips" {
             return userConfigureVars.amtExHips = varToUpdate
         }
     }

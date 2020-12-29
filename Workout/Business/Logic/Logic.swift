@@ -17,7 +17,6 @@ class Logic: ObservableObject {
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
     @Published var core: [Exercise] = []
-    //FIXME: - hips
     @Published var hips: [Exercise] = []
     
     /*
@@ -27,7 +26,6 @@ class Logic: ObservableObject {
         upperBody = decodeJSON(jsonFileName: "UpperBody").shuffled()
         lowerBody = decodeJSON(jsonFileName: "LowerBody").shuffled()
         core = decodeJSON(jsonFileName: "Core").shuffled()
-        //FIXME: - hips
         hips = decodeJSON(jsonFileName: "Hips").shuffled()
     }
     
@@ -42,9 +40,7 @@ class Logic: ObservableObject {
             returnArray = lowerBody
         } else if currentType == "Core" {
             returnArray = core
-        }
-        //FIXME: - hips
-        else if currentType == "Hips" {
+        } else if currentType == "Hips" {
             returnArray = hips
         }
         return returnArray

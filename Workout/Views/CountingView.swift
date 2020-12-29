@@ -18,9 +18,7 @@ struct CountingView: View {
      */
     @ObservedObject var setButtonSelectionVars: SetButtonSelectionVars
     
-    /*
-     timer vars
-     */
+    // timer vars
     @State var timeRemaining: Int
     @State var timerIsPaused = true
     @State var timer: Timer? = nil
@@ -102,7 +100,7 @@ struct CountingView: View {
             }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
             
         } else { // show sets and reps view
-            SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount)
+            SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount, sliderValue: 0.0)
         }
         
     }

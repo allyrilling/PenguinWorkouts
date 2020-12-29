@@ -52,7 +52,7 @@ struct DetailView: View {
                 /*
                  detail view top button bar
                  */
-                HStack(alignment: .top) { // HERERERERR ALIGHMENT DIDNT WQORK
+                HStack(alignment: .top) {
                     Button(action: { // back to main menu button
                         motherView.viewState = ViewKeys.mainViewState.rawValue
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
