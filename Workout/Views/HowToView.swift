@@ -21,8 +21,6 @@ struct HowToView: View {
         let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[currentExerciseIndex]
         
         ZStack {
-//            RoundedRectangle(cornerRadius: 10)
-//                .foregroundColor(Color.gray.opacity(0.3))
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.accentColor, lineWidth: 3)
             ScrollView {

@@ -26,23 +26,23 @@ struct CountingView: View {
     @State var timer: Timer? = nil
     
     var body: some View {
-        /*
-         uses the timer
-         */
-        if currentExercise.isTimeBased {
+        if currentExercise.isTimeBased { // show timer view
             VStack {
-                
                 HStack {
-                    /*
-                     timer play button
-                     */
-                    TimerButtonView(imageSystemName: "play.fill")
-                        .onTapGesture {
-                            countingLogic.startTimer(countingView: self)
-                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    Button(action: { // play button
+                        countingLogic.startTimer(countingView: self)
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    }) {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color.accentColor)
+                                    .frame(width: 40, height: 40)
+                                Image(systemName: "play.fill")
+                                    .foregroundColor(.black)
+                            }
                         }
-                    
-                    Spacer()
+                    }
                     
                     /*
                      shows time remaining
@@ -57,26 +57,37 @@ struct CountingView: View {
                             .font(.system(size: 35))
                     }
                     
-                    Spacer()
-                    
-                    /*
-                     timer pause button
-                     */
-                    TimerButtonView(imageSystemName: "pause.fill")
-                        .onTapGesture {
-                            countingLogic.stopTimer(countingView: self)
-                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    Button(action: { // pause button
+                        countingLogic.stopTimer(countingView: self)
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    }) {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color.accentColor)
+                                    .frame(width: 40, height: 40)
+                                Image(systemName: "pause.fill")
+                                    .foregroundColor(.black)
+                            }
                         }
+                    }
                 }
                 
                 HStack {
-                    
-                    ButtonWithText(sfSymbolName: "plus", buttonLabel: "15 sec", circleIsFirst: true)
-                        .onTapGesture {
-                            countingLogic.add15seconds(countingView: self)
-                        }
-                    
-                    Spacer()
+                    Button(action: { // add time button
+                        countingLogic.add15seconds(countingView: self)
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }) {
+                        HStack {
+                            Image(systemName: "plus")
+                                .foregroundColor(.black)
+                                .font(.system(.title))
+                            Text("15 sec")
+                                .foregroundColor(.black)
+                        }.padding()
+                        .background(Color.accentColor)
+                        .cornerRadius(15)
+                    }
                     
                     VStack {
                         ButtonWithText(sfSymbolName: "arrow.counterclockwise", buttonLabel: "", circleIsFirst: true)
@@ -94,19 +105,9 @@ struct CountingView: View {
                                 countingLogic.sub15seconds(countingView: self)
                             }
                         }
-                    
-                }.padding([.horizontal, .bottom])
-            }.overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.accentColor, lineWidth: 3)
-            )
-            .padding([.horizontal, .bottom])
-            
-            
-            /*
-             uses sets and reps
-             */
-        } else {
+                }.padding()
+            }
+        } else { // show sets and reps view
             SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount)
         }
         

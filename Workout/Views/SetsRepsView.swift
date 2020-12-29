@@ -17,264 +17,156 @@ struct SetsRepsView: View {
     var currentExercise: Exercise
     @State var currentExerciseAmount: Int
     
+    @State var sliderValue: Double = 0
+    
     var body: some View {
-        
-        
-        
-        ZStack {
-            
-//            HStack {
-//                Spacer()
-//                RoundedRectangle(cornerRadius: 2)
-//                    .frame(width: 2, height: 100)
-//                    .foregroundColor(Color.accentColor)
-//                    .opacity(0.5)
-//                    .padding(.leading)
-//                Spacer()
-//            }
-            
-            HStack {
-                
-                // Set buttons
-                VStack {
+            VStack {
+                ZStack {
+                    Color.white
+                        .cornerRadius(20)
                     HStack {
-                        SetButton(setNumber: 1, countingView: countingView)
-                            .onTapGesture {
-                                setButtonSelectionVars.isSelected1 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected1)
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            }
-                        Text("Set 1")
-                    }
-                    HStack {
-                        SetButton(setNumber: 2, countingView: countingView)
-                            .onTapGesture {
-                                setButtonSelectionVars.isSelected2 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected2)
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            }
-                        Text("Set 2")
-                    }
-                    HStack {
-                        SetButton(setNumber: 3, countingView: countingView)
-                            .onTapGesture {
-                                setButtonSelectionVars.isSelected3 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected3)
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            }
-                        Text("Set 3")
-                    }
-                }.padding(.horizontal)
-                
-                Spacer()
-                RoundedRectangle(cornerRadius: 2)
-                    .frame(width: 2, height: 100)
-                    .foregroundColor(Color.accentColor)
-                    .opacity(0.5)
-                    .padding(1)
-                Spacer()
-                
-                // Reps view
-                VStack {
-                    HStack {
-                        Text(String(currentExerciseAmount))
-                            .font(.system(size: 50))
-                            .fontWeight(.bold)
-                        Text("Reps")
-                            .font(.system(size: 25))
-                    }.padding(.top)
-                    HStack {
-                        ButtonWithText(sfSymbolName: "plus", buttonLabel: "", circleIsFirst: true)
-                            .onTapGesture {
+                        Spacer()
+                        VStack { // amount text
+                            Text(String(currentExerciseAmount))
+                                .font(.system(size: 80))
+                                .fontWeight(.bold)
+                            Text("Reps")
+                                .font(.system(size: 25))
+                        }.padding()
+                        Spacer()
+                        VStack { // action buttons
+                            Button(action: { // plus button
                                 currentExerciseAmount = currentExerciseAmount + 1
                                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            }) {
+                                Image(systemName: "plus")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .frame(width: 100, height: 40, alignment: .center)
+                                    .background(Color.accentColor)
+                                    .cornerRadius(15)
                             }
-                        ButtonWithText(sfSymbolName: "arrow.counterclockwise", buttonLabel: "", circleIsFirst: true)
-                            .onTapGesture {
-                                currentExerciseAmount = currentExercise.amount
-                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            }
-                        ButtonWithText(sfSymbolName: "minus", buttonLabel: "", circleIsFirst: true)
-                            .onTapGesture {
+                            Button(action: { // minus button
                                 if currentExerciseAmount > 0 {
                                     currentExerciseAmount = currentExerciseAmount - 1
                                 }
                                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            }) {
+                                Image(systemName: "minus")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .frame(width: 100, height: 40, alignment: .center)
+                                    .background(Color.accentColor)
+                                    .cornerRadius(15)
                             }
+                            Button(action: { // reset button
+                                currentExerciseAmount = currentExercise.amount
+                                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            }) {
+                                Image(systemName: "arrow.counterclockwise")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .frame(width: 100, height: 40, alignment: .center)
+                                    .background(Color.accentColor)
+                                    .cornerRadius(15)
+                            }
+                        }.padding()
                     }
-                }.padding([.bottom, .trailing])
+                }.padding()
+                ZStack { // set slider and text
+                    Color.white
+                        .cornerRadius(20)
+                    VStack {
+                        Slider(value: $sliderValue, in: 0...3, step: 1)
+                        Text("\(Int(sliderValue)) of 3")
+                            .font(.system(size: 30, weight: .bold))
+                        Text("Sets Completed")
+                    }.padding(.horizontal)
+                }.padding()
             }
-            
-        }.overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.accentColor, lineWidth: 3)
-        ).padding()
-        
-    }
+        }
 }
 
-/*
- HStack {
-     Spacer()
-     
-     VStack {
-         Text("Sets")
-             .font(.system(size: 45))
-             .fontWeight(.bold)
-         
-         /*
-          3 horizontal buttons to track sets
-          */
-         HStack {
-             SetButton(setNumber: 1, countingView: countingView)
-                 .onTapGesture {
-                     setButtonSelectionVars.isSelected1 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected1)
-                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                 }
-             SetButton(setNumber: 2, countingView: countingView)
-                 .onTapGesture {
-                     setButtonSelectionVars.isSelected2 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected2)
-                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                 }
-             SetButton(setNumber: 3, countingView: countingView)
-                 .onTapGesture {
-                     setButtonSelectionVars.isSelected3 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected3)
-                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                 }
-         }.padding(.bottom)
-         
-     }
-     
-     Spacer()
-     
-     RoundedRectangle(cornerRadius: 2)
-         .frame(width: 2, height: 100)
-         .foregroundColor(Color.accentColor)
-         .opacity(0.5)
-         .padding(.leading)
-
-     Spacer()
-     
-     VStack {
-         Text("Reps")
-             .font(.system(size: 45))
-             .fontWeight(.bold)
-         Text(String(currentExercise.amount))
-             .font(.system(size: 40))
-     }.padding()
-     
-     Spacer()
-     
- }.overlay(
-     RoundedRectangle(cornerRadius: 10)
-         .stroke(Color.accentColor, lineWidth: 3)
- ).padding(.horizontal)
- */
-
 
 /*
- ZStack {
+ //
+ //  SetsRepsView.swift
+ //  Workout
+ //
+ //  Created by Ally Rilling on 8/24/20.
+ //
+
+ import SwiftUI
+
+ struct SetsRepsView: View {
+     var countingView: CountingView
+     /*
+      the buttons to keep track of the sets
+      */
+     @ObservedObject var setButtonSelectionVars: SetButtonSelectionVars
+     var countingLogic: CountingLogic
+     var currentExercise: Exercise
+     @State var currentExerciseAmount: Int
      
-     HStack {
-         Spacer()
-         RoundedRectangle(cornerRadius: 2)
-             .frame(width: 2, height: 100)
-             .foregroundColor(Color.accentColor)
-             .opacity(0.5)
-             .padding(.leading)
-         Spacer()
-     }
+     @State var sliderValue: Double = 0
      
-     HStack {
-         // sets
-         VStack {
-             
-             Text("Sets")
-                 .font(.system(size: 45))
-                 .fontWeight(.bold)
-                 .padding(.bottom, 5)
-             
-             HStack {
-                 SetButton(setNumber: 1, countingView: countingView)
-                     .onTapGesture {
-                         setButtonSelectionVars.isSelected1 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected1)
+     var body: some View {
+         ZStack(alignment: .top) {
+             Color.white.cornerRadius(20)
+             VStack {
+                 VStack { // amount text
+                     Text(String(currentExerciseAmount))
+                         .font(.system(size: 80))
+                         .fontWeight(.bold)
+                     Text("Reps")
+                         .font(.system(size: 25))
+                 }
+                 HStack { // action buttons
+                     Button(action: { // plus button
+                         currentExerciseAmount = currentExerciseAmount + 1
                          UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                     }) {
+                         Image(systemName: "plus")
+                             .foregroundColor(.black)
+                             .padding()
+                             .frame(width: 100, height: 40, alignment: .center)
+                             .background(Color.accentColor)
+                             .cornerRadius(15)
                      }
-                 SetButton(setNumber: 2, countingView: countingView)
-                     .onTapGesture {
-                         setButtonSelectionVars.isSelected2 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected2)
+                     Button(action: { // reset button
+                         currentExerciseAmount = currentExercise.amount
                          UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                     }) {
+                         Image(systemName: "arrow.counterclockwise")
+                             .foregroundColor(.black)
+                             .padding()
+                             .frame(width: 100, height: 40, alignment: .center)
+                             .background(Color.accentColor)
+                             .cornerRadius(15)
                      }
-                 SetButton(setNumber: 3, countingView: countingView)
-                     .onTapGesture {
-                         setButtonSelectionVars.isSelected3 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected3)
+                     Button(action: { // minus button
+                         if currentExerciseAmount > 0 {
+                             currentExerciseAmount = currentExerciseAmount - 1
+                         }
                          UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                     }) {
+                         Image(systemName: "minus")
+                             .foregroundColor(.black)
+                             .padding()
+                             .frame(width: 100, height: 40, alignment: .center)
+                             .background(Color.accentColor)
+                             .cornerRadius(15)
                      }
+                 }.padding()
+                 VStack {
+                     Slider(value: $sliderValue, in: 0...3, step: 1)
+                     Text("\(Int(sliderValue)) of 3")
+                         .font(.system(size: 30, weight: .bold))
+                     Text("Sets Completed")
+                 }.padding(.horizontal)
              }
-             
          }.padding()
-         
-         Spacer()
-         
-         // reps
-         VStack {
-             Text("Reps")
-                 .font(.system(size: 45))
-                 .fontWeight(.bold)
-             Text(String(currentExercise.amount))
-                 .font(.system(size: 40))
-             HStack {
-                 ButtonWithText(sfSymbolName: "plus", buttonLabel: "", circleIsFirst: true)
-                 ButtonWithText(sfSymbolName: "minus", buttonLabel: "", circleIsFirst: true)
-             }
-             
-         }.padding()
-         
      }
- }.overlay(
-     RoundedRectangle(cornerRadius: 10)
-         .stroke(Color.accentColor, lineWidth: 3)
- ).padding()
- */
+ }
 
-
-/*
- VStack {
-     HStack {
-         Text("Sets")
-             .font(.system(size: 45))
-             .fontWeight(.bold)
-             .padding(.horizontal)
-         
-         SetButton(setNumber: 1, countingView: countingView)
-             .onTapGesture {
-                 setButtonSelectionVars.isSelected1 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected1)
-                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-             }
-         SetButton(setNumber: 2, countingView: countingView)
-             .onTapGesture {
-                 setButtonSelectionVars.isSelected2 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected2)
-                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-             }
-         SetButton(setNumber: 3, countingView: countingView)
-             .onTapGesture {
-                 setButtonSelectionVars.isSelected3 = countingLogic.toggleSetButtonSelection(isSelected: setButtonSelectionVars.isSelected3)
-                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-             }
-         Spacer()
-     }
-     
-     HStack {
-         Text("Reps")
-             .font(.system(size: 45))
-             .fontWeight(.bold)
-             .padding(.horizontal)
-         Text(String(currentExercise.amount))
-             .font(.system(size: 40))
-         ButtonWithText(sfSymbolName: "plus", buttonLabel: "", circleIsFirst: true)
-         ButtonWithText(sfSymbolName: "minus", buttonLabel: "", circleIsFirst: true)
-         Spacer()
-     }
-     
- }.overlay(
-     RoundedRectangle(cornerRadius: 10)
-         .stroke(Color.accentColor, lineWidth: 3)
- ).padding()
  */

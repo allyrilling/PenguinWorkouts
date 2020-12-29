@@ -26,10 +26,6 @@ struct DetailView: View {
     @State var htViewIsHidden = true
     
     var body: some View {
-        
-        /*
-         uses the current exercise type and index to create the detailed view for the selected exercise
-         */
         let currentExerciseType = currentExerciseVars.currentExerciseType
         let currentExerciseIndex = currentExerciseVars.currentExerciseIndex
         let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[currentExerciseIndex]
@@ -44,58 +40,96 @@ struct DetailView: View {
          the view that shows time or sets and reps
          */
         let countingView = CountingView(currentExercise: currentExercise, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
-        
-        
-        VStack {
+
+        ZStack(alignment: .top) {
+            Color.gray.edgesIgnoringSafeArea(.all)
+                .opacity(0.1)
+            
             /*
-             detail view ttop button bar
+             uses the current exercise type and index to create the detailed view for the selected exercise
              */
-            HStack {
-                CustomBackToMenuButton(motherView: motherView)
+            VStack {
+                /*
+                 detail view top button bar
+                 */
+                HStack(alignment: .top) { // HERERERERR ALIGHMENT DIDNT WQORK
+                    Button(action: { // back to main menu button
+                        motherView.viewState = ViewKeys.mainViewState.rawValue
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    }) {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color.accentColor)
+                                    .frame(width: 40, height: 40)
+                                Image(systemName: "arrow.left")
+                                    .foregroundColor(.black)
+                            }
+                            Text("Menu")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    /*
+                     shows next exercise button until have reached last next exercise and then it hides it
+                     */
+                    if currentExerciseIndex < currentTypeUserConfigVar - 1 {
+                        Button(action: {
+                            /*
+                             increments index
+                             does hacky thing to refresh the detail view state based on the even or odd index of the exercise
+                             */
+                            currentExerciseVars.currentExerciseIndex = currentExerciseVars.currentExerciseIndex + 1
+                            if currentExerciseVars.currentExerciseIndex % 2 == 0 {
+                                motherView.viewState = ViewKeys.detailViewState.rawValue
+                            } else {
+                                motherView.viewState = ViewKeys.detailViewState2.rawValue
+                            }
+                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                        }) {
+                            HStack {
+                                Text("Next")
+                                    .foregroundColor(.black)
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(Color.accentColor)
+                                        .frame(width: 40, height: 40)
+                                    Image(systemName: "arrow.right")
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        }
+                    }
+                }.padding()
                 
+                Text(currentExercise.name) // exercise name
+                    .font(.system(size: 45, weight: .bold))
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(10)
+                
+                countingView // displays sets/reps or timer
+
                 Spacer()
                 
                 /*
-                 shows next exercise button until have reached last next exercise and then it hides it
+                 based on state of ht var hides or shows description of exercise
                  */
-                if currentExerciseIndex < currentTypeUserConfigVar - 1 {
-                    CustomNextExerciseButton(motherView: motherView, currentExerciseVars: currentExerciseVars)
+                if !htViewIsHidden {
+                    HowToView(logic: logic,
+                              currentExerciseVars: currentExerciseVars)
+                        .padding(.horizontal)
                 }
                 
-            }.padding()
-            
-            /*
-             displayes sets and reps or timer
-             */
-            countingView
-            
-            /*
-             name of exercise
-             */
-            Text(currentExercise.name)
-                .font(.system(size: 45))
-                .padding()
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-                .lineLimit(10)
-            
-            Spacer()
-            
-            /*
-             based on state of ht var hides or shows description of exercise
-             */
-            if !htViewIsHidden {
-                HowToView(logic: logic,
-                          currentExerciseVars: currentExerciseVars)
-                    .padding(.horizontal)
+                /*
+                 hide show button
+                 */
+                HideShowHowToButton(detailView: self)
             }
-            
-            /*
-             hide show button
-             */
-            HideShowHowToButton(detailView: self)
         }
-        
     }
 }
 
