@@ -30,8 +30,8 @@ struct MainViewTopBar: View {
                         .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
                     Text("Randomize")
                         .foregroundColor(.black)
-                        .padding(.leading, 5)
-                }
+                        .padding(.leading)
+                }.padding(20)
             }
             
             Spacer()
@@ -44,11 +44,11 @@ struct MainViewTopBar: View {
                 HStack {
                     Text("Configure")
                         .foregroundColor(.black)
-                        .padding(.trailing, 5)
+                        .padding(.horizontal)
                     Image(systemName: "gear")
                         .foregroundColor(.black)
                         .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
-                }
+                }.padding(20)
             }
         }
     }

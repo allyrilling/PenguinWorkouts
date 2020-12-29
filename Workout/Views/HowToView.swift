@@ -22,7 +22,6 @@ struct HowToView: View {
                 Image(systemName: "checkmark.seal.fill")
                     .font(.system(size: 100))
                     .foregroundColor(.accentColor)
-                    .padding()
                 VStack {
                     Text("Starting Position")
                         .font(.system(size: 38, weight: .semibold))

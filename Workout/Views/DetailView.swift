@@ -45,25 +45,19 @@ struct DetailView: View {
          uses the current exercise type and index to create the detailed view for the selected exercise
          */
         VStack {
-            /*
-             detail view top button bar
-             */
-            HStack(alignment: .top) {
+            HStack { // detail view top bar
                 Button(action: { // back to main menu button
                     motherView.viewState = ViewKeys.mainViewState.rawValue
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                 }) {
                     HStack {
-                        ZStack {
-                            Circle()
-                                .foregroundColor(Color.accentColor)
-                                .frame(width: 40, height: 40)
-                            Image(systemName: "arrow.left")
-                                .foregroundColor(.black)
-                        }
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(.black)
+                            .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
                         Text("Menu")
                             .foregroundColor(.black)
-                    }
+                            .padding(.horizontal)
+                    }.padding(20)
                 }
                 
                 Spacer()
@@ -88,17 +82,14 @@ struct DetailView: View {
                         HStack {
                             Text("Next")
                                 .foregroundColor(.black)
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(Color.accentColor)
-                                    .frame(width: 40, height: 40)
-                                Image(systemName: "arrow.right")
-                                    .foregroundColor(.black)
-                            }
-                        }
+                                .padding(.horizontal)
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.black)
+                                .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
+                        }.padding(20)
                     }
                 }
-            }.padding()
+            }
             
             NavigationLink(
                 destination: HowToView(logic: logic, currentExerciseVars: currentExerciseVars),

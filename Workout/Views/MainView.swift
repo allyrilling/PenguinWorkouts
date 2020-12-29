@@ -35,9 +35,6 @@ struct MainView: View {
              the navigation bar that hosues the Randomize and configure buttons
              */
             MainViewTopBar(logic: logic, motherView: motherView, currentType: currentType)
-                .padding()
-                .padding(.horizontal, 5)
-                .padding(.vertical, 5)
 
             /*
              creates the segmented picker control w the specified array of exercise types
