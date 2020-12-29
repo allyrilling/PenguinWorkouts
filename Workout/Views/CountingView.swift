@@ -28,89 +28,97 @@ struct CountingView: View {
     var body: some View {
         if currentExercise.isTimeBased { // show timer view
             VStack {
+                Text("\(convertSecToMin(sec: timeRemaining))")
+                    .fontWeight(.bold)
+                    .font(.system(size: 80))
+                    .padding(.top)
                 HStack {
                     Button(action: { // play button
                         countingLogic.startTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
-                        HStack {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(Color.accentColor)
-                                    .frame(width: 40, height: 40)
-                                Image(systemName: "play.fill")
-                                    .foregroundColor(.black)
-                            }
-                        }
+                        Image(systemName: "play.fill")
+                            .foregroundColor(.black)
+                            .font(.system(.title))
+                            .frame(width: 120, height: 20, alignment: .center)
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
                     }
-                    
-                    /*
-                     shows time remaining
-                     */
-                    VStack {
-                        Text("\(timeRemaining)")
-                            .fontWeight(.bold)
-                            .font(.system(size: 55))
-                            .padding(.top)
-                        Text("sec")
-                            .fontWeight(.semibold)
-                            .font(.system(size: 35))
-                    }
-                    
                     Button(action: { // pause button
                         countingLogic.stopTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
-                        HStack {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(Color.accentColor)
-                                    .frame(width: 40, height: 40)
-                                Image(systemName: "pause.fill")
-                                    .foregroundColor(.black)
-                            }
-                        }
+                        Image(systemName: "pause.fill")
+                            .foregroundColor(.black)
+                            .font(.system(.title))
+                            .frame(width: 120, height: 20, alignment: .center)
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
                     }
-                }
-                
+                }.padding(.top)
                 HStack {
-                    Button(action: { // add time button
+                    Button(action: { // add 15 seconds button
                         countingLogic.add15seconds(countingView: self)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
-                        HStack {
-                            Image(systemName: "plus")
-                                .foregroundColor(.black)
-                                .font(.system(.title))
-                            Text("15 sec")
-                                .foregroundColor(.black)
-                        }.padding()
-                        .background(Color.accentColor)
-                        .cornerRadius(15)
+                        Image(systemName: "plus")
+                            .foregroundColor(.black)
+                            .frame(width: 65, height: 10, alignment: .center)
+                            .font(.system(size: 20))
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
+                    }
+                    Button(action: { // sub 15 seconds button
+                        if timeRemaining > 15 {
+                            countingLogic.sub15seconds(countingView: self)
+                        }
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }) {
+                        Image(systemName: "minus")
+                            .foregroundColor(.black)
+                            .frame(width: 65, height: 10, alignment: .center)
+                            .font(.system(size: 20))
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
                     }
                     
-                    VStack {
-                        ButtonWithText(sfSymbolName: "arrow.counterclockwise", buttonLabel: "", circleIsFirst: true)
-                        Text("Reset")
-                    }.onTapGesture {
+                    Button(action: { // reset time button
                         countingLogic.resetTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    }) {
+                        Image(systemName: "arrow.counterclockwise")
+                            .foregroundColor(.black)
+                            .frame(width: 65, height: 10, alignment: .center)
+                            .font(.system(size: 20))
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(15)
                     }
-                    
-                    Spacer()
-                    
-                    ButtonWithText(sfSymbolName: "minus", buttonLabel: "15 sec", circleIsFirst: false)
-                        .onTapGesture {
-                            if timeRemaining > 15 {
-                                countingLogic.sub15seconds(countingView: self)
-                            }
-                        }
                 }.padding()
-            }
+            }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+            
         } else { // show sets and reps view
             SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount)
         }
         
     }
     
+}
+
+func convertSecToMin(sec: Int) -> String {
+    var convertedString = ""
+    if (sec < 60 && sec >= 10) {
+        convertedString = "0:\(sec)"
+    } else if (sec < 60 && sec < 10) {
+        convertedString = "0:0\(sec)"
+    } else if (sec%60 >= 0 && sec%60 <= 9) {
+        convertedString = "\(sec/60):0\(sec%60)"
+    } else {
+        convertedString = "\(sec/60):\(sec%60)"
+    }
+    return convertedString
 }
