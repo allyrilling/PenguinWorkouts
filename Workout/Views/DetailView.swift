@@ -105,36 +105,16 @@ struct DetailView: View {
                 label: {
                     Text(currentExercise.name)
                         .font(.system(size: 45, weight: .bold))
+                        .foregroundColor(.black)
                         .padding()
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(10)
-                }).navigationTitle(Text("Back"))
-            
-//            Text(currentExercise.name) // exercise name
-//                .font(.system(size: 45, weight: .bold))
-//                .padding()
-//                .multilineTextAlignment(.center)
-//                .fixedSize(horizontal: false, vertical: true)
-//                .lineLimit(10)
+                }).navigationTitle(Text(currentExercise.name))
             
             countingView // displays sets/reps or timer
             
             Spacer()
-            
-//            /*
-//             based on state of ht var hides or shows description of exercise
-//             */
-//            if !htViewIsHidden {
-//                HowToView(logic: logic,
-//                          currentExerciseVars: currentExerciseVars)
-//                    .padding(.horizontal)
-//            }
-//
-//            /*
-//             hide show button
-//             */
-//            HideShowHowToButton(detailView: self)
         }.background(Color.gray.edgesIgnoringSafeArea(.all)
                         .opacity(0.1))
     }

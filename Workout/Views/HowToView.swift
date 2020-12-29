@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-/*
- shows the video of each exercise
- */
 struct HowToView: View {
     @ObservedObject var logic: Logic
     @ObservedObject var currentExerciseVars: CurrentExerciseVars
@@ -18,24 +15,41 @@ struct HowToView: View {
         let currentExerciseType = currentExerciseVars.currentExerciseType
         let currentExerciseIndex = currentExerciseVars.currentExerciseIndex
         let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[currentExerciseIndex]
+        let descriptionArray = currentExercise.description.split(separator: "\n")
         
         ScrollView {
             VStack {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 100))
+                    .foregroundColor(.accentColor)
+                    .padding()
                 VStack {
                     Text("Starting Position")
-                        .font(.system(size: 37, weight: .semibold))
-                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 38, weight: .semibold))
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .center)
                     Text(currentExercise.startingPosition)
                         .font(.system(size: 20))
-                        .multilineTextAlignment(.leading)
-                }.padding()
-                .background(Color.white.cornerRadius(15))
+                        .padding([.horizontal, .bottom])
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }.background(Color.white
+                                .cornerRadius(20)
+                                .frame(width: UIScreen.main.bounds.width - 40))
+                .padding()
                 
-                // maybe make this some kind of list view
-                Text(currentExercise.description)
-                    .lineLimit(10)
-                    .fixedSize(horizontal: false, vertical: true)
-            }.padding()
+                VStack {
+                    ForEach(descriptionArray, id: \.self) { item in
+                        Text(item)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .multilineTextAlignment(.leading)
+                            
+                    }.padding([.bottom, .horizontal])
+                }.padding([.top, .horizontal])
+                .background(Color.white
+                                .cornerRadius(15)
+                                .frame(width: UIScreen.main.bounds.width - 40))
+            }
         }.background(Color.gray.edgesIgnoringSafeArea(.all)
                         .opacity(0.1))
     }
