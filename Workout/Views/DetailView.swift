@@ -20,6 +20,8 @@ struct DetailView: View {
     @ObservedObject var userConfigureVars: UserConfigureVars
     @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
     
+    var index = 0
+    
     /*
      weather or not to show the how to view based on state of button at bottom
      */
@@ -28,7 +30,7 @@ struct DetailView: View {
     var body: some View {
         let currentExerciseType = currentExerciseVars.currentExerciseType
         let currentExerciseIndex = currentExerciseVars.currentExerciseIndex
-        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[currentExerciseIndex]
+        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[index]
         
         /*
          the number of exercises based on the current exercise type chosen

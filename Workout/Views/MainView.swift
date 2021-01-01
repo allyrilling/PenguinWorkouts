@@ -27,71 +27,45 @@ struct MainView: View {
     var types = ["Core", "Upper Body", "Lower Body", "Hips"]
     
     var body: some View {
-        /*
-         the configure view to be navigated to when the user hits the configure button
-         */
-        VStack {
-            /*
-             the navigation bar that hosues the Randomize and configure buttons
-             */
-            MainViewTopBar(logic: logic, motherView: motherView, currentType: currentType)
-
-            /*
-             creates the segmented picker control w the specified array of exercise types
-             */
-            Picker("Type", selection: $currentType) {
-                ForEach(types, id: \.self) { type in
-                    Text(type)
+        NavigationView {
+            VStack {
+                MainViewTopBar(logic: logic, motherView: motherView, currentType: currentType)
+                
+                Picker("Type", selection: $currentType) {
+                    ForEach(types, id: \.self) { type in
+                        Text(type)
+                    }
+                }.onAppear() {
+                    UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.accentColor)
                 }
-            }.onAppear() {
-                UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.accentColor)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal)
-            
-            /*
-             populates the list with the exercies from each section depending on which section of the picker is selected
-             */
-            List {
-                Section {
-                    /*
-                     this is one cell
-                     */
-                    ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in
-                        HStack {
-                            /*
-                             displays exercise name in cell
-                             */
-                            Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name)
-                                .fontWeight(.semibold)
-                                .font(.system(size: 20))
-                                .multilineTextAlignment(.leading)
-                            Spacer()
-                            /*
-                             sets or reps based on specific exercise
-                             */
-                            if logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased {
-                                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
-                            } else {
-                                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
+
+                List { // populates the list with the exercies from each section depending on which section of the picker is selected
+                    Section {
+                        ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
+                            VStack {
+                                NavigationLink(
+                                    destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index),
+                                    label: {
+                                        HStack {
+                                            Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
+                                                .fontWeight(.semibold)
+                                                .font(.system(size: 20))
+                                                .multilineTextAlignment(.leading)
+                                            Spacer()
+                                            if logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased { // time based
+                                                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
+                                            } else { // reps based
+                                                Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
+                                            }
+                                        }
+                                    })
                             }
-                            /*
-                             the arrow in the cell
-                             */
-                            Image(systemName: "chevron.right")
-                                .padding(.leading)
-                        }.onTapGesture {
-                            /*
-                             makes the current index selected the global index var and moves to detail view of the selected cell
-                             */
-                            currentExerciseVars.currentExerciseIndex = index
-                            currentExerciseVars.currentExerciseType = currentType
-                            motherView.viewState = ViewKeys.detailViewState.rawValue
-                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
                     }
-                }
-            }.listStyle(InsetGroupedListStyle())
+                }.listStyle(InsetGroupedListStyle())
+            }.navigationBarHidden(true)
         }
     }
 }
