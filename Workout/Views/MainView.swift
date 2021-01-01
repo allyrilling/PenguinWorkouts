@@ -46,8 +46,9 @@ struct MainView: View {
                         ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
                             VStack {
                                 NavigationLink(
-                                    destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index),
+                                    destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index, type: currentType),
                                     label: {
+                                        // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
                                         HStack {
                                             Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
                                                 .fontWeight(.semibold)

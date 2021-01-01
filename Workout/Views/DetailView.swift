@@ -21,6 +21,7 @@ struct DetailView: View {
     @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
     
     var index = 0
+    var type = "core"
     
     /*
      weather or not to show the how to view based on state of button at bottom
@@ -28,7 +29,8 @@ struct DetailView: View {
     @State var htViewIsHidden = true
     
     var body: some View {
-        let currentExerciseType = currentExerciseVars.currentExerciseType
+//        let currentExerciseType = currentExerciseVars.currentExerciseType
+        let currentExerciseType = type
         let currentExerciseIndex = currentExerciseVars.currentExerciseIndex
         let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[index]
         
