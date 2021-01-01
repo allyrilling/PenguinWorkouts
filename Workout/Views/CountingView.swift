@@ -97,7 +97,10 @@ struct CountingView: View {
                             .cornerRadius(15)
                     }
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+            }.background(RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
+                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
             
         } else { // show sets and reps view
             SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount, sliderValue: 0.0)

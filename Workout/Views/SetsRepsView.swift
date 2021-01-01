@@ -42,7 +42,7 @@ struct SetsRepsView: View {
                             .frame(width: 100, height: 40, alignment: .center)
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                     Button(action: { // minus button
                         if currentExerciseAmount > 0 {
                             currentExerciseAmount = currentExerciseAmount - 1
@@ -55,7 +55,7 @@ struct SetsRepsView: View {
                             .frame(width: 100, height: 40, alignment: .center)
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                     Button(action: { // reset button
                         currentExerciseAmount = currentExercise.amount
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -66,9 +66,12 @@ struct SetsRepsView: View {
                             .frame(width: 100, height: 40, alignment: .center)
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+            }.background(RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
+                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
             .padding()
             
             VStack {
@@ -78,7 +81,10 @@ struct SetsRepsView: View {
                     .font(.system(size: 30, weight: .bold))
                 Text("Sets Completed")
                     .padding(.bottom)
-            }.background(RoundedRectangle(cornerRadius: 20).foregroundColor(.white))
+            }.background(RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
+                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
             .padding()
         }
     }

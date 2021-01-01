@@ -36,20 +36,18 @@ struct MainViewTopBar: View {
             
             Spacer()
             
-            Button(action: { // configure button
-                motherView.currentExerciseVars.currentExerciseType = currentType
-                motherView.viewState = ViewKeys.configureViewState.rawValue
-                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-            }) {
-                HStack {
-                    Text("Configure")
-                        .foregroundColor(.black)
-                        .padding(.horizontal)
-                    Image(systemName: "gear")
-                        .foregroundColor(.black)
-                        .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
-                }.padding(20)
-            }
+            NavigationLink(
+                destination: ConfigureView(motherView: motherView, userConfigureVars: motherView.userConfigureVars),
+                label: {
+                    HStack {
+                        Text("Configure")
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                        Image(systemName: "gear")
+                            .foregroundColor(.black)
+                            .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
+                    }.padding(20)
+                })
         }
     }
 }
