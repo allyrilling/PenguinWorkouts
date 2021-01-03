@@ -42,7 +42,7 @@ struct CountingView: View {
                             .padding()
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10)
                     Button(action: { // pause button
                         countingLogic.stopTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
@@ -54,7 +54,7 @@ struct CountingView: View {
                             .padding()
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10)
                 }.padding(.top)
                 HStack {
                     Button(action: { // add 15 seconds button
@@ -68,7 +68,7 @@ struct CountingView: View {
                             .padding()
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                     Button(action: { // sub 15 seconds button
                         if timeRemaining > 15 {
                             countingLogic.sub15seconds(countingView: self)
@@ -82,7 +82,7 @@ struct CountingView: View {
                             .padding()
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                     
                     Button(action: { // reset time button
                         countingLogic.resetTimer(countingView: self)
@@ -95,7 +95,7 @@ struct CountingView: View {
                             .padding()
                             .background(Color.accentColor)
                             .cornerRadius(15)
-                    }
+                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
                 }.padding()
             }.background(RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(.white)

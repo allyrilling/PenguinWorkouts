@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B13DB4C259FF1CA008E9BD5 /* ButtonAnimiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B13DB4B259FF1CA008E9BD5 /* ButtonAnimiation.swift */; };
 		6B1A3E5524CF3A28008DFFB2 /* ViewKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1A3E5424CF3A28008DFFB2 /* ViewKeys.swift */; };
 		6B1A3E5724CF3AFF008DFFB2 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1A3E5624CF3AFF008DFFB2 /* MotherView.swift */; };
 		6B211C6D24DF9BA6007FBE8F /* UpperBody.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B211C6C24DF9BA6007FBE8F /* UpperBody.json */; };
@@ -21,7 +22,6 @@
 		6B364E7624D7A59A000E1435 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B364E7524D7A59A000E1435 /* SetButton.swift */; };
 		6B364E7824D7A5D8000E1435 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B364E7724D7A5D8000E1435 /* TimerButtonView.swift */; };
 		6B582CD424F4059C00B21D31 /* SetsRepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B582CD324F4059C00B21D31 /* SetsRepsView.swift */; };
-		6B596F7C2594EAED00260376 /* ButtonWithTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B596F7B2594EAED00260376 /* ButtonWithTextStyle.swift */; };
 		6B73330F24FAF46500387EAE /* TimerButtonVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73330E24FAF46500387EAE /* TimerButtonVars.swift */; };
 		6B7F4A5F24CA78100058C897 /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F4A5E24CA78100058C897 /* ConfigureView.swift */; };
 		6B7F4A6624CB27E00058C897 /* CountingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F4A6524CB27E00058C897 /* CountingView.swift */; };
@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B13DB4B259FF1CA008E9BD5 /* ButtonAnimiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimiation.swift; sourceTree = "<group>"; };
 		6B1A3E5424CF3A28008DFFB2 /* ViewKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewKeys.swift; sourceTree = "<group>"; };
 		6B1A3E5624CF3AFF008DFFB2 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		6B211C6C24DF9BA6007FBE8F /* UpperBody.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UpperBody.json; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		6B364E7524D7A59A000E1435 /* SetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetButton.swift; sourceTree = "<group>"; };
 		6B364E7724D7A5D8000E1435 /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		6B582CD324F4059C00B21D31 /* SetsRepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsRepsView.swift; sourceTree = "<group>"; };
-		6B596F7B2594EAED00260376 /* ButtonWithTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithTextStyle.swift; sourceTree = "<group>"; };
 		6B73330E24FAF46500387EAE /* TimerButtonVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonVars.swift; sourceTree = "<group>"; };
 		6B7F4A5E24CA78100058C897 /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
 		6B7F4A6524CB27E00058C897 /* CountingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingView.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		6B596F7A2594EAC800260376 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				6B596F7B2594EAED00260376 /* ButtonWithTextStyle.swift */,
+				6B13DB4B259FF1CA008E9BD5 /* ButtonAnimiation.swift */,
 			);
 			name = Styles;
 			sourceTree = "<group>";
@@ -338,7 +338,6 @@
 				6B364E5F24D72F22000E1435 /* HowToView.swift in Sources */,
 				6BF7F4B524D0904C0007B8DD /* MainViewTopBar.swift in Sources */,
 				6B7F4A5F24CA78100058C897 /* ConfigureView.swift in Sources */,
-				6B596F7C2594EAED00260376 /* ButtonWithTextStyle.swift in Sources */,
 				6B364E7824D7A5D8000E1435 /* TimerButtonView.swift in Sources */,
 				6B7F721324D43E9800FB37A0 /* CurrentExerciseVars.swift in Sources */,
 				6BD07D62252188A700CEF66D /* CurrentExerciseAmount.swift in Sources */,
@@ -347,6 +346,7 @@
 				6B7F721524D4426300FB37A0 /* ButtonWithText.swift in Sources */,
 				6B977E2624DAE19100B3B921 /* CurrentTimerValueVars.swift in Sources */,
 				6B364E7624D7A59A000E1435 /* SetButton.swift in Sources */,
+				6B13DB4C259FF1CA008E9BD5 /* ButtonAnimiation.swift in Sources */,
 				6B364E6E24D79EC7000E1435 /* CustomBackToMenuButton.swift in Sources */,
 				6BF9DB9224EB063C008251FE /* Exercise.swift in Sources */,
 				6B582CD424F4059C00B21D31 /* SetsRepsView.swift in Sources */,
