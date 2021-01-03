@@ -65,8 +65,7 @@ struct MainView: View {
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
-        }.background(Color.gray.edgesIgnoringSafeArea(.all)
-                        .opacity(0.1))
+        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
 

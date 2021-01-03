@@ -51,8 +51,7 @@ struct ConfigureView: View {
                     }
                 Spacer()
             }
-        }.background(Color.gray.edgesIgnoringSafeArea(.all)
-                        .opacity(0.1))
+        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
         .navigationTitle("Configure")
     }
 }

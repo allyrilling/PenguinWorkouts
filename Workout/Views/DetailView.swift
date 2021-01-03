@@ -73,8 +73,7 @@ struct DetailView: View {
                 
             }.padding()
             
-        }.background(Color.gray.edgesIgnoringSafeArea(.all)
-                        .opacity(0.1))
+        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
         .navigationTitle(Text(currentExercise.name))
     }
 }
