@@ -40,32 +40,47 @@ struct MainView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal)
             
-            List { // populates the list with the exercies from each section depending on which section of the picker is selected
-                Section {
-                    ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
-                        VStack {
-                            NavigationLink(
-                                destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index, type: currentType),
-                                label: {
-                                    // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
-                                    HStack {
-                                        Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
-                                            .fontWeight(.semibold)
-                                            .font(.system(size: 20))
-                                            .multilineTextAlignment(.leading)
-                                        Spacer()
-                                        if logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased { // time based
-                                            Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
-                                        } else { // reps based
-                                            Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
-                                        }
+            ScrollView {
+                ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
+                    VStack {
+                        NavigationLink(
+                            destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index, type: currentType),
+                            label: {
+                                // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
+                                HStack {
+                                    Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
+                                        .fontWeight(.semibold)
+                                        .font(.system(size: 20))
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                    if (logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased) { // time based
+                                        Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
+                                    } else { // reps based
+                                        Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
                                     }
-                                })
+                                    Image(systemName: "chevron.right")
+                                }.foregroundColor(.black)
+                            })
+                        if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
+                            RoundedRectangle(cornerRadius: 3, style: .continuous)
+                                .frame(height: 2)
+                                .foregroundColor(.gray)
                         }
                     }
                 }
-            }.listStyle(InsetGroupedListStyle())
+            }.padding()
+            .background(ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.gray, lineWidth: 2)
+                    .blur(radius: 2)
+                    .offset(x: 2, y: 2)
+                    .mask(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing)))
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.white, lineWidth: 2)
+                    .blur(radius: 2)
+                    .offset(x: -2, y: -2)
+                    .mask(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .bottomTrailing, endPoint: .topLeading)))
+            }).padding()
         }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
-

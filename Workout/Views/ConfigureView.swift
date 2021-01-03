@@ -35,7 +35,6 @@ struct ConfigureView: View {
             coreTFHS
             hipsTFHS
             
-            
             /*
              the show all exercises button
              */
