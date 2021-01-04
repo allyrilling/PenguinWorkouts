@@ -37,12 +37,15 @@ struct SetsRepsView: View {
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "plus")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
+                    
                     Button(action: { // minus button
                         if currentExerciseAmount > 0 {
                             currentExerciseAmount = currentExerciseAmount - 1
@@ -50,28 +53,32 @@ struct SetsRepsView: View {
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "minus")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                     Button(action: { // reset button
                         currentExerciseAmount = currentExercise.amount
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "arrow.counterclockwise")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
-                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
+            }.background(RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(Color("BackgroundColor"))
+                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
             .padding()
             
             VStack {
@@ -81,10 +88,10 @@ struct SetsRepsView: View {
                     .font(.system(size: 30, weight: .bold))
                 Text("Sets Completed")
                     .padding(.bottom)
-            }.background(RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
-                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
+            }.background(RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(Color("BackgroundColor"))
+                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
             .padding()
         }
     }

@@ -36,25 +36,30 @@ struct CountingView: View {
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
                         Image(systemName: "play.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
+                    
                     Button(action: { // pause button
                         countingLogic.stopTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
                         Image(systemName: "pause.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                 }.padding(.top)
                 HStack {
                     Button(action: { // add 15 seconds button
@@ -62,13 +67,15 @@ struct CountingView: View {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
                         Image(systemName: "plus")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                     Button(action: { // sub 15 seconds button
                         if timeRemaining > 15 {
                             countingLogic.sub15seconds(countingView: self)
@@ -76,31 +83,36 @@ struct CountingView: View {
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
                         Image(systemName: "minus")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                     
                     Button(action: { // reset time button
                         countingLogic.resetTimer(countingView: self)
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "arrow.counterclockwise")
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor)
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(Color.accentColor)
-                            .cornerRadius(15)
-                    }.shadow(color: .gray, radius: 5, x: 0, y: 5)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    }
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                            .shadow(color: .white, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: -10)
-                            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 0, y: 10))
+            }.background(RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(Color("BackgroundColor"))
+                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+            .padding()
             
         } else { // show sets and reps view
             SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount, sliderValue: 0.0)

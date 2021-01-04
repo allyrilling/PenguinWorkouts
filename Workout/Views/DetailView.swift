@@ -47,11 +47,12 @@ struct DetailView: View {
                         HStack {
                             Image(systemName: "graduationcap.fill")
                             Text("Directions")
-                        }.foregroundColor(.black)
+                        }.foregroundColor(.accentColor)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 15)
-                                        .foregroundColor(.accentColor)
-                                        .shadow(color: .gray, radius: 5, x: 0, y: 5))
+                                        .foregroundColor(Color("BackgroundColor"))
+                                        .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                        .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     })
                 
                 Spacer()
@@ -62,12 +63,13 @@ struct DetailView: View {
                         label: {
                             HStack {
                                 Text("Next")
-                                    .foregroundColor(.black)
-                                    .padding(.horizontal)
                                 Image(systemName: "arrow.right")
-                                    .foregroundColor(.black)
-                                    .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
-                            }.padding(20)
+                            }.foregroundColor(.accentColor)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                         })
                 }
                 

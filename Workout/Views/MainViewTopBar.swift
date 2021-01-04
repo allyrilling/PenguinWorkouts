@@ -24,14 +24,16 @@ struct MainViewTopBar: View {
                 LogicUtilites.randomizeExercies(logic: logic)
                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             }) {
-                HStack {
-                    Image(systemName: "shuffle")
-                        .foregroundColor(.black)
-                        .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
-                    Text("Randomize")
-                        .foregroundColor(.black)
-                        .padding(.leading)
-                }.padding(20)
+                    HStack {
+                        Image(systemName: "shuffle")
+                        Text("Randomize")
+                    }.foregroundColor(.accentColor)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
             }
             
             Spacer()
@@ -40,13 +42,15 @@ struct MainViewTopBar: View {
                 destination: ConfigureView(motherView: motherView, userConfigureVars: motherView.userConfigureVars),
                 label: {
                     HStack {
-                        Text("Configure")
-                            .foregroundColor(.black)
-                            .padding(.horizontal)
                         Image(systemName: "gear")
-                            .foregroundColor(.black)
-                            .background(Circle().foregroundColor(.accentColor).frame(width: 40, height: 40))
-                    }.padding(20)
+                        Text("Configure")
+                    }.foregroundColor(.accentColor)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
                 })
         }
     }

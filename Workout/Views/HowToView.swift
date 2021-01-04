@@ -22,6 +22,8 @@ struct HowToView: View {
                 Image(systemName: "checkmark.seal.fill")
                     .font(.system(size: 100))
                     .foregroundColor(.accentColor)
+                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                 VStack {
                     Text("Starting Position")
                         .font(.system(size: 38, weight: .semibold))
@@ -32,8 +34,10 @@ struct HowToView: View {
                         .padding([.horizontal, .bottom])
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity, alignment: .center)
-                }.background(Color.white
-                                .cornerRadius(20)
+                }.background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(Color("BackgroundColor"))
+                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                                 .frame(width: UIScreen.main.bounds.width - 40))
                 .padding()
                 
@@ -42,14 +46,15 @@ struct HowToView: View {
                         Text(item)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .multilineTextAlignment(.leading)
-                            
+                        
                     }.padding([.bottom, .horizontal])
                 }.padding([.top, .horizontal])
-                .background(Color.white
-                                .cornerRadius(15)
+                .background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(Color("BackgroundColor"))
+                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                                 .frame(width: UIScreen.main.bounds.width - 40))
             }
-        }.background(Color.gray.edgesIgnoringSafeArea(.all)
-                        .opacity(0.1))
+        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }

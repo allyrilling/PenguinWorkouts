@@ -36,9 +36,25 @@ struct MainView: View {
                 }
             }.onAppear() {
                 UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.accentColor)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal)
+                UISegmentedControl.appearance().backgroundColor = UIColor(Color("NeuLight"))
+            }.pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal, 5)
+            .cornerRadius(20)
+            .background(
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 2)
+                        .blur(radius: 2)
+                        .offset(x: 2, y: 2)
+                        .mask(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing)))
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.white, lineWidth: 2)
+                        .blur(radius: 2)
+                        .offset(x: -2, y: -2)
+                        .mask(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .bottomTrailing, endPoint: .topLeading)))
+                }.frame(height: 40)
+            )
+            .padding()
             
             ScrollView {
                 ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
@@ -69,18 +85,13 @@ struct MainView: View {
                     }
                 }
             }.padding()
-            .background(ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.gray, lineWidth: 2)
-                    .blur(radius: 2)
-                    .offset(x: 2, y: 2)
-                    .mask(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing)))
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.white, lineWidth: 2)
-                    .blur(radius: 2)
-                    .offset(x: -2, y: -2)
-                    .mask(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .bottomTrailing, endPoint: .topLeading)))
-            }).padding()
+            .background(
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(Color("BackgroundColor"))
+                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
+            ).padding()
+            
         }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
