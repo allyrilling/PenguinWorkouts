@@ -41,19 +41,36 @@ struct DetailView: View {
             Spacer()
             
             HStack {
-                NavigationLink(
-                    destination: HowToView(logic: logic, currentExerciseVars: currentExerciseVars),
-                    label: {
-                        HStack {
-                            Image(systemName: "graduationcap.fill")
-                            Text("Directions")
-                        }.foregroundColor(.accentColor)
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15)
-                                        .foregroundColor(Color("BackgroundColor"))
-                                        .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                        .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    })
+                VStack {
+                    NavigationLink(
+                        destination: HowToView(logic: logic, currentExerciseVars: currentExerciseVars),
+                        label: {
+                            HStack {
+                                Image(systemName: "graduationcap.fill")
+                                Text("Directions")
+                            }.foregroundColor(.accentColor)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                        }).padding(.bottom)
+                    
+                    NavigationLink(
+                        destination: MainView(motherView: motherView, currentType: type, currentExerciseVars: currentExerciseVars, userConfigureVars: userConfigureVars, logic: logic, logicUtilites: motherView.logicUtilites),
+                        label: {
+                            HStack {
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                            }.foregroundColor(.accentColor)
+                            .padding()
+                            .frame(width: 145)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                        })
+                }
                 
                 Spacer()
                 

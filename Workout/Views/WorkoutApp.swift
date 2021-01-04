@@ -18,6 +18,7 @@ struct WorkoutApp: App {
             let globalLogic = Logic()
             let globalLogicUtilites = LogicUtilites()
             let globalCurrentExerciseVars = CurrentExerciseVars()
+            let appState = AppState()
       
             let globalMotherView = MotherView(
                 viewState: ViewKeys.mainViewState.rawValue,
