@@ -32,6 +32,8 @@ struct MotherView: View {
      */
     var logicUtilites: LogicUtilites
     
+    @State var appState: AppState
+    
     var body: some View {
         
         NavigationView {

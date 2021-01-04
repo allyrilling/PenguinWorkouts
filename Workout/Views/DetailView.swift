@@ -19,6 +19,7 @@ struct DetailView: View {
     @ObservedObject var logic: Logic
     @ObservedObject var userConfigureVars: UserConfigureVars
     @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
+//    @State var appState: AppState
     
     var index = 0
     var type = "core"

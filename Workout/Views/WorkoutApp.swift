@@ -25,7 +25,8 @@ struct WorkoutApp: App {
                 currentExerciseVars: globalCurrentExerciseVars,
                 userConfigureVars: globalUserConfigureVars,
                 logic: globalLogic,
-                logicUtilites: globalLogicUtilites
+                logicUtilites: globalLogicUtilites,
+                appState: appState
             )
 
             globalMotherView

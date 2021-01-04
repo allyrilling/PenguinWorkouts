@@ -20,6 +20,7 @@ struct MainView: View {
     @ObservedObject var userConfigureVars: UserConfigureVars
     @ObservedObject var logic: Logic
     var logicUtilites: LogicUtilites
+//    @State var appState: AppState
     
     /*
      for segmented control labels
@@ -80,7 +81,7 @@ struct MainView: View {
                         if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
                             RoundedRectangle(cornerRadius: 3, style: .continuous)
                                 .frame(height: 2)
-                                .foregroundColor(.gray)
+                                .foregroundColor((Color("BackgroundColor")))
                         }
                     }
                 }
