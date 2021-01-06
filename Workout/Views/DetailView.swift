@@ -19,7 +19,7 @@ struct DetailView: View {
     @ObservedObject var logic: Logic
     @ObservedObject var userConfigureVars: UserConfigureVars
     @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
-//    @State var appState: AppState
+    @Binding var rootIsActive: Bool
     
     var index = 0
     var type = "core"
@@ -57,27 +57,42 @@ struct DetailView: View {
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                         }).padding(.bottom)
                     
-                    NavigationLink(
-                        destination: MainView(motherView: motherView, currentType: type, currentExerciseVars: currentExerciseVars, userConfigureVars: userConfigureVars, logic: logic, logicUtilites: motherView.logicUtilites),
-                        label: {
-                            HStack {
-                                Image(systemName: "house.fill")
-                                Text("Home")
-                            }.foregroundColor(.accentColor)
-                            .padding()
-                            .frame(width: 145)
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                        })
+                    Button(action: {
+                        self.rootIsActive = false
+                    }, label: {
+                        HStack {
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                        }.foregroundColor(.accentColor)
+                        .padding()
+                        .frame(width: 145)
+                        .background(RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("BackgroundColor"))
+                                        .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                        .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    })
+                    
+//                    NavigationLink(
+//                        destination: MainView(motherView: motherView, currentType: type, currentExerciseVars: currentExerciseVars, userConfigureVars: userConfigureVars, logic: logic, logicUtilites: motherView.logicUtilites, appState: appState),
+//                        label: {
+//                            HStack {
+//                                Image(systemName: "house.fill")
+//                                Text("Home")
+//                            }.foregroundColor(.accentColor)
+//                            .padding()
+//                            .frame(width: 145)
+//                            .background(RoundedRectangle(cornerRadius: 15)
+//                                            .foregroundColor(Color("BackgroundColor"))
+//                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+//                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+//                        })
                 }
                 
                 Spacer()
                 
                 if index < currentTypeUserConfigVar - 1 { // next button
                     NavigationLink(
-                        destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index + 1, type: type),
+                        destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $rootIsActive, index: index + 1, type: type),
                         label: {
                             HStack {
                                 Text("Next")
@@ -88,7 +103,7 @@ struct DetailView: View {
                                             .foregroundColor(Color("BackgroundColor"))
                                             .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                        })
+                        }).isDetailLink(false)
                 }
                 
             }.padding()

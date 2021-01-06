@@ -52,22 +52,26 @@ struct MotherView: View {
                 
                 
                 else if viewState == ViewKeys.configureViewState.rawValue {
-                    ConfigureView(motherView: self,
-                                  userConfigureVars: userConfigureVars)
+//                    ConfigureView(motherView: self,
+//                                  userConfigureVars: userConfigureVars)
                 }
                 
                 
                 else if viewState == ViewKeys.detailViewState.rawValue {
-                    DetailView(motherView: self,
-                               currentExerciseVars: currentExerciseVars,
-                               logic: logic,
-                               userConfigureVars: userConfigureVars)
+//                    DetailView(motherView: self,
+//                               currentExerciseVars: currentExerciseVars,
+//                               logic: logic,
+//                               userConfigureVars: userConfigureVars,
+//                               appState: appState,
+//                               rootIsActive: false)
                 } else if viewState == ViewKeys.detailViewState2.rawValue {
                     // have two detail view view states so that the view refreshes when you go to the next view
-                    DetailView(motherView: self,
-                               currentExerciseVars: currentExerciseVars,
-                               logic: logic,
-                               userConfigureVars: userConfigureVars)
+//                    DetailView(motherView: self,
+//                               currentExerciseVars: currentExerciseVars,
+//                               logic: logic,
+//                               userConfigureVars: userConfigureVars,
+//                               appState: appState,
+//                               rootIsActive: false)
                 }
             }.navigationBarHidden(true)
         

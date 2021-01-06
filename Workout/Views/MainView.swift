@@ -20,7 +20,7 @@ struct MainView: View {
     @ObservedObject var userConfigureVars: UserConfigureVars
     @ObservedObject var logic: Logic
     var logicUtilites: LogicUtilites
-//    @State var appState: AppState
+    @State var isActive: Bool = false
     
     /*
      for segmented control labels
@@ -61,7 +61,8 @@ struct MainView: View {
                 ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
                     VStack {
                         NavigationLink(
-                            destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, index: index, type: currentType),
+                            destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $isActive, index: index, type: currentType),
+                            isActive: self.$isActive,
                             label: {
                                 // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
                                 HStack {
@@ -77,7 +78,8 @@ struct MainView: View {
                                     }
                                     Image(systemName: "chevron.right")
                                 }.foregroundColor(.black)
-                            })
+                            }
+                        ).isDetailLink(false)
                         if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
                             RoundedRectangle(cornerRadius: 3, style: .continuous)
                                 .frame(height: 2)
