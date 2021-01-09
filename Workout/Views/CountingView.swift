@@ -13,6 +13,8 @@ import SwiftUI
 struct CountingView: View {
     var currentExercise: Exercise
     var countingLogic = CountingLogic()
+    @ObservedObject var currentExerciseVars: CurrentExerciseVars
+    @ObservedObject var logic: Logic
     /*
      the buttons to keep track of the sets
      */
@@ -24,9 +26,11 @@ struct CountingView: View {
     @State var timer: Timer? = nil
     
     var body: some View {
+        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseVars.currentExerciseType)[currentExerciseVars.currentExerciseIndex]
+        
         if currentExercise.isTimeBased { // show timer view
             VStack {
-                Text("\(convertSecToMin(sec: timeRemaining))")
+                Text("\(convertSecToMin(sec: currentExercise.amount))")
                     .fontWeight(.bold)
                     .font(.system(size: 80))
                     .padding(.top)

@@ -15,6 +15,7 @@ struct ConfigureView: View {
      the mother view to return to when going back
      */
     @State var motherView: MotherView
+    @Binding var configureIsActive: Bool
     
     /*
      instance of the data amount of exercies per type that the user enters to be passed back to content view
@@ -30,9 +31,22 @@ struct ConfigureView: View {
         let hipsTFHS = CustomTextFieldView(exerciseType: "Hips", userConfigureVars: userConfigureVars, motherView: motherView)
         
         ScrollView { // call each declaration of the text field
+            HStack {
+                Text("Configure")
+                    .padding()
+                    .font(.system(size: 40, weight: .semibold))
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
+                
+                Spacer()
+            }
+            
+            coreTFHS
             ubTFHS
             lbTFHS
-            coreTFHS
             hipsTFHS
             
             /*
@@ -50,8 +64,24 @@ struct ConfigureView: View {
                     }
                 Spacer()
             }
-        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
-        .navigationTitle("Configure")
+            
+            Button(action: {
+                configureIsActive.toggle()
+            }, label: {
+                HStack {
+                    Image(systemName: "house")
+                    Text("Home")
+                }.foregroundColor(.accentColor)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(Color("BackgroundColor"))
+                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                .padding()
+            })
+            
+        }.padding()
+        .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
 

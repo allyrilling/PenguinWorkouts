@@ -60,27 +60,26 @@ struct MainView: View {
             ScrollView {
                 ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
                     VStack {
-                        NavigationLink(
-                            destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $isActive, index: index, type: currentType),
-                            isActive: self.$isActive,
-                            label: {
-                                // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
-                                HStack {
-                                    Text(String(index))
-                                    Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 20))
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
-                                    if (logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased) { // time based
-                                        Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
-                                    } else { // reps based
-                                        Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
-                                    }
-                                    Image(systemName: "chevron.right")
-                                }.foregroundColor(.black)
-                            }
-                        ).isDetailLink(false)
+                        Button(action: {
+                            currentExerciseVars.currentExerciseType = currentType
+                            currentExerciseVars.currentExerciseIndex = index
+                            isActive.toggle()
+                        }, label: {
+                            HStack {
+                                Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 20))
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                                if (logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased) { // time based
+                                    Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
+                                } else { // reps based
+                                    Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
+                                }
+                            }.foregroundColor(.black)
+                        }).sheet(isPresented: $isActive) {
+                            DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $isActive, index: index, type: currentType)
+                        }
                         
                         if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
                             RoundedRectangle(cornerRadius: 3, style: .continuous)

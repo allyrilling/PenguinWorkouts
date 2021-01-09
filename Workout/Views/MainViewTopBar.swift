@@ -13,6 +13,9 @@ import SwiftUI
 struct MainViewTopBar: View {
     @ObservedObject var logic: Logic
     @State var motherView: MotherView
+    
+    @State var configureIsActive = false
+    
     /*
      current type is so that when navigating back to main view the type the user had selected before is still selected after
      */
@@ -38,20 +41,37 @@ struct MainViewTopBar: View {
             
             Spacer()
             
-            NavigationLink(
-                destination: ConfigureView(motherView: motherView, userConfigureVars: motherView.userConfigureVars),
-                label: {
-                    HStack {
-                        Image(systemName: "gear")
-                        Text("Configure")
-                    }.foregroundColor(.accentColor)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("BackgroundColor"))
-                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    .padding()
-                })
+            Button(action: {
+                configureIsActive.toggle()
+            }, label: {
+                HStack {
+                    Image(systemName: "gear")
+                    Text("Configure")
+                }.foregroundColor(.accentColor)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(Color("BackgroundColor"))
+                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                .padding()
+            }).sheet(isPresented: $configureIsActive) {
+                ConfigureView(motherView: motherView, configureIsActive: $configureIsActive, userConfigureVars: motherView.userConfigureVars)
+            }
+            
+//            NavigationLink(
+//                destination: ConfigureView(motherView: motherView, userConfigureVars: motherView.userConfigureVars),
+//                label: {
+//                    HStack {
+//                        Image(systemName: "gear")
+//                        Text("Configure")
+//                    }.foregroundColor(.accentColor)
+//                    .padding()
+//                    .background(RoundedRectangle(cornerRadius: 15)
+//                                    .foregroundColor(Color("BackgroundColor"))
+//                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+//                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+//                    .padding()
+//                })
         }
     }
 }

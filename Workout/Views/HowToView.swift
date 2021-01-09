@@ -10,6 +10,7 @@ import SwiftUI
 struct HowToView: View {
     @ObservedObject var logic: Logic
     @ObservedObject var currentExerciseVars: CurrentExerciseVars
+    @Binding var howToIsActive: Bool
     
     var body: some View {
         let currentExerciseType = currentExerciseVars.currentExerciseType
@@ -39,7 +40,7 @@ struct HowToView: View {
                                 .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                                 .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                                 .frame(width: UIScreen.main.bounds.width - 40))
-                .padding()
+                .padding(.vertical)
                 
                 VStack {
                     ForEach(descriptionArray, id: \.self) { item in
@@ -48,13 +49,30 @@ struct HowToView: View {
                             .multilineTextAlignment(.leading)
                         
                     }.padding([.bottom, .horizontal])
-                }.padding([.top, .horizontal])
+                }.padding(.vertical)
                 .background(RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(Color("BackgroundColor"))
                                 .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                                 .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                                 .frame(width: UIScreen.main.bounds.width - 40))
-            }
+                   
+                Button(action: {
+                    howToIsActive.toggle()
+                }, label: {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                        Text("Back")
+                    }.foregroundColor(.accentColor)
+                    .padding()
+                    .frame(width: 145)
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
+                })
+                
+            }.padding()
         }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }

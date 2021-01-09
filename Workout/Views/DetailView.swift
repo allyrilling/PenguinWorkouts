@@ -29,24 +29,37 @@ struct DetailView: View {
      */
     @State var htViewIsHidden = true
     
+    @State var howToIsActive = false
+    
     var body: some View {
-        let currentExercise = logic.returnCorrectExerciseArray(currentType: type)[index]
-        Text(String(index))
+        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseVars.currentExerciseType)[currentExerciseVars.currentExerciseIndex]
         
         // number of exercises set by user
         let currentTypeUserConfigVar = LogicUtilites.returnCorrectExerciseInt(currentType: type, userConfigureVars: userConfigureVars)
         
-        VStack {
-            // displays sets/reps or timer
-            CountingView(currentExercise: currentExercise, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
-            
-            Spacer()
-            
-            HStack {
-                VStack {
-                    NavigationLink(
-                        destination: HowToView(logic: logic, currentExerciseVars: currentExerciseVars),
-                        label: {
+        ScrollView {
+            VStack {
+                Text(currentExercise.name)
+                    .padding()
+                    .font(.system(size: 40, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
+                
+                // displays sets/reps or timer
+                CountingView(currentExercise: currentExercise, currentExerciseVars: currentExerciseVars, logic: logic, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
+                
+                Spacer()
+                
+                HStack {
+                    VStack {
+                        Button(action: {
+                            howToIsActive.toggle()
+                        }, label: {
                             HStack {
                                 Image(systemName: "graduationcap.fill")
                                 Text("Directions")
@@ -57,44 +70,33 @@ struct DetailView: View {
                                             .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                         }).padding(.bottom)
+                        .sheet(isPresented: $howToIsActive) {
+                            HowToView(logic: logic, currentExerciseVars: currentExerciseVars, howToIsActive: $howToIsActive)
+                        }
+                        
+                        Button(action: {
+                            self.rootIsActive = false
+                        }, label: {
+                            HStack {
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                            }.foregroundColor(.accentColor)
+                            .padding()
+                            .frame(width: 145)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(Color("BackgroundColor"))
+                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                        })
+                        
+                    }
                     
-                    Button(action: {
-                        self.rootIsActive = false
-                    }, label: {
-                        HStack {
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                        }.foregroundColor(.accentColor)
-                        .padding()
-                        .frame(width: 145)
-                        .background(RoundedRectangle(cornerRadius: 15)
-                                        .foregroundColor(Color("BackgroundColor"))
-                                        .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                        .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    })
+                    Spacer()
                     
-//                    NavigationLink(
-//                        destination: MainView(motherView: motherView, currentType: type, currentExerciseVars: currentExerciseVars, userConfigureVars: userConfigureVars, logic: logic, logicUtilites: motherView.logicUtilites, appState: appState),
-//                        label: {
-//                            HStack {
-//                                Image(systemName: "house.fill")
-//                                Text("Home")
-//                            }.foregroundColor(.accentColor)
-//                            .padding()
-//                            .frame(width: 145)
-//                            .background(RoundedRectangle(cornerRadius: 15)
-//                                            .foregroundColor(Color("BackgroundColor"))
-//                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-//                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-//                        })
-                }
-                
-                Spacer()
-                
-                if index < currentTypeUserConfigVar - 1 { // next button
-                    NavigationLink(
-                        destination: DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $rootIsActive, index: index + 1, type: type),
-                        label: {
+                    if index < currentTypeUserConfigVar - 1 { // next button
+                        Button(action: {
+                            currentExerciseVars.currentExerciseIndex = currentExerciseVars.currentExerciseIndex + 1
+                        }, label: {
                             HStack {
                                 Text("Next")
                                 Image(systemName: "arrow.right")
@@ -104,12 +106,10 @@ struct DetailView: View {
                                             .foregroundColor(Color("BackgroundColor"))
                                             .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                        }).isDetailLink(false)
-                }
-                
-            }.padding()
-            
+                            })
+                        }
+                }.padding()
+            }.padding(.vertical)
         }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
-        .navigationTitle(Text(currentExercise.name))
     }
 }
