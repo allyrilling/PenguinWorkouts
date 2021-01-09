@@ -21,8 +21,8 @@ struct DetailView: View {
     @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
     @Binding var rootIsActive: Bool
     
-    var index = 0
-    var type = "core"
+    var index: Int
+    var type: String
     
     /*
      weather or not to show the how to view based on state of button at bottom
@@ -31,6 +31,7 @@ struct DetailView: View {
     
     var body: some View {
         let currentExercise = logic.returnCorrectExerciseArray(currentType: type)[index]
+        Text(String(index))
         
         // number of exercises set by user
         let currentTypeUserConfigVar = LogicUtilites.returnCorrectExerciseInt(currentType: type, userConfigureVars: userConfigureVars)
@@ -112,6 +113,3 @@ struct DetailView: View {
         .navigationTitle(Text(currentExercise.name))
     }
 }
-
-
-

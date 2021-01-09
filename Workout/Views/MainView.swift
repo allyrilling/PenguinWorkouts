@@ -66,6 +66,7 @@ struct MainView: View {
                             label: {
                                 // currentExerciseVars.currentExerciseType = currentType -> was doing this in the on tap gesture, not sure if i still need to be doing it
                                 HStack {
+                                    Text(String(index))
                                     Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
                                         .fontWeight(.semibold)
                                         .font(.system(size: 20))
@@ -80,6 +81,7 @@ struct MainView: View {
                                 }.foregroundColor(.black)
                             }
                         ).isDetailLink(false)
+                        
                         if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
                             RoundedRectangle(cornerRadius: 3, style: .continuous)
                                 .frame(height: 2)
