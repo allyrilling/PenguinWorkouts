@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct SetsRepsView: View {
-    var countingView: CountingView
-    /*
-     the buttons to keep track of the sets
-     */
-    @ObservedObject var setButtonSelectionVars: SetButtonSelectionVars
-    var countingLogic: CountingLogic
-    var currentExercise: Exercise
+    @ObservedObject var globalVars: GlobalVars
     @State var currentExerciseAmount: Int
     
-    @State var sliderValue: Double
+    @State var sliderValue: Double = 0.0
     
     var body: some View {
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+        
         VStack {
             HStack {
                 Spacer()

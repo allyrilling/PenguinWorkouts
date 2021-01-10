@@ -11,22 +11,15 @@ import SwiftUI
  the view that displays the timer or the sets and reps
  */
 struct CountingView: View {
-    var currentExercise: Exercise
     var countingLogic = CountingLogic()
-    @ObservedObject var currentExerciseVars: CurrentExerciseVars
-    @ObservedObject var logic: Logic
-    /*
-     the buttons to keep track of the sets
-     */
-    @ObservedObject var setButtonSelectionVars: SetButtonSelectionVars
-    
+    @ObservedObject var globalVars: GlobalVars
     // timer vars
-    @State var timeRemaining: Int
+    @State var timeRemaining: Int = 0
     @State var timerIsPaused = true
     @State var timer: Timer? = nil
     
     var body: some View {
-        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseVars.currentExerciseType)[currentExerciseVars.currentExerciseIndex]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
         
         if currentExercise.isTimeBased { // show timer view
             VStack {
@@ -98,7 +91,7 @@ struct CountingView: View {
                     }
                     
                     Button(action: { // reset time button
-                        countingLogic.resetTimer(countingView: self)
+                        countingLogic.resetTimer(countingView: self, globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "arrow.counterclockwise")
@@ -119,7 +112,7 @@ struct CountingView: View {
             .padding()
             
         } else { // show sets and reps view
-            SetsRepsView(countingView: self, setButtonSelectionVars: setButtonSelectionVars, countingLogic: countingLogic, currentExercise: currentExercise, currentExerciseAmount: currentExercise.amount, sliderValue: 0.0)
+            SetsRepsView(globalVars: globalVars, currentExerciseAmount: currentExercise.amount)
         }
         
     }

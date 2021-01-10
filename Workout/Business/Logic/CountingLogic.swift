@@ -67,8 +67,8 @@ class CountingLogic {
     /*
      resets timer to original value, pauses it
      */
-    func resetTimer(countingView: CountingView) {
-        countingView.timeRemaining = countingView.currentExercise.amount
+    func resetTimer(countingView: CountingView, globalVars: GlobalVars) {
+        countingView.timeRemaining = LogicUtilites.returnCorrectExerciseArray(currentType: countingView.globalVars.type, globalVars: globalVars)[countingView.globalVars.index].amount
         stopTimer(countingView: countingView)
     }
     

@@ -11,31 +11,16 @@ import SwiftUI
  the view that has the specific exercise and its sets and reps where applicable
  */
 struct DetailView: View {
-    /*
-     see mother view for var descriptions
-     */
-    @State var motherView: MotherView
-    @ObservedObject var currentExerciseVars: CurrentExerciseVars
-    @ObservedObject var logic: Logic
-    @ObservedObject var userConfigureVars: UserConfigureVars
-    @ObservedObject var setButtonSelectionVars = SetButtonSelectionVars()
+    @ObservedObject var globalVars: GlobalVars
     @Binding var rootIsActive: Bool
-    
-    var index: Int
-    var type: String
-    
-    /*
-     weather or not to show the how to view based on state of button at bottom
-     */
-    @State var htViewIsHidden = true
     
     @State var howToIsActive = false
     
     var body: some View {
-        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseVars.currentExerciseType)[currentExerciseVars.currentExerciseIndex]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
         
         // number of exercises set by user
-        let currentTypeUserConfigVar = LogicUtilites.returnCorrectExerciseInt(currentType: type, userConfigureVars: userConfigureVars)
+        let currentTypeUserConfigVar: Int = Int(LogicUtilites.returnCorrectExerciseInt(currentType: globalVars.type, globalVars: globalVars))
         
         ScrollView {
             VStack {
@@ -51,7 +36,8 @@ struct DetailView: View {
                     .padding()
                 
                 // displays sets/reps or timer
-                CountingView(currentExercise: currentExercise, currentExerciseVars: currentExerciseVars, logic: logic, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
+//                CountingView(currentExercise: currentExercise, currentExerciseVars: currentExerciseVars, logic: logic, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
+                CountingView(globalVars: globalVars)
                 
                 Spacer()
                 
@@ -71,7 +57,7 @@ struct DetailView: View {
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                         }).padding(.bottom)
                         .sheet(isPresented: $howToIsActive) {
-                            HowToView(logic: logic, currentExerciseVars: currentExerciseVars, howToIsActive: $howToIsActive)
+                            HowToView(globalVars: globalVars, howToIsActive: $howToIsActive)
                         }
                         
                         Button(action: {
@@ -93,9 +79,9 @@ struct DetailView: View {
                     
                     Spacer()
                     
-                    if index < currentTypeUserConfigVar - 1 { // next button
+                    if (globalVars.index < currentTypeUserConfigVar - 1) { // next button
                         Button(action: {
-                            currentExerciseVars.currentExerciseIndex = currentExerciseVars.currentExerciseIndex + 1
+                            globalVars.index = globalVars.index + 1
                         }, label: {
                             HStack {
                                 Text("Next")

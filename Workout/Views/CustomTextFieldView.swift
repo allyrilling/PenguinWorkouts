@@ -8,26 +8,16 @@
 import SwiftUI
 
 struct CustomTextFieldView: View {
-    /*
-     the exercise type to be passed into the tf to display
-     */
-    var exerciseType: String
-    /*
-     the var tied to what is typed int he text field
-     */
-    @State var varToUpdate: String = ""
-    /*
-     the instance of the data to be passed between configure and content views containing the data about number of exercies per type enereted by user, observed object beccause it changes the the text below each text feild
-     */
-    @ObservedObject var userConfigureVars: UserConfigureVars
-    @State var motherView: MotherView
+    @ObservedObject var globalVars: GlobalVars
+    var stringType: String
     
+    @State var varToUpdate: String = "" // the var tied to what is typed int he text field
     @State private var isPressed: Bool = false
     
     var body: some View {
         VStack {
             HStack {
-                let textField = TextField(exerciseType, text: $varToUpdate)
+                let textField = TextField(stringType, text: $varToUpdate)
                     .padding(.horizontal)
                     .keyboardType(.numberPad)
                     .font(.title)
@@ -53,8 +43,9 @@ struct CustomTextFieldView: View {
                         /*
                          to make sure that the user cannot pass back an empty string "" and cause an error
                          */
-                        if varToUpdate != "" && motherView.logic.returnCorrectExerciseArray(currentType: exerciseType).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 {
-                            LogicUtilites.updateUserConfigureVars(exerciseType: exerciseType, userConfigureVars: userConfigureVars, varToUpdate: varToUpdate)
+                        if varToUpdate != "" && LogicUtilites.returnCorrectExerciseArray(currentType: stringType, globalVars: globalVars).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 {
+                            LogicUtilites.updateUserConfigureVars(exerciseType: stringType, globalVars: globalVars, varToUpdate: varToUpdate)
+                            print("Chan")
                         }
                         varToUpdate = ""
                         
@@ -97,9 +88,9 @@ struct CustomTextFieldView: View {
                 HStack {
                     Text("Showing")
                         .padding(.leading)
-                    Text("\(LogicUtilites.returnCorrectExerciseString(currentType: exerciseType, userConfigureVars: userConfigureVars))")
+                    Text("\(LogicUtilites.returnCorrectExerciseString(currentType: stringType, globalVars: globalVars))")
                         .fontWeight(.bold)
-                    Text("of \(motherView.logic.returnCorrectExerciseArray(currentType: exerciseType).count) exercises")
+                    Text("of \(LogicUtilites.returnCorrectExerciseArray(currentType: stringType, globalVars: globalVars).count) exercises")
                 }
                 Spacer()
             }.padding(.bottom)

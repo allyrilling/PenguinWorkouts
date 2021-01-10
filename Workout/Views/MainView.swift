@@ -7,19 +7,11 @@
 
 import SwiftUI
 
-/*
- the view of the app that contains the menubar, timer, and exercies
- */
+// launch screen of app
 struct MainView: View {
-    /*
-     see mother view for def of these vars
-     */
-    @State var motherView: MotherView
-    @State var currentType: String
-    @ObservedObject var currentExerciseVars: CurrentExerciseVars
-    @ObservedObject var userConfigureVars: UserConfigureVars
-    @ObservedObject var logic: Logic
-    var logicUtilites: LogicUtilites
+    @ObservedObject var globalVars: GlobalVars
+    
+    @State var currentType: String = "Core"
     @State var isActive: Bool = false
     
     /*
@@ -29,7 +21,7 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            MainViewTopBar(logic: logic, motherView: motherView, currentType: currentType)
+            MainViewTopBar(globalVars: globalVars)
             
             Picker("Type", selection: $currentType) {
                 ForEach(types, id: \.self) { type in
@@ -58,30 +50,30 @@ struct MainView: View {
             .padding()
             
             ScrollView {
-                ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))!, id:\.self) { index in // this is one cell
+                ForEach(0 ..< Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, globalVars: globalVars))!, id:\.self) { index in // this is one cell
                     VStack {
                         Button(action: {
-                            currentExerciseVars.currentExerciseType = currentType
-                            currentExerciseVars.currentExerciseIndex = index
+                            globalVars.type = currentType
+                            globalVars.index = index
                             isActive.toggle()
                         }, label: {
                             HStack {
-                                Text(logic.returnCorrectExerciseArray(currentType: currentType)[index].name) // exercise name in cell
+                                Text(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].name) // exercise name in cell
                                     .fontWeight(.semibold)
                                     .font(.system(size: 20))
                                     .multilineTextAlignment(.leading)
                                 Spacer()
-                                if (logic.returnCorrectExerciseArray(currentType: currentType)[index].isTimeBased) { // time based
-                                    Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) sec")
+                                if (LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].isTimeBased) { // time based
+                                    Text("\(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].amount) sec")
                                 } else { // reps based
-                                    Text("\(logic.returnCorrectExerciseArray(currentType: currentType)[index].amount) reps")
+                                    Text("\(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].amount) reps")
                                 }
                             }.foregroundColor(.black)
                         }).sheet(isPresented: $isActive) {
-                            DetailView(motherView: motherView, currentExerciseVars: currentExerciseVars, logic: logic, userConfigureVars: userConfigureVars, rootIsActive: $isActive, index: index, type: currentType)
+                            DetailView(globalVars: globalVars, rootIsActive: $isActive)
                         }
                         
-                        if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, userConfigureVars: userConfigureVars))! - 1) {
+                        if (index < Int(LogicUtilites.returnCorrectExerciseString(currentType: currentType, globalVars: globalVars))! - 1) {
                             RoundedRectangle(cornerRadius: 3, style: .continuous)
                                 .frame(height: 2)
                                 .foregroundColor((Color("BackgroundColor")))

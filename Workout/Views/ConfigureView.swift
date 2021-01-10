@@ -11,24 +11,17 @@ import SwiftUI
  the view that the user enters the amount of exercises they want for each exercise type
  */
 struct ConfigureView: View {
-    /*
-     the mother view to return to when going back
-     */
-    @State var motherView: MotherView
     @Binding var configureIsActive: Bool
     
-    /*
-     instance of the data amount of exercies per type that the user enters to be passed back to content view
-     */
-    var userConfigureVars: UserConfigureVars
+    @ObservedObject var globalVars: GlobalVars
     
     var body: some View {
         
         // text fields
-        let ubTFHS = CustomTextFieldView(exerciseType: "Upper Body", userConfigureVars: userConfigureVars, motherView: motherView)
-        let lbTFHS = CustomTextFieldView(exerciseType: "Lower Body", userConfigureVars: userConfigureVars, motherView: motherView)
-        let coreTFHS = CustomTextFieldView(exerciseType: "Core", userConfigureVars: userConfigureVars, motherView: motherView)
-        let hipsTFHS = CustomTextFieldView(exerciseType: "Hips", userConfigureVars: userConfigureVars, motherView: motherView)
+        let ubTFHS = CustomTextFieldView(globalVars: globalVars, stringType: "Upper Body")
+        let lbTFHS = CustomTextFieldView(globalVars: globalVars, stringType: "Lower Body")
+        let coreTFHS = CustomTextFieldView(globalVars: globalVars, stringType: "Core")
+        let hipsTFHS = CustomTextFieldView(globalVars: globalVars, stringType: "Hips")
         
         ScrollView { // call each declaration of the text field
             HStack {
@@ -49,36 +42,42 @@ struct ConfigureView: View {
             lbTFHS
             hipsTFHS
             
-            /*
-             the show all exercises button
-             */
             HStack {
-                ButtonWithText(sfSymbolName: "plus", buttonLabel: "Show all exercises", circleIsFirst: true)
+                Button(action: {
+                    globalVars.amtExUpperBody = String(globalVars.upperBody.count)
+                    globalVars.amtExLowerBody = String(globalVars.lowerBody.count)
+                    globalVars.amtExCore = String(globalVars.core.count)
+                    globalVars.amtExHips = String(globalVars.hips.count)
+                }, label: {
+                    HStack {
+                        Image(systemName: "plus")
+                        Text("All Exercises")
+                    }.foregroundColor(.accentColor)
                     .padding()
-                    .onTapGesture {
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                        userConfigureVars.amtExUpperBody = String(motherView.logic.upperBody.count)
-                        userConfigureVars.amtExLowerBody = String(motherView.logic.lowerBody.count)
-                        userConfigureVars.amtExCore = String(motherView.logic.core.count)
-                        userConfigureVars.amtExHips = String(motherView.logic.hips.count)
-                    }
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
+                })
+                
                 Spacer()
+                
+                Button(action: {
+                    configureIsActive.toggle()
+                }, label: {
+                    HStack {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }.foregroundColor(.accentColor)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color("BackgroundColor"))
+                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                    .padding()
+                })
             }
-            
-            Button(action: {
-                configureIsActive.toggle()
-            }, label: {
-                HStack {
-                    Image(systemName: "house")
-                    Text("Home")
-                }.foregroundColor(.accentColor)
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(Color("BackgroundColor"))
-                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                .padding()
-            })
             
         }.padding()
         .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct HowToView: View {
-    @ObservedObject var logic: Logic
-    @ObservedObject var currentExerciseVars: CurrentExerciseVars
+    @ObservedObject var globalVars: GlobalVars
     @Binding var howToIsActive: Bool
     
     var body: some View {
-        let currentExerciseType = currentExerciseVars.currentExerciseType
-        let currentExerciseIndex = currentExerciseVars.currentExerciseIndex
-        let currentExercise = logic.returnCorrectExerciseArray(currentType: currentExerciseType)[currentExerciseIndex]
+        let currentExerciseType = globalVars.type
+        let currentExerciseIndex = globalVars.index
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[currentExerciseIndex]
         let descriptionArray = currentExercise.description.split(separator: "\n")
         
         ScrollView {

@@ -11,21 +11,13 @@ import SwiftUI
  the bar housing the randomize and configure buttons
  */
 struct MainViewTopBar: View {
-    @ObservedObject var logic: Logic
-    @State var motherView: MotherView
-    
+    @ObservedObject var globalVars: GlobalVars
     @State var configureIsActive = false
-    
-    /*
-     current type is so that when navigating back to main view the type the user had selected before is still selected after
-     */
-    var currentType: String
     
     var body: some View {
         HStack {
             Button(action: { // randomize button
-                LogicUtilites.randomizeExercies(logic: logic)
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                LogicUtilites.randomizeExercies(globalVars: globalVars)
             }) {
                     HStack {
                         Image(systemName: "shuffle")
@@ -55,7 +47,7 @@ struct MainViewTopBar: View {
                                 .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                 .padding()
             }).sheet(isPresented: $configureIsActive) {
-                ConfigureView(motherView: motherView, configureIsActive: $configureIsActive, userConfigureVars: motherView.userConfigureVars)
+                ConfigureView(configureIsActive: $configureIsActive, globalVars: globalVars)
             }
             
 //            NavigationLink(

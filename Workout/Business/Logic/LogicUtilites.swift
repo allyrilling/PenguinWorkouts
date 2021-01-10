@@ -15,25 +15,25 @@ class LogicUtilites {
     /*
      randomizes exercies on press of randomize button
      */
-    static func randomizeExercies(logic: Logic) {
-        logic.upperBody.shuffle()
-        logic.lowerBody.shuffle()
-        logic.core.shuffle()
-        logic.hips.shuffle()
+    static func randomizeExercies(globalVars: GlobalVars) {
+        globalVars.upperBody.shuffle()
+        globalVars.lowerBody.shuffle()
+        globalVars.core.shuffle()
+        globalVars.hips.shuffle()
     }
 
     /*
      returns the string of the number of exercieses included in the passed in instance of user configure vars
      */
-    static func returnCorrectExerciseString(currentType: String, userConfigureVars: UserConfigureVars) -> String {
+    static func returnCorrectExerciseString(currentType: String, globalVars: GlobalVars) -> String {
         if currentType == "Upper Body" {
-            return userConfigureVars.amtExUpperBody
+            return globalVars.amtExUpperBody
         } else if currentType == "Lower Body" {
-            return userConfigureVars.amtExLowerBody
+            return globalVars.amtExLowerBody
         } else if currentType == "Core" {
-            return userConfigureVars.amtExCore
+            return globalVars.amtExCore
         } else if currentType == "Hips" {
-            return userConfigureVars.amtExHips
+            return globalVars.amtExHips
         }
         return "fail" // should never happen
     }
@@ -41,15 +41,15 @@ class LogicUtilites {
     /*
      returns the user configured amount of the exercise type specified in parameters
      */
-    static func returnCorrectExerciseInt(currentType: String, userConfigureVars: UserConfigureVars) -> Int {
+    static func returnCorrectExerciseInt(currentType: String, globalVars: GlobalVars) -> Int {
             if currentType == "Upper Body" {
-                return Int(userConfigureVars.amtExUpperBody)!
+                return Int(globalVars.amtExUpperBody)!
             } else if currentType == "Lower Body" {
-                return Int(userConfigureVars.amtExLowerBody)!
+                return Int(globalVars.amtExLowerBody)!
             } else if currentType == "Core" {
-                return Int(userConfigureVars.amtExCore)!
+                return Int(globalVars.amtExCore)!
             } else if currentType == "Hips" {
-                return Int(userConfigureVars.amtExHips)!
+                return Int(globalVars.amtExHips)!
             }
             return 0 // should never happen
     }
@@ -57,16 +57,33 @@ class LogicUtilites {
     /*
      updates userConfigure vars correct var based on the exercise type passed in
      */
-    static func updateUserConfigureVars(exerciseType: String, userConfigureVars: UserConfigureVars, varToUpdate: String) {
+    static func updateUserConfigureVars(exerciseType: String, globalVars: GlobalVars, varToUpdate: String) {
         if exerciseType == "Upper Body" {
-            userConfigureVars.amtExUpperBody = varToUpdate
+            globalVars.amtExUpperBody = varToUpdate
         } else if exerciseType == "Lower Body" {
-            userConfigureVars.amtExLowerBody = varToUpdate
+            globalVars.amtExLowerBody = varToUpdate
         } else if exerciseType == "Core" {
-            userConfigureVars.amtExCore = varToUpdate
+            globalVars.amtExCore = varToUpdate
         } else if exerciseType == "Hips" {
-            return userConfigureVars.amtExHips = varToUpdate
+            return globalVars.amtExHips = varToUpdate
         }
+    }
+    
+    /*
+     based on the text passed into the function returns the corresponding array
+     */
+    static func returnCorrectExerciseArray(currentType: String, globalVars: GlobalVars) -> [Exercise] {
+        var returnArray: [Exercise] = []
+        if currentType == "Upper Body" {
+            returnArray = globalVars.upperBody
+        } else if currentType == "Lower Body" {
+            returnArray = globalVars.lowerBody
+        } else if currentType == "Core" {
+            returnArray = globalVars.core
+        } else if currentType == "Hips" {
+            returnArray = globalVars.hips
+        }
+        return returnArray
     }
     
 }
