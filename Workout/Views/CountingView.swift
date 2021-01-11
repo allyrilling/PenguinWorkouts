@@ -11,10 +11,11 @@ import SwiftUI
  the view that displays the timer or the sets and reps
  */
 struct CountingView: View {
-    var countingLogic = CountingLogic()
     @ObservedObject var globalVars: GlobalVars
+    
+    var countingLogic = CountingLogic()
     // timer vars
-    @State var timeRemaining: Int = 0
+    @State var timeRemaining: Int
     @State var timerIsPaused = true
     @State var timer: Timer? = nil
     
@@ -23,7 +24,7 @@ struct CountingView: View {
         
         if currentExercise.isTimeBased { // show timer view
             VStack {
-                Text("\(convertSecToMin(sec: currentExercise.amount))")
+                Text("\(convertSecToMin(sec: timeRemaining))")
                     .fontWeight(.bold)
                     .font(.system(size: 80))
                     .padding(.top)
@@ -74,9 +75,7 @@ struct CountingView: View {
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     }
                     Button(action: { // sub 15 seconds button
-                        if timeRemaining > 15 {
-                            countingLogic.sub15seconds(countingView: self)
-                        }
+                        countingLogic.sub15seconds(countingView: self)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
                         Image(systemName: "minus")

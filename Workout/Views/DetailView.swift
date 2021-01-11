@@ -35,9 +35,8 @@ struct DetailView: View {
                                     .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     .padding()
                 
-                // displays sets/reps or timer
-//                CountingView(currentExercise: currentExercise, currentExerciseVars: currentExerciseVars, logic: logic, setButtonSelectionVars: setButtonSelectionVars, timeRemaining: currentExercise.amount)
-                CountingView(globalVars: globalVars)
+                let countingView = CountingView(globalVars: globalVars, timeRemaining: currentExercise.amount)
+                countingView // displays sets/reps or timer
                 
                 Spacer()
                 

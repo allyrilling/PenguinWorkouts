@@ -13,32 +13,6 @@ import AudioToolbox
  */
 class CountingLogic {
     /*
-     gets the state of the set button passed into it
-     isselected = true which means that set is complete
-     */
-    func returnCorrectIsSelectedVar(setButtonSelectionVars: SetButtonSelectionVars, setNumber: Int) -> Bool {
-        if setNumber == 1 {
-            return setButtonSelectionVars.isSelected1
-        } else if setNumber == 2 {
-            return setButtonSelectionVars.isSelected2
-        } else if setNumber == 3 {
-            return setButtonSelectionVars.isSelected3
-        }
-        return false
-    }
-    
-    /*
-     toggle setbutton on tap
-     */
-    func toggleSetButtonSelection(isSelected: Bool) -> Bool {
-        if isSelected {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    /*
      starts timer passed into it
      */
     func startTimer(countingView: CountingView) {
@@ -80,11 +54,9 @@ class CountingLogic {
     }
     
     func sub15seconds(countingView: CountingView) {
-        countingView.timeRemaining = countingView.timeRemaining - 15
-    }
-    
-    func add1ToReps() {
-        
+        if countingView.timeRemaining > 15 {
+            countingView.timeRemaining = countingView.timeRemaining - 15
+        }
     }
     
 }
