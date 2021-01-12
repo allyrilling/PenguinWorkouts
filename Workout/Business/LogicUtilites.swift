@@ -7,25 +7,16 @@
 
 import Foundation
 
-/*
- random logic utilties, doesnt require class to be instantiated as they are all static functions
- */
 class LogicUtilites {
     
-    /*
-     randomizes exercies on press of randomize button
-     */
-    static func randomizeExercies(globalVars: GlobalVars) {
+    static func randomizeExercies(globalVars: GlobalVars) { // randomizes exercies on press of randomize button
         globalVars.upperBody.shuffle()
         globalVars.lowerBody.shuffle()
         globalVars.core.shuffle()
         globalVars.hips.shuffle()
     }
 
-    /*
-     returns the string of the number of exercieses included in the passed in instance of user configure vars
-     */
-    static func returnCorrectExerciseString(currentType: String, globalVars: GlobalVars) -> String {
+    static func returnCorrectExerciseString(currentType: String, globalVars: GlobalVars) -> String { // returns the string of the number of exercieses included in the passed in instance of user configure vars
         if currentType == "Upper Body" {
             return globalVars.amtExUpperBody
         } else if currentType == "Lower Body" {
@@ -38,10 +29,7 @@ class LogicUtilites {
         return "fail" // should never happen
     }
     
-    /*
-     returns the user configured amount of the exercise type specified in parameters
-     */
-    static func returnCorrectExerciseInt(currentType: String, globalVars: GlobalVars) -> Int {
+    static func returnCorrectExerciseInt(currentType: String, globalVars: GlobalVars) -> Int { // returns the user configured amount of the exercise type specified in parameters
             if currentType == "Upper Body" {
                 return Int(globalVars.amtExUpperBody)!
             } else if currentType == "Lower Body" {
@@ -54,10 +42,7 @@ class LogicUtilites {
             return 0 // should never happen
     }
     
-    /*
-     updates userConfigure vars correct var based on the exercise type passed in
-     */
-    static func updateUserConfigureVars(exerciseType: String, globalVars: GlobalVars, varToUpdate: String) {
+    static func updateUserConfigureVars(exerciseType: String, globalVars: GlobalVars, varToUpdate: String) { // updates userConfigure vars correct var based on the exercise type passed in
         if exerciseType == "Upper Body" {
             globalVars.amtExUpperBody = varToUpdate
         } else if exerciseType == "Lower Body" {
@@ -69,10 +54,7 @@ class LogicUtilites {
         }
     }
     
-    /*
-     based on the text passed into the function returns the corresponding array
-     */
-    static func returnCorrectExerciseArray(currentType: String, globalVars: GlobalVars) -> [Exercise] {
+    static func returnCorrectExerciseArray(currentType: String, globalVars: GlobalVars) -> [Exercise] { // based on the text passed into the function returns the corresponding array
         var returnArray: [Exercise] = []
         if currentType == "Upper Body" {
             returnArray = globalVars.upperBody

@@ -7,32 +7,20 @@
 
 import Foundation
 
-/*
- master logic class
- */
 class Logic {
-    /*
-     arrays of the exercise objects, constant throughtout the app
-     */
     static var upperBody: [Exercise] = []
     static var lowerBody: [Exercise] = []
     static var core: [Exercise] = []
     static var hips: [Exercise] = []
     
-    /*
-     populates the class arrays above with the contents of the json files using the fucntion decodeJSON
-     */
-    init() {
+    init() { // populates the class arrays above with the contents of the json files using the fucntion decodeJSON
         Logic.upperBody = Logic.decodeJSON(jsonFileName: "UpperBody").shuffled()
         Logic.lowerBody = Logic.decodeJSON(jsonFileName: "LowerBody").shuffled()
         Logic.core = Logic.decodeJSON(jsonFileName: "Core").shuffled()
         Logic.hips = Logic.decodeJSON(jsonFileName: "Hips").shuffled()
     }
     
-    /*
-     decodes local json files into exercise objects to populate the above arrays
-     */
-    static func decodeJSON(jsonFileName: String) -> [Exercise] {
+    static func decodeJSON(jsonFileName: String) -> [Exercise] { // decodes local json files into exercise objects to populate the above arrays
         var arrayToInit: [Exercise] = []
         
         if let url = Bundle.main.url(forResource: jsonFileName, withExtension: "json") {

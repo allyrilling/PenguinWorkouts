@@ -7,16 +7,10 @@
 
 import Foundation
 
-/*
- an exercise
- includes various elements that each exercise contatains
- */
 struct Exercise: Decodable {
     var name: String
     var amount: Int
     var isTimeBased: Bool
-//    var videoURL: String
-    // FIXME: - text
     var startingPosition: String
     var description: String
     
@@ -24,8 +18,6 @@ struct Exercise: Decodable {
         self.name = name
         self.amount = amount
         self.isTimeBased = isTimeBased
-//        self.videoURL = description
-        //FIXME: - text
         self.startingPosition = startingPosition
         self.description = description
     }

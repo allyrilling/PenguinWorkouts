@@ -7,12 +7,12 @@
 
 import Foundation
 
-/*
- this class is used to pass the amount of exercies per type entered by the user back to the content view
- */
-class UserConfigureVars: ObservableObject {
-    @Published var amtExUpperBody: String = "5"
-    @Published var amtExLowerBody: String = "5"
-    @Published var amtExCore: String = "10"
-    @Published var amtExHips: String = "5"
-}
+///*
+// this class is used to pass the amount of exercies per type entered by the user back to the content view
+// */
+//class UserConfigureVars: ObservableObject {
+//    @Published var amtExUpperBody: String = "5"
+//    @Published var amtExLowerBody: String = "5"
+//    @Published var amtExCore: String = "10"
+//    @Published var amtExHips: String = "5"
+//}

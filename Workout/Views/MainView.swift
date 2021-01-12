@@ -14,10 +14,7 @@ struct MainView: View {
     @State var currentType: String = "Core"
     @State var isActive: Bool = false
     
-    /*
-     for segmented control labels
-     */
-    var types = ["Core", "Upper Body", "Lower Body", "Hips"]
+    var types = ["Core", "Upper Body", "Lower Body", "Hips"] // for segmented control labels
     
     var body: some View {
         VStack {

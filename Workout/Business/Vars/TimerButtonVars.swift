@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
-class TimerButtonVars: ObservableObject {
-    
-    @Published var playButtonState = false
-    @Published var pauseButtonState = false
-    
-}
+//
+//class TimerButtonVars: ObservableObject {
+//    
+//    @Published var playButtonState = false
+//    @Published var pauseButtonState = false
+//    
+//}

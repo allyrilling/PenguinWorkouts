@@ -40,20 +40,12 @@ struct CustomTextFieldView: View {
                 VStack { // change button
                     Button(action: {
                         self.isPressed.toggle()
-                        /*
-                         to make sure that the user cannot pass back an empty string "" and cause an error
-                         */
-                        if varToUpdate != "" && LogicUtilites.returnCorrectExerciseArray(currentType: stringType, globalVars: globalVars).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 {
+                        if varToUpdate != "" && LogicUtilites.returnCorrectExerciseArray(currentType: stringType, globalVars: globalVars).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 { // makes sure legal input
                             LogicUtilites.updateUserConfigureVars(exerciseType: stringType, globalVars: globalVars, varToUpdate: varToUpdate)
-                            print("Chan")
                         }
                         varToUpdate = ""
                         
-                        /*
-                         to dismiss the keyboard on change button press
-                         */
-                        self.endEditing(force: true)
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        self.endEditing(force: true) // to dismiss keyboard
                     }, label: {
                         ZStack {
                             if(isPressed) {

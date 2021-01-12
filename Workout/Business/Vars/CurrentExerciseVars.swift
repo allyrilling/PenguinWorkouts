@@ -9,8 +9,8 @@ import Foundation
 
 /*
  the global instance of index and type
- */
-class CurrentExerciseVars: ObservableObject {
-    @Published var currentExerciseIndex = 0
-    @Published var currentExerciseType = "Core"
-}
+// */
+//class CurrentExerciseVars: ObservableObject {
+//    @Published var currentExerciseIndex = 0
+//    @Published var currentExerciseType = "Core"
+//}

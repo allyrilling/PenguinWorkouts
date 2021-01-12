@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-/*
- the bar housing the randomize and configure buttons
- */
 struct MainViewTopBar: View {
     @ObservedObject var globalVars: GlobalVars
     @State var configureIsActive = false
@@ -33,7 +30,7 @@ struct MainViewTopBar: View {
             
             Spacer()
             
-            Button(action: {
+            Button(action: { // configure button
                 configureIsActive.toggle()
             }, label: {
                 HStack {
@@ -47,23 +44,8 @@ struct MainViewTopBar: View {
                                 .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                 .padding()
             }).sheet(isPresented: $configureIsActive) {
-                ConfigureView(configureIsActive: $configureIsActive, globalVars: globalVars)
+                ConfigureView(globalVars: globalVars, configureIsActive: $configureIsActive)
             }
-            
-//            NavigationLink(
-//                destination: ConfigureView(motherView: motherView, userConfigureVars: motherView.userConfigureVars),
-//                label: {
-//                    HStack {
-//                        Image(systemName: "gear")
-//                        Text("Configure")
-//                    }.foregroundColor(.accentColor)
-//                    .padding()
-//                    .background(RoundedRectangle(cornerRadius: 15)
-//                                    .foregroundColor(Color("BackgroundColor"))
-//                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-//                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-//                    .padding()
-//                })
         }
     }
 }

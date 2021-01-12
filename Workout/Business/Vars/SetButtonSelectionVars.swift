@@ -7,13 +7,13 @@
 
 import Foundation
 
-/*
- the state of the set buttons in counting view 
- */
-class SetButtonSelectionVars: ObservableObject {
-    
-    @Published var isSelected1 = false
-    @Published var isSelected2 = false
-    @Published var isSelected3 = false
-    
-}
+///*
+// the state of the set buttons in counting view 
+// */
+//class SetButtonSelectionVars: ObservableObject {
+//    
+//    @Published var isSelected1 = false
+//    @Published var isSelected2 = false
+//    @Published var isSelected3 = false
+//    
+//}

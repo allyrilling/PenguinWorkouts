@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-/*
- the view that has the specific exercise and its sets and reps where applicable
- */
 struct DetailView: View {
     @ObservedObject var globalVars: GlobalVars
     @Binding var rootIsActive: Bool
@@ -24,7 +21,7 @@ struct DetailView: View {
         
         ScrollView {
             VStack {
-                Text(currentExercise.name)
+                Text(currentExercise.name) // exercise name
                     .padding()
                     .font(.system(size: 40, weight: .semibold))
                     .multilineTextAlignment(.center)
@@ -42,7 +39,7 @@ struct DetailView: View {
                 
                 HStack {
                     VStack {
-                        Button(action: {
+                        Button(action: { // directions button
                             howToIsActive.toggle()
                         }, label: {
                             HStack {
@@ -59,10 +56,9 @@ struct DetailView: View {
                             HowToView(globalVars: globalVars, howToIsActive: $howToIsActive)
                         }
                         
-                        Button(action: {
+                        Button(action: { // home button
                             countingView.countingLogic.resetTimer(countingView: countingView, globalVars: globalVars)
                             globalVars.setsSliderValue = 0
-                            
                             self.rootIsActive = false
                         }, label: {
                             HStack {

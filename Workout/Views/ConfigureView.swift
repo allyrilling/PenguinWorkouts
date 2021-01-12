@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-/*
- the view that the user enters the amount of exercises they want for each exercise type
- */
 struct ConfigureView: View {
-    @Binding var configureIsActive: Bool
-    
     @ObservedObject var globalVars: GlobalVars
+    @Binding var configureIsActive: Bool // determines weather the user dismisses the screen
     
     var body: some View {
         

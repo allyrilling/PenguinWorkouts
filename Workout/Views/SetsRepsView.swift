@@ -10,8 +10,6 @@ import SwiftUI
 struct SetsRepsView: View {
     @ObservedObject var globalVars: GlobalVars
     
-    // HERE EVYERHTING WORKS I THINK EXCEPT THE SETS SLIDER RESETTING ON NEW EXERCISE
-    
     var body: some View {
         let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
         

@@ -13,7 +13,6 @@ import AudioToolbox
  */
 struct CountingView: View {
     @ObservedObject var globalVars: GlobalVars
-    
     var countingLogic = CountingLogic()
     
     var body: some View {

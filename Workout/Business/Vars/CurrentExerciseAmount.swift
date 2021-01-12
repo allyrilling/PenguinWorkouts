@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-class CurrentExerciseAmount: ObservableObject {
-    @Published var currentExerciseAmount: Int = 0
-}
-
+//
+//class CurrentExerciseAmount: ObservableObject {
+//    @Published var currentExerciseAmount: Int = 0
+//}
+//

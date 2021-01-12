@@ -23,7 +23,8 @@ struct HowToView: View {
                     .foregroundColor(.accentColor)
                     .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
                     .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
-                VStack {
+                
+                VStack { // starting position
                     Text("Starting Position")
                         .font(.system(size: 38, weight: .semibold))
                         .padding()
@@ -40,7 +41,7 @@ struct HowToView: View {
                                 .frame(width: UIScreen.main.bounds.width - 40))
                 .padding(.vertical)
                 
-                VStack {
+                VStack { // directions
                     ForEach(descriptionArray, id: \.self) { item in
                         Text(item)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,7 +55,7 @@ struct HowToView: View {
                                 .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
                                 .frame(width: UIScreen.main.bounds.width - 40))
                    
-                Button(action: {
+                Button(action: { // back button
                     howToIsActive.toggle()
                 }, label: {
                     HStack {
