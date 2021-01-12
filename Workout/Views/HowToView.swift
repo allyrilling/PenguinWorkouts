@@ -12,7 +12,6 @@ struct HowToView: View {
     @Binding var howToIsActive: Bool
     
     var body: some View {
-        let currentExerciseType = globalVars.type
         let currentExerciseIndex = globalVars.index
         let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[currentExerciseIndex]
         let descriptionArray = currentExercise.description.split(separator: "\n")

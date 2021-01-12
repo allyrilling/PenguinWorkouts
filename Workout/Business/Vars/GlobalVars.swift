@@ -8,9 +8,6 @@
 import Foundation
 
 class GlobalVars: ObservableObject {
-//    var logic: Logic
-//    let logicUtilites = LogicUtilites()
-    
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
     @Published var core: [Exercise] = []
@@ -24,8 +21,15 @@ class GlobalVars: ObservableObject {
     @Published var index = 0
     @Published var type = "Core"
     
+    @Published var timeRemaining = 0
+    @Published var timerIsPaused = true
+    @Published var timer: Timer? = nil
+    
+    @Published var reps = 0
+    @Published var setsSliderValue: Double = 0.0
+    
     init() {
-        var logic = Logic()
+        Logic()
         self.core = Logic.core
         self.upperBody = Logic.upperBody
         self.lowerBody = Logic.lowerBody

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AudioToolbox
 
 /*
  the view that displays the timer or the sets and reps
@@ -14,17 +15,13 @@ struct CountingView: View {
     @ObservedObject var globalVars: GlobalVars
     
     var countingLogic = CountingLogic()
-    // timer vars
-    @State var timeRemaining: Int
-    @State var timerIsPaused = true
-    @State var timer: Timer? = nil
     
     var body: some View {
         let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
         
         if currentExercise.isTimeBased { // show timer view
             VStack {
-                Text("\(convertSecToMin(sec: timeRemaining))")
+                Text("\(convertSecToMin(sec: globalVars.timeRemaining))")
                     .fontWeight(.bold)
                     .font(.system(size: 80))
                     .padding(.top)
@@ -111,7 +108,7 @@ struct CountingView: View {
             .padding()
             
         } else { // show sets and reps view
-            SetsRepsView(globalVars: globalVars, currentExerciseAmount: currentExercise.amount)
+            SetsRepsView(globalVars: globalVars)
         }
         
     }

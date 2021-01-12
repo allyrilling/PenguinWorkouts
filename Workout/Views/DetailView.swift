@@ -35,7 +35,7 @@ struct DetailView: View {
                                     .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     .padding()
                 
-                let countingView = CountingView(globalVars: globalVars, timeRemaining: currentExercise.amount)
+                let countingView = CountingView(globalVars: globalVars)
                 countingView // displays sets/reps or timer
                 
                 Spacer()
@@ -60,6 +60,9 @@ struct DetailView: View {
                         }
                         
                         Button(action: {
+                            countingView.countingLogic.resetTimer(countingView: countingView, globalVars: globalVars)
+                            globalVars.setsSliderValue = 0
+                            
                             self.rootIsActive = false
                         }, label: {
                             HStack {
@@ -81,6 +84,13 @@ struct DetailView: View {
                     if (globalVars.index < currentTypeUserConfigVar - 1) { // next button
                         Button(action: {
                             globalVars.index = globalVars.index + 1
+                            let nextExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+                            if(nextExercise.isTimeBased) {
+                                countingView.countingLogic.resetTimer(countingView: countingView, globalVars: globalVars)
+                            } else { // here
+                                globalVars.reps = nextExercise.amount
+                                globalVars.setsSliderValue = 0
+                            }
                         }, label: {
                             HStack {
                                 Text("Next")

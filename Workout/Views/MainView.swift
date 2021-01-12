@@ -56,6 +56,14 @@ struct MainView: View {
                             globalVars.type = currentType
                             globalVars.index = index
                             isActive.toggle()
+                            
+                            let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+                            if(currentExercise.isTimeBased) {
+                                globalVars.timeRemaining = currentExercise.amount
+                            } else {
+                                globalVars.reps = currentExercise.amount
+                            }
+                            
                         }, label: {
                             HStack {
                                 Text(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].name) // exercise name in cell

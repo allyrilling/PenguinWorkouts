@@ -9,9 +9,8 @@ import SwiftUI
 
 struct SetsRepsView: View {
     @ObservedObject var globalVars: GlobalVars
-    @State var currentExerciseAmount: Int
     
-    @State var sliderValue: Double = 0.0
+    // HERE EVYERHTING WORKS I THINK EXCEPT THE SETS SLIDER RESETTING ON NEW EXERCISE
     
     var body: some View {
         let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
@@ -20,7 +19,7 @@ struct SetsRepsView: View {
             HStack {
                 Spacer()
                 VStack { // amount text
-                    Text(String(currentExerciseAmount))
+                    Text(String(globalVars.reps))
                         .font(.system(size: 80))
                         .fontWeight(.bold)
                     Text("Reps")
@@ -29,7 +28,7 @@ struct SetsRepsView: View {
                 Spacer()
                 VStack { // action buttons
                     Button(action: { // plus button
-                        currentExerciseAmount = currentExerciseAmount + 1
+                        globalVars.reps = globalVars.reps + 1
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "plus")
@@ -43,8 +42,8 @@ struct SetsRepsView: View {
                     }
                     
                     Button(action: { // minus button
-                        if currentExerciseAmount > 0 {
-                            currentExerciseAmount = currentExerciseAmount - 1
+                        if globalVars.reps > 0 {
+                            globalVars.reps = globalVars.reps - 1
                         }
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
@@ -58,7 +57,7 @@ struct SetsRepsView: View {
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     }
                     Button(action: { // reset button
-                        currentExerciseAmount = currentExercise.amount
+                        globalVars.reps = currentExercise.amount
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "arrow.counterclockwise")
@@ -78,9 +77,9 @@ struct SetsRepsView: View {
             .padding()
             
             VStack {
-                Slider(value: $sliderValue, in: 0...3, step: 1) // set counter
+                Slider(value: $globalVars.setsSliderValue, in: 0...3, step: 1) // set counter
                     .padding()
-                Text("\(Int(sliderValue)) of 3")
+                Text("\(Int(globalVars.setsSliderValue)) of 3")
                     .font(.system(size: 30, weight: .bold))
                 Text("Sets Completed")
                     .padding(.bottom)
