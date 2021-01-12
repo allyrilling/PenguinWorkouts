@@ -57,7 +57,7 @@ struct DetailView: View {
                         }
                         
                         Button(action: { // home button
-                            countingView.countingLogic.resetTimer(countingView: countingView, globalVars: globalVars)
+                            CountingLogic.resetTimer(globalVars: globalVars)
                             globalVars.setsSliderValue = 0
                             self.rootIsActive = false
                         }, label: {
@@ -82,8 +82,8 @@ struct DetailView: View {
                             globalVars.index = globalVars.index + 1
                             let nextExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
                             if(nextExercise.isTimeBased) {
-                                countingView.countingLogic.resetTimer(countingView: countingView, globalVars: globalVars)
-                            } else { // here
+                                CountingLogic.resetTimer(globalVars: globalVars)
+                            } else {
                                 globalVars.reps = nextExercise.amount
                                 globalVars.setsSliderValue = 0
                             }

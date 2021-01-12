@@ -54,6 +54,8 @@ struct MainView: View {
                             globalVars.index = index
                             isActive.toggle()
                             
+                            CountingLogic.resetTimer(globalVars: globalVars) // so that timer does not keep running in the background
+                            
                             let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
                             if(currentExercise.isTimeBased) {
                                 globalVars.timeRemaining = currentExercise.amount

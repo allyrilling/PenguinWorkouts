@@ -26,7 +26,7 @@ struct CountingView: View {
                     .padding(.top)
                 HStack {
                     Button(action: { // play button
-                        countingLogic.startTimer(countingView: self)
+                        CountingLogic.startTimer(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
                         Image(systemName: "play.fill")
@@ -41,7 +41,7 @@ struct CountingView: View {
                     }
                     
                     Button(action: { // pause button
-                        countingLogic.stopTimer(countingView: self)
+                        CountingLogic.stopTimer(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                     }) {
                         Image(systemName: "pause.fill")
@@ -57,7 +57,7 @@ struct CountingView: View {
                 }.padding(.top)
                 HStack {
                     Button(action: { // add 15 seconds button
-                        countingLogic.add15seconds(countingView: self)
+                        CountingLogic.add15seconds(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
                         Image(systemName: "plus")
@@ -71,7 +71,7 @@ struct CountingView: View {
                                             .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
                     }
                     Button(action: { // sub 15 seconds button
-                        countingLogic.sub15seconds(countingView: self)
+                        CountingLogic.sub15seconds(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
                         Image(systemName: "minus")
@@ -86,7 +86,7 @@ struct CountingView: View {
                     }
                     
                     Button(action: { // reset time button
-                        countingLogic.resetTimer(countingView: self, globalVars: globalVars)
+                        CountingLogic.resetTimer(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }) {
                         Image(systemName: "arrow.counterclockwise")
