@@ -65,6 +65,7 @@ struct HowToView: View {
                     .padding()
                     .frame(width: 145)
                 }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                .padding()
                 
             }.padding()
         }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
