@@ -33,11 +33,7 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                     
                     Button(action: { // minus button
                         if globalVars.reps > 0 {
@@ -49,11 +45,8 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    
                     Button(action: { // reset button
                         globalVars.reps = currentExercise.amount
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -62,11 +55,7 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                 }.padding()
             }.background(RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(Color("BackgroundColor"))

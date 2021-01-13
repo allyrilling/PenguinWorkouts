@@ -47,11 +47,8 @@ struct DetailView: View {
                                 Text("Directions")
                             }.foregroundColor(.accentColor)
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                        }).padding(.bottom)
+                        }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                        .padding(.bottom)
                         .sheet(isPresented: $howToIsActive) {
                             HowToView(globalVars: globalVars, howToIsActive: $howToIsActive)
                         }
@@ -67,11 +64,7 @@ struct DetailView: View {
                             }.foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 145)
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                        })
+                        }).buttonStyle(NeuButtonStyle(isRoundRect: true))
                         
                     }
                     
@@ -93,11 +86,7 @@ struct DetailView: View {
                                 Image(systemName: "arrow.right")
                             }.foregroundColor(.accentColor)
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                            })
+                            }).buttonStyle(NeuButtonStyle(isRoundRect: true))
                         }
                 }.padding()
             }.padding(.vertical)

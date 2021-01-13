@@ -34,11 +34,7 @@ struct CountingView: View {
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                     
                     Button(action: { // pause button
                         CountingLogic.stopTimer(globalVars: globalVars)
@@ -49,12 +45,9 @@ struct CountingView: View {
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                 }.padding(.top)
+                
                 HStack {
                     Button(action: { // add 15 seconds button
                         CountingLogic.add15seconds(globalVars: globalVars)
@@ -65,11 +58,8 @@ struct CountingView: View {
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    
                     Button(action: { // sub 15 seconds button
                         CountingLogic.sub15seconds(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -79,11 +69,7 @@ struct CountingView: View {
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                     
                     Button(action: { // reset time button
                         CountingLogic.resetTimer(globalVars: globalVars)
@@ -94,11 +80,7 @@ struct CountingView: View {
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                            .background(RoundedRectangle(cornerRadius: 15)
-                                            .foregroundColor(Color("BackgroundColor"))
-                                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    }
+                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
                 }.padding()
             }.background(RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(Color("BackgroundColor"))

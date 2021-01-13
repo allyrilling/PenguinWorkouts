@@ -15,18 +15,13 @@ struct MainViewTopBar: View {
         HStack {
             Button(action: { // randomize button
                 LogicUtilites.randomizeExercies(globalVars: globalVars)
-            }) {
-                    HStack {
-                        Image(systemName: "shuffle")
-                        Text("Randomize")
-                    }.foregroundColor(.accentColor)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("BackgroundColor"))
-                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    .padding()
-            }
+            }, label: {
+                HStack {
+                    Image(systemName: "shuffle")
+                    Text("Randomize")
+                }.foregroundColor(.accentColor)
+                .padding()
+            }).buttonStyle(NeuButtonStyle(isRoundRect: true))
             
             Spacer()
             
@@ -38,14 +33,10 @@ struct MainViewTopBar: View {
                     Text("Configure")
                 }.foregroundColor(.accentColor)
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(Color("BackgroundColor"))
-                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                .padding()
-            }).sheet(isPresented: $configureIsActive) {
+            }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+            .sheet(isPresented: $configureIsActive) {
                 ConfigureView(globalVars: globalVars, configureIsActive: $configureIsActive)
             }
-        }
+        }.padding()
     }
 }

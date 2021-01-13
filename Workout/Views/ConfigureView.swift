@@ -50,12 +50,7 @@ struct ConfigureView: View {
                         Text("All Exercises")
                     }.foregroundColor(.accentColor)
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("BackgroundColor"))
-                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    .padding()
-                })
+                }).buttonStyle(NeuButtonStyle(isRoundRect: true))
                 
                 Spacer()
                 
@@ -67,13 +62,8 @@ struct ConfigureView: View {
                         Text("Home")
                     }.foregroundColor(.accentColor)
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("BackgroundColor"))
-                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
-                    .padding()
-                })
-            }
+                }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+            }.padding()
             
         }.padding()
         .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))

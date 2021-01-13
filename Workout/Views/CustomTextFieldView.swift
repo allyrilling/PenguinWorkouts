@@ -47,34 +47,13 @@ struct CustomTextFieldView: View {
                         
                         self.endEditing(force: true) // to dismiss keyboard
                     }, label: {
-                        ZStack {
-                            if(isPressed) {
-                                ZStack {
-                                    Capsule()
-                                        .stroke(Color.gray, lineWidth: 2)
-                                        .blur(radius: 2)
-                                        .offset(x: 2, y: 2)
-                                        .mask(Capsule().fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing)))
-                                    Capsule()
-                                        .stroke(Color.white, lineWidth: 2)
-                                        .blur(radius: 2)
-                                        .offset(x: -2, y: -2)
-                                        .mask(Capsule().fill(LinearGradient(gradient: Gradient(colors: [.gray, .clear]), startPoint: .bottomTrailing, endPoint: .topLeading)))
-                                }
-                            } else {
-                                Capsule()
-                                    .foregroundColor(.white)
-                                    .shadow(color: Color.gray.opacity(0.5), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color.white, radius: 5, x: -5, y: -5)
-                            }
-                            HStack {
-                                Image(systemName: "arrow.clockwise")
-                                Text("Change")
-                            }
-                        }.frame(width: 120)
-                    }).animation(.interpolatingSpring(stiffness: 100, damping: 100))
+                        HStack {
+                            Image(systemName: "arrow.clockwise")
+                            Text("Change")
+                        }.padding()
+                    }).buttonStyle(NeuButtonStyle(isRoundRect: false))
                 }
-            }.padding()
+            }
             
             HStack { // "showing 12 of 19 exercises"
                 HStack {
