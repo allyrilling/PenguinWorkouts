@@ -153,7 +153,7 @@
     },
     {
         "name" : "Torture Twists",
-        "amount" : 45,
+        "amount" : 60,
         "isTimeBased" : true,
         "videoURL" : "rain",
         "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape, arms straight out with palms together",
@@ -247,5 +247,52 @@
         "startingPosition" : "Hands on ground under shoulders and feet on ground under knees, stomach facing sky (Reverse Tabletop position)",
         "description" : "1. Shift weight into one hand and the opposite foot \n2. Lift non-weight bearing hand and foot (should be opposite sides) off ground to touch over stomach \n3. Return lifted foot and arm to ground \n4. Repeat on other side"
     },
-    
+    {
+        "name" : "Russian Twists",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape",
+        "description" : "1. Twist upper body to the right while keeping the lower body in starting position \n2. Return to starting position \n3. Repeat on other side"
+    },
+    {
+        "name" : "Heel Taps",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
+        "description" : "1. Lower heels towards ground while maintaining 90 degree bend in knees \n2. Tap heels on ground \n3. Return legs to starting position"
+    },
+    {
+        "name" : "Knife Crunches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Laying on back with knees bent facing sky, arms straight with hands clasped perpendicular to ground",
+        "description" : "1. Lift shoulder blades off ground \n2. Lower arms to the right and twist lifting left shoulder blade off ground while dropping right shoulder blade to the ground \n3. Return to starting position \n4. Repeat on other side \nTip: Arms follow an upside-down V-shaped path"
+    },
+    {
+        "name" : "Plank with Leg Lifts",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Plank",
+        "description" : "1. While maintaining plank form, lift one foot slightly off the ground \n2. Hold foot off ground for one second \n3. Return foot to ground \n4. Repeat on other foot"
+    },
+    {
+        "name" : "Sprinter Sit-ups",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "rain",
+        "startingPosition" : "Laying on back with legs straight out on ground, arms straight overhead on ground",
+        "description" : "1. Simultaneously bend left elbow and right knee while sitting up and crunching elbow to knee (back lifts fully off ground and left leg remains on ground) \n2. Return to starting position \n3. Repeat on other side"
+    },
+    {
+        "name" : "Side Crunch Hold",
+        "amount" : 30,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups",
+        "startingPosition" : "Laying in fetal position on one side, top side hand behind head",
+        "description" : "1. Engage side core to lift bottom shoulder off ground slightly \n2. Hold!"
+    }
 ]
