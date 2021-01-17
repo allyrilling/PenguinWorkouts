@@ -289,10 +289,42 @@
     },
     {
         "name" : "Side Crunch Hold",
-        "amount" : 30,
+        "amount" : 45,
         "isTimeBased" : true,
         "videoURL" : "SideSitups",
         "startingPosition" : "Laying in fetal position on one side, top side hand behind head",
         "description" : "1. Engage side core to lift bottom shoulder off ground slightly \n2. Hold!"
+    },
+    {
+        "name" : "Slow Mountain Climbers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups",
+        "startingPosition" : "Plank",
+        "description" : "1. Bend right knee and slowly bring it forward to cross under body to touch left elbow \n2. Return to starting position \n3. Repeat on other side"
+    },
+    {
+        "name" : "Big Scissors",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups",
+        "startingPosition" : "Laying on back with feet straight up, legs perpendicular to ground, hands behind head",
+        "description" : "1. Lower right leg towards ground, stopping when heel is just above ground \n2. Return right leg to starting position \n3. Repeat with left leg"
+    },
+    {
+        "name" : "Heel Pushes",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups",
+        "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
+        "description" : "1. Straighten legs and push heels straight out to hover just above ground, low back should remain on ground \n2. Return to starting position \n3. Repeat"
+    },
+    {
+        "name" : "Single Leg Toe Touches",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "videoURL" : "SideSitups",
+        "startingPosition" : "Laying on back with one foot straight up with leg perpendicular to ground, other leg straight on ground, hands behind head",
+        "description" : "1. Engage abs so that head, shoulders, and upper back lift off ground and upper body forms a C-shape and reach opposite hand to the foot reaching towards the sky \n2. Return back to floor \n3. Repeat"
     }
 ]
