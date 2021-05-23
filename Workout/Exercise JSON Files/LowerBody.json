@@ -3,97 +3,97 @@
         "name" : "Squat Hold",
         "amount" : 60,
         "isTimeBased" : true,
-        "videoURL" : "SquatHold",
         "startingPosition" : "Standing with feet slightly wider than hip distance",
-        "description" : "1. Bend knees while keeping in line with feet, keep abs engaged \n2. Hold"
+        "description" : "1. Bend knees while keeping in line with feet, keep abs engaged \n2. Hold",
+        "isUserIncluded" : true
     },
     {
         "name" : "Squat Pulse",
         "amount" : 60,
         "isTimeBased" : true,
-        "videoURL" : "SquatPulse",
         "startingPosition" : "Standing with feet slightly wider than hip distance",
-        "description" : "1. Bend knees while keeping in line with feet, keep abs engaged \n2. Straighten knees slightly from starting squat position \n3. Bend knees slightly deeper than starting squat position \n4. Repeat as pulses"
+        "description" : "1. Bend knees while keeping in line with feet, keep abs engaged \n2. Straighten knees slightly from starting squat position \n3. Bend knees slightly deeper than starting squat position \n4. Repeat as pulses",
+        "isUserIncluded" : true
     },
     {
         "name" : "One Leg Step-ups",
         "amount" : 10,
         "isTimeBased" : false,
-        "videoURL" : "OneLegStepUps",
         "startingPosition" : "Standing next to raised surface",
-        "description" : "1. Move one leg onto raised surface \n2. Transfer weight into raised surface leg \n3. Lift floor leg off floor, fully stand on raised surface leg \n4. Return floor leg to floor"
+        "description" : "1. Move one leg onto raised surface \n2. Transfer weight into raised surface leg \n3. Lift floor leg off floor, fully stand on raised surface leg \n4. Return floor leg to floor",
+        "isUserIncluded" : true
     },
     {
         "name" : "One Leg Backwards Lunges",
         "amount" : 10,
         "isTimeBased" : false,
-        "videoURL" : "BackwardsLunges",
         "startingPosition" : "Standing",
-        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Foot backwards so that Standing Leg knee is bent at a 90 degree angle with knee over ankle \n3. Return to starting position"
+        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Foot backwards so that Standing Leg knee is bent at a 90 degree angle with knee over ankle \n3. Return to starting position",
+        "isUserIncluded" : true
     },
     {
         "name" : "Air Squats",
         "amount" : 20,
         "isTimeBased" : false,
-        "videoURL" : "AirSquats",
         "startingPosition" : "Standing",
-        "description" : "1. Bend elbows to 90 degrees while maintaining a straight line from head to feet \n 2. Push back up to starting position"
+        "description" : "1. Bend elbows to 90 degrees while maintaining a straight line from head to feet \n 2. Push back up to starting position",
+        "isUserIncluded" : true
     },
     {
         "name" : "Squat Jumps",
         "amount" : 10,
         "isTimeBased" : false,
-        "videoURL" : "SquatJumps",
         "startingPosition" : "Standing with feet slightly wider than hip distance",
-        "description" : "1. Squat down \n2. Jump upwards \n3. Land in squat position"
+        "description" : "1. Squat down \n2. Jump upwards \n3. Land in squat position",
+        "isUserIncluded" : true
     },
     {
         "name" : "Pistol Squats",
         "amount" : 8,
         "isTimeBased" : false,
-        "videoURL" : "PistolSquats",
         "startingPosition" : "Standing near a raised surface",
-        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. With all weight on Standing Leg sit down onto raised surface while lifting non-Standing Leg \n3. Return to standing position"
+        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. With all weight on Standing Leg sit down onto raised surface while lifting non-Standing Leg \n3. Return to standing position",
+        "isUserIncluded" : true
     },
     {
         "name" : "One Leg Forward Lunges",
         "amount" : 10,
         "isTimeBased" : false,
-        "videoURL" : "ForwardsLunges",
         "startingPosition" : "Standing",
-        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Leg forward so that knee is at a 90 degree angle \n3. Push back to starting position"
+        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Leg forward so that knee is at a 90 degree angle \n3. Push back to starting position",
+        "isUserIncluded" : true
     },
     {
         "name" : "One Leg Side Lunges",
         "amount" : 10,
         "isTimeBased" : false,
-        "videoURL" : "SideLunges",
         "startingPosition" : "Standing",
-        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Leg sideways so that knee is at a 90 degree angle \n3. Push back to starting position"
+        "description" : "1. Transfer weight into one leg (Standing Leg) \n2. Step non-Standing Leg sideways so that knee is at a 90 degree angle \n3. Push back to starting position",
+        "isUserIncluded" : true
     },
     {
         "name" : "Burpees",
         "amount" : 15,
         "isTimeBased" : false,
-        "videoURL" : "desktop",
         "startingPosition" : "Standing",
-        "description" : "1. Jump up \n2. Put hands on floor and jump feet backwards to plank \n3. Jump feet forwards to hands and stand up \n4. Repeat"
+        "description" : "1. Jump up \n2. Put hands on floor and jump feet backwards to plank \n3. Jump feet forwards to hands and stand up \n4. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Calf Lifts",
         "amount" : 25,
         "isTimeBased" : false,
-        "videoURL" : "CalfLifts",
         "startingPosition" : "Standing with feet shoulder width apart",
-        "description" : "1. Transfer weight into toes \n2. Push up onto tippy toes \n3. Return to flat feet"
+        "description" : "1. Transfer weight into toes \n2. Push up onto tippy toes \n3. Return to flat feet",
+        "isUserIncluded" : true
     },
     {
         "name" : "Toe Taps",
         "amount" : 50,
         "isTimeBased" : false,
-        "videoURL" : "ToeTaps",
         "startingPosition" : "Standing near raised surface",
-        "description" : "1. Rest toes of one foot on raised surface \n2. Switch to other toes on raised surface \n3. Repeat quickly"
+        "description" : "1. Rest toes of one foot on raised surface \n2. Switch to other toes on raised surface \n3. Repeat quickly",
+        "isUserIncluded" : true
     }
     
 ]

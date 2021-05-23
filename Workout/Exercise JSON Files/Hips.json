@@ -3,96 +3,96 @@
         "name" : "Clams",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, knees stacked and bent at a 90 degree angle",
-        "description" : "1. Engage hip to lift top leg, leg should lift in one motion \n2. Return leg to starting position \n3. Repeat"
+        "description" : "1. Engage hip to lift top leg, leg should lift in one motion \n2. Return leg to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Center Leg Raises",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Engage hip to lift top leg straight upwards \n2. Return leg to starting position \n3. Repeat"
+        "description" : "1. Engage hip to lift top leg straight upwards \n2. Return leg to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Front Leg Raises",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight, top foot resting on ground in front of bottom foot",
-        "description" : "1. Engage hip to lift top leg straight upwards; top leg remains in front of bottom leg \n2. Return leg to starting position \n3. Repeat"
+        "description" : "1. Engage hip to lift top leg straight upwards; top leg remains in front of bottom leg \n2. Return leg to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Back Leg Raises",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight, top foot resting on ground in back of bottom foot",
-        "description" : "1. Engage hip to lift top leg straight upwards; top leg remains in back of bottom leg \n2. Return leg to starting position \n3. Repeat"
+        "description" : "1. Engage hip to lift top leg straight upwards; top leg remains in back of bottom leg \n2. Return leg to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Leg Circles",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Engage hip to lift top leg straight upwards \n2. Move foot in circular motion \n3. Continue for time"
+        "description" : "1. Engage hip to lift top leg straight upwards \n2. Move foot in circular motion \n3. Continue for time",
+        "isUserIncluded" : true
     },
     {
         "name" : "Front-Back Toe Taps",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Engage hip to lift top leg straight upwards (Center Raised position) \n2. Tap top foot in front of bottom foot \n3. Return foot to Center Raised position \n4. Tap top foot behind bottom foot \n5. Return foot to Center Raised position \n6. Repeat"
+        "description" : "1. Engage hip to lift top leg straight upwards (Center Raised position) \n2. Tap top foot in front of bottom foot \n3. Return foot to Center Raised position \n4. Tap top foot behind bottom foot \n5. Return foot to Center Raised position \n6. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Figure Eights",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Engage hip to lift top leg straight upwards \n2. Move foot in figure eight motion \n3. Continue for time"
+        "description" : "1. Engage hip to lift top leg straight upwards \n2. Move foot in figure eight motion \n3. Continue for time",
+        "isUserIncluded" : true
     },
     {
         "name" : "Runners",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Bend top knee to 90 degrees while moving top knee so that femur is perpendicular to rest of body \n2. Return to starting position \n3. Repeat"
+        "description" : "1. Bend top knee to 90 degrees while moving top knee so that femur is perpendicular to rest of body \n2. Return to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Runners with Leg Extension",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Laying on side, legs straight and stacked on top of each other",
-        "description" : "1. Bend top knee to 90 degrees while moving top knee so that femur is perpendicular to rest of body \n2. Kick foot out while bringing leg back to starting position \n3. Repeat"
+        "description" : "1. Bend top knee to 90 degrees while moving top knee so that femur is perpendicular to rest of body \n2. Kick foot out while bringing leg back to starting position \n3. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Fire Hydrants",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Hands under shoulders, knees under hips (Table Top position)",
-        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee out to the side until parallel with ground while maintaining a 90 degree bend in knee \n3. Return knee to ground \n4. Repeat"
+        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee out to the side until parallel with ground while maintaining a 90 degree bend in knee \n3. Return knee to ground \n4. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Hurdlers",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Hands under shoulders, knees under hips (Table Top position)",
-        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee off ground and straighten leg out backwards \n3. Bend knee and pull forward as if lifting over an object \n4. Straighten leg out backwards \n5. Repeat"
+        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee off ground and straighten leg out backwards \n3. Bend knee and pull forward as if lifting over an object \n4. Straighten leg out backwards \n5. Repeat",
+        "isUserIncluded" : true
     },
     {
         "name" : "Donkey Kicks",
         "amount" : 45,
         "isTimeBased" : true,
-        "videoURL" : "rain",
         "startingPosition" : "Hands under shoulders, knees under hips (Table Top position)",
-        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee backwards so foot moves towards sky while maintaining a 90 degree bend in knee \n3. Engage glute muscles to lift foot and knee upwards \n4. Lower leg to ground \n5. Repeat"
+        "description" : "1. Shift weight to one side \n2. Lift non-weight bearing knee backwards so foot moves towards sky while maintaining a 90 degree bend in knee \n3. Engage glute muscles to lift foot and knee upwards \n4. Lower leg to ground \n5. Repeat",
+        "isUserIncluded" : true
     }
 ]
