@@ -5,7 +5,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Plank",
         "description" : "1. Bend elbows to 90 degrees while maintaining a straight line from head to feet \n2. Push back up to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Tricep Push-ups",
@@ -13,7 +14,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Plank",
         "description" : "1. Bend elbows keeping them tight along side ribs maintaining a straight line from head to feet \n2. Push back up to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Bent-over Flys",
@@ -21,7 +23,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Standing",
         "description" : "1. Bend at the hips and soften knees so body forms an L shape \n2. Bring arms to a T \n3. Move arms upwards and backwards to activate muscles of upper back \n4. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Arm Raises",
@@ -29,7 +32,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Standing",
         "description" : "1. Move arms out to a T \n2. Raise slightly above starting T position \n3. Lower arms slightly below starting T position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Front Arm Raises",
@@ -37,7 +41,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Standing",
         "description" : "1. Move arms out in front parallel to eachother and the ground (Frankinstien position) \n2. Raise slightly above starting Frankinstien position \n3. Lower slightly below starting Frankinstien position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
         
     },
     {
@@ -46,7 +51,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Plank with hands on ground and feet on raised surface",
         "description" : "1. Bend elbows to 90 degrees while maintaining a straight line from head to feet \n2. Push back up to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Incline Push-ups",
@@ -54,7 +60,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Plank with hands on raised surface and feet on ground",
         "description" : "1. Bend elbows to 90 degrees while maintaining a straight line from head to feet \n2. Push back up to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Mountain Climbers",
@@ -62,7 +69,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Bend one leg at the knee \n2. Bring knee to touch same side elbow \n3. Return to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Cross Body Mountain Climbers",
@@ -70,7 +78,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Bend one leg at the knee \n2. Bring knee across body to touch opposite elbow \n3. Return to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Down Dog Push-ups",
@@ -78,7 +87,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Downward Dog",
         "description" : "1. Bend elbows slightly so that head lowers closer to ground \n2. Return to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Vinyasa Push-ups",
@@ -86,7 +96,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Downward Dog",
         "description" : "1. Bend elbows while keeping them tight to ribs, chest lowers to hover over ground \n2. Push to Upward Dog",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Handstand",
@@ -94,7 +105,8 @@
         "isTimeBased" : false,
         "startingPosition" : "Standing",
         "description" : "1. Place hands on ground shoulder length apart \n2. Kick up to transfer weight into hands \n3. Hold",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     }
     
 ]

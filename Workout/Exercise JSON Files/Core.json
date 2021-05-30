@@ -5,7 +5,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent and facing sky, hands behind head",
         "description" : "1. Engage abs so that head, shoulders, and upper back lift off ground and upper body forms a C-shape \n2. Return back to floor",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Flutter Kicks",
@@ -13,7 +14,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on ground with legs straight out",
         "description" : "1. Lift legs slightly off ground while keeping low back flat on ground \n2. Move legs vertically opposite of each other \n3. Continue for time",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Penguins",
@@ -21,7 +23,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent and facing sky, hands behind head",
         "description" : "1. Lift head, shoulders, and upper back off ground \n2. Reach one hand to same side heel \n3. Move back to center \n4. Reach other hand to other side heel \n4. Return to center \n5. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Plank",
@@ -29,7 +32,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Hold in plank position :)",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Plank",
@@ -37,7 +41,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Shift weight into one arm, lift opposite arm off ground, stack one foot on top of the other so that body is open to side \n2. Hold",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Scissor Kicks",
@@ -45,7 +50,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on ground with legs straight out",
         "description" : "1. Lift legs slightly off ground while keeping low back flat on ground \n2. Move legs horizontally one over the other (switching each time) \n3. Continue for time",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Toe Touches",
@@ -53,7 +59,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with feet straight up, legs perpendicular to ground, hands behind head",
         "description" : "1. Engage abs so that head, shoulders, and upper back lift off ground and upper body forms a C-shape \n2. Return back to floor",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Leg Lifts",
@@ -61,7 +68,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on ground with feet straight up, legs perpendicular to ground",
         "description" : "1. Lower legs to hover slightly above ground, keep low back flat on ground \n2. Raise legs back to perpendicular position \n3. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Bicycles",
@@ -69,7 +77,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground, hands behind head",
         "description" : "1. Bring one knee into chest extend other leg, twist so that opposite elbow touches knee \n2. Switch sides and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Leg Extensions",
@@ -77,7 +86,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
         "description" : "1. Extend one leg out straight so hovers slightly above ground \n2. Bring leg back to starting position \n3. Repeat with other leg",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Rainbow Plank",
@@ -85,7 +95,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Drop hips to one side while keeping both hands/forearms and feet on ground \n2. Move back to original plank position \n3. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Boat Hold",
@@ -93,7 +104,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape",
         "description" : "1. Hold!",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Rowers",
@@ -101,7 +113,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape",
         "description" : "1. Extend legs out straight and lower torso back towards ground, making body longer \n2. Return to starting position and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Super Crunches",
@@ -109,7 +122,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on ground with legs straight out",
         "description" : "1. Hinging at hips, lift legs and upper body off ground and crunch together balancing on tailbone \n2. Lower back to ground into starting position and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Full Crunches",
@@ -117,7 +131,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with feet on floor and knees facing sky, hands behind head",
         "description" : "1. Crunch in so that both knees touch both elbow; low back, head, and shoulders lift off ground \n2. Return to starting position and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Dead Bugs",
@@ -125,7 +140,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground, arms straight upwards towards sky perpendicular to ground",
         "description" : "1. Lower one leg and opposite arm to hover slightly above ground, keep low back flat on ground \n2. Return to starting position \n3. Repeat with opposite side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Roll Sit-ups",
@@ -133,7 +149,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying in fetal position on one side",
         "description" : "1. Roll onto back so that knees are facing upwards towards sky \n2. Do a full sit-up \n3. Lower down onto back \n4. Roll over to other side and into fetal position \n5. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Crunches",
@@ -141,7 +158,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying in fetal position on one side, top side hand behind head",
         "description" : "1. Engage side core to lift bottom shoulder off ground slightly \n2. Return to ground and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Alternating Cross Sit-ups",
@@ -149,7 +167,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent facing sky",
         "description" : "1. Do a sit-up \n2. At the top of the sit-up twist so that opposite elbow touches opposite knee \n3. Return to starting position \n4. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Torture Twists",
@@ -157,7 +176,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape, arms straight out with palms together",
         "description" : "1. Twist to one side so that hands are 45 degrees above ground \n2. Hold for 5 seconds \n3. Twist to other side and repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Bird Dog",
@@ -165,7 +185,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Hands on ground under shoulders, knees on ground under hips (Table Top position)",
         "description" : "1. Move one arm straight out in front parallel to ground \n2. Move opposite leg straight out behind parallel to ground \n3. Engage core and crunch lifted elbow to opposite lifted knee \n4. Straighten arm out front and leg back behind \n5. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Knee Hover Shoulder Tap",
@@ -173,7 +194,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Hands on ground under shoulders, knees on ground under hips (Table Top position)",
         "description" : "1. Lift knees so hovering slightly above ground \n2. Shift weight into one hand \n3. Lift opposite hand to touch opposite shoulder \n4. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Butterfly Sit-ups",
@@ -181,7 +203,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent and out to sides, feet together (Butterfly position)",
         "description" : "1. Do a sit-up while keeping legs on ground \n2. Return back to ground \n3. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Plank Saws",
@@ -189,7 +212,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Shift forward slightly so that shoulders are in front of elbows \n2. Shift backwards slightly so that shoulders are directly over elbows \n3. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Plank Hip Raises",
@@ -197,7 +221,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Shift weight into one arm, lift opposite arm off ground, stack one foot on top of the other so that body is open to side \n2. Lower hips to hover slightly above ground \n3. Raise hips back to starting position \n4. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Hollow Body Rock",
@@ -205,7 +230,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with legs straight out",
         "description" : "1. Engage core so that head, shoulders, and upper back lift off ground \n2. While keeping core engaged, lean backwards to rock onto upper back lifting legs off ground \n3. Rock forward so legs return to ground \n4. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "C-Curve Hold",
@@ -213,7 +239,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent facing sky",
         "description" : "1. Engage core so that head, shoulders, and upper back lift off ground; upper body should make a C-shape \n2. Hold",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Plank Shoulder Tap",
@@ -221,7 +248,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Shift weight into one hand \n2. Lift other hand off ground and touch opposite shoulder \n3. Return hand to ground \n4. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Superwoman Hold",
@@ -229,7 +257,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on stomach",
         "description" : "1. Engage lower back so that chest lifts off ground, look forward \n2. Hold",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Superwoman Pulse",
@@ -237,7 +266,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on stomach",
         "description" : "1. Engage lower back so that chest lifts off ground, look forward \n2. Lift chest slightly more off ground \n3. Lower chest slightly to beginning position \n4. Repeat pulses",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Crab Toe Touches",
@@ -245,7 +275,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Hands on ground under shoulders and feet on ground under knees, stomach facing sky (Reverse Tabletop position)",
         "description" : "1. Shift weight into one hand and the opposite foot \n2. Lift non-weight bearing hand and foot (should be opposite sides) off ground to touch over stomach \n3. Return lifted foot and arm to ground \n4. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Russian Twists",
@@ -253,7 +284,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Sitting on tailbone with feet lifted, shins parallel to ground, torso and upper legs make a V-shape",
         "description" : "1. Twist upper body to the right while keeping the lower body in starting position \n2. Return to starting position \n3. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Heel Taps",
@@ -261,7 +293,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
         "description" : "1. Lower heels towards ground while maintaining 90 degree bend in knees \n2. Tap heels on ground \n3. Return legs to starting position",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Knife Crunches",
@@ -269,7 +302,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees bent facing sky, arms straight with hands clasped perpendicular to ground",
         "description" : "1. Lift shoulder blades off ground \n2. Lower arms to the right and twist lifting left shoulder blade off ground while dropping right shoulder blade to the ground \n3. Return to starting position \n4. Repeat on other side \nTip: Arms follow an upside-down V-shaped path",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Plank with Leg Lifts",
@@ -277,7 +311,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. While maintaining plank form, lift one foot slightly off the ground \n2. Hold foot off ground for one second \n3. Return foot to ground \n4. Repeat on other foot",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Sprinter Sit-ups",
@@ -285,7 +320,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with legs straight out on ground, arms straight overhead on ground",
         "description" : "1. Simultaneously bend left elbow and right knee while sitting up and crunching elbow to knee (back lifts fully off ground and left leg remains on ground) \n2. Return to starting position \n3. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Side Crunch Hold",
@@ -293,7 +329,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying in fetal position on one side, top side hand behind head",
         "description" : "1. Engage side core to lift bottom shoulder off ground slightly \n2. Hold!",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Slow Mountain Climbers",
@@ -301,7 +338,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Plank",
         "description" : "1. Bend right knee and slowly bring it forward to cross under body to touch left elbow \n2. Return to starting position \n3. Repeat on other side",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Big Scissors",
@@ -309,7 +347,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with feet straight up, legs perpendicular to ground, hands behind head",
         "description" : "1. Lower right leg towards ground, stopping when heel is just above ground \n2. Return right leg to starting position \n3. Repeat with left leg",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Heel Pushes",
@@ -317,7 +356,8 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
         "description" : "1. Straighten legs and push heels straight out to hover just above ground, low back should remain on ground \n2. Return to starting position \n3. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     },
     {
         "name" : "Single Leg Toe Touches",
@@ -325,6 +365,7 @@
         "isTimeBased" : true,
         "startingPosition" : "Laying on back with one foot straight up with leg perpendicular to ground, other leg straight on ground, hands behind head",
         "description" : "1. Engage abs so that head, shoulders, and upper back lift off ground and upper body forms a C-shape and reach opposite hand to the foot reaching towards the sky \n2. Return back to floor \n3. Repeat",
-        "isUserIncluded" : true
+        "isUserIncluded" : true,
+        "id" : "uuid"
     }
 ]

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GlobalVars: ObservableObject {
     @Published var upperBody: [Exercise] = []
@@ -27,6 +28,13 @@ class GlobalVars: ObservableObject {
     
     @Published var reps = 0
     @Published var setsSliderValue: Double = 0.0
+    
+    @Published var accentColor = Color.red
+    @Published var secondaryColor = Color.gray.opacity(0.2)
+    
+    @Published var bodyTS: CGFloat = 17
+    @Published var titleTS: CGFloat = 30
+    @Published var bigTitleTS: CGFloat = 50
     
     init() {
         Logic()

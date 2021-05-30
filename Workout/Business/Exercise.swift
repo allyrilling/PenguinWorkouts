@@ -13,6 +13,8 @@ struct Exercise: Decodable {
     var isTimeBased: Bool
     var startingPosition: String
     var description: String
+    var isUserIncluded: Bool = true
+    var id: String = UUID().uuidString
     
     init(name: String, amount: Int, isTimeBased: Bool, description: String, startingPosition: String) {
         self.name = name
