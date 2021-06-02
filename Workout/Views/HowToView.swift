@@ -13,16 +13,14 @@ struct HowToView: View {
     
     var body: some View {
         let currentExerciseIndex = globalVars.index
-        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[currentExerciseIndex]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[currentExerciseIndex]
         let descriptionArray = currentExercise.description.split(separator: "\n")
         
         ScrollView {
             VStack {
                 Image(systemName: "checkmark.seal.fill")
                     .font(.system(size: 100))
-                    .foregroundColor(.accentColor)
-                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
+                    .foregroundColor(globalVars.accentColor)
                 
                 VStack { // starting position
                     Text("Starting Position")
@@ -34,11 +32,7 @@ struct HowToView: View {
                         .padding([.horizontal, .bottom])
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity, alignment: .center)
-                }.background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(Color("BackgroundColor"))
-                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
-                                .frame(width: UIScreen.main.bounds.width - 40))
+                }
                 .padding(.vertical)
                 
                 VStack { // directions
@@ -49,11 +43,6 @@ struct HowToView: View {
                         
                     }.padding([.bottom, .horizontal])
                 }.padding(.vertical)
-                .background(RoundedRectangle(cornerRadius: 15)
-                                .foregroundColor(Color("BackgroundColor"))
-                                .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5)
-                                .frame(width: UIScreen.main.bounds.width - 40))
                    
                 Button(action: { // back button
                     howToIsActive.toggle()
@@ -61,13 +50,13 @@ struct HowToView: View {
                     HStack {
                         Image(systemName: "checkmark.circle.fill")
                         Text("Back")
-                    }.foregroundColor(.accentColor)
+                    }.foregroundColor(globalVars.mainColor)
                     .padding()
                     .frame(width: 145)
-                }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                }).buttonStyle(SnazzyBS(globalVars: globalVars))
                 .padding()
                 
             }.padding()
-        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
+        }
     }
 }

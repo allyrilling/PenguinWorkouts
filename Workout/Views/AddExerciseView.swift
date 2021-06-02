@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AddExerciseView: View {
     @ObservedObject var globalVars: GlobalVars
+    var type: String
     
-    var currentType: String
     @State var isActive: Bool = false
     
     @State var name = ""
@@ -43,11 +43,11 @@ struct AddExerciseView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }.padding()
             .background(RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(globalVars.secondaryColor))
+                            .foregroundColor(globalVars.subColor))
             
             Button(action: {
                 let newEx = Exercise(name: name == "" ? "New Exercise" : name, amount: Int(amount) ?? 0, isTimeBased: (isTimeBased == 0), description: description, startingPosition: startingPosition)
-                LogicUtilites.appendNewExercise(currentType: currentType, globalVars: globalVars, ex: newEx)
+                LogicUtilites.appendNewExercise(globalVars: globalVars, ex: newEx, type: type)
             }, label: {
                 HStack {
                     Spacer()
@@ -56,11 +56,11 @@ struct AddExerciseView: View {
                     Spacer()
                 }.padding()
                 .background(RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(globalVars.secondaryColor))
+                            .foregroundColor(globalVars.subColor))
             })
             
         }.padding()
-        .accentColor(globalVars.accentColor)
+        .accentColor(globalVars.mainColor)
         
         Spacer()
     }

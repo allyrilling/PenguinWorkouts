@@ -13,7 +13,7 @@ struct SecondaryColorButton: View {
     
     var body: some View {
         Button(action: {
-            globalVars.secondaryColor = color.opacity(0.2)
+            globalVars.subColor = color.opacity(0.2)
         }, label: {
             Circle()
                 .foregroundColor(color)
@@ -21,7 +21,7 @@ struct SecondaryColorButton: View {
                 .frame(width: 30, height: 30)
                 .padding(5)
                 .background(Circle()
-                                .stroke(globalVars.secondaryColor == color.opacity(0.2) ? Color.black : Color.clear))
+                                .stroke(globalVars.subColor == color.opacity(0.2) ? Color.black : Color.clear))
         })
     }
 }

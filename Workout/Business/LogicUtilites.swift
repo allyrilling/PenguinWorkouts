@@ -16,7 +16,7 @@ class LogicUtilites {
         globalVars.hips.shuffle()
     }
 
-    static func returnCorrectExerciseString(currentType: String, globalVars: GlobalVars) -> String { // returns the string of the number of exercieses included in the passed in instance of user configure vars
+    static func returnCorrectExerciseString(globalVars: GlobalVars, currentType: String) -> String { // returns the string of the number of exercieses included in the passed in instance of user configure vars
         if currentType == "Upper Body" {
             return globalVars.amtExUpperBody
         } else if currentType == "Lower Body" {
@@ -29,63 +29,63 @@ class LogicUtilites {
         return "fail" // should never happen
     }
     
-    static func returnCorrectExerciseInt(currentType: String, globalVars: GlobalVars) -> Int { // returns the user configured amount of the exercise type specified in parameters
-            if currentType == "Upper Body" {
+    static func returnCorrectExerciseInt(globalVars: GlobalVars) -> Int { // returns the user configured amount of the exercise type specified in parameters
+            if globalVars.type == "Upper Body" {
                 return Int(globalVars.amtExUpperBody)!
-            } else if currentType == "Lower Body" {
+            } else if globalVars.type == "Lower Body" {
                 return Int(globalVars.amtExLowerBody)!
-            } else if currentType == "Core" {
+            } else if globalVars.type == "Core" {
                 return Int(globalVars.amtExCore)!
-            } else if currentType == "Hips" {
+            } else if globalVars.type == "Hips" {
                 return Int(globalVars.amtExHips)!
             }
             return 0 // should never happen
     }
     
-    static func updateUserConfigureVars(exerciseType: String, globalVars: GlobalVars, varToUpdate: String) { // updates userConfigure vars correct var based on the exercise type passed in
-        if exerciseType == "Upper Body" {
+    static func updateUserConfigureVars(globalVars: GlobalVars, varToUpdate: String, type: String) { // updates userConfigure vars correct var based on the exercise type passed in
+        if type == "Upper Body" {
             globalVars.amtExUpperBody = varToUpdate
-        } else if exerciseType == "Lower Body" {
+        } else if type == "Lower Body" {
             globalVars.amtExLowerBody = varToUpdate
-        } else if exerciseType == "Core" {
+        } else if type == "Core" {
             globalVars.amtExCore = varToUpdate
-        } else if exerciseType == "Hips" {
+        } else if type == "Hips" {
             return globalVars.amtExHips = varToUpdate
         }
     }
     
-    static func returnCorrectExerciseArray(currentType: String, globalVars: GlobalVars) -> [Exercise] { // based on the text passed into the function returns the corresponding array
+    static func returnCorrectExerciseArray(globalVars: GlobalVars, type: String) -> [Exercise] { // based on the text passed into the function returns the corresponding array
         var returnArray: [Exercise] = []
-        if currentType == "Upper Body" {
+        if (type == "Upper Body") {
             returnArray = globalVars.upperBody
-        } else if currentType == "Lower Body" {
+        } else if (type == "Lower Body") {
             returnArray = globalVars.lowerBody
-        } else if currentType == "Core" {
+        } else if (type == "Core") {
             returnArray = globalVars.core
-        } else if currentType == "Hips" {
+        } else if (type == "Hips") {
             returnArray = globalVars.hips
         }
         return returnArray
     }
     
-    static func appendNewExercise(currentType: String, globalVars: GlobalVars, ex: Exercise) {
-        if(currentType == "Core") {
+    static func appendNewExercise(globalVars: GlobalVars, ex: Exercise, type: String) {
+        if(type == "Core") {
             globalVars.core.append(ex)
-        } else if (currentType == "Hips") {
+        } else if (type == "Hips") {
             globalVars.hips.append(ex)
-        } else if (currentType == "Upper Body") {
+        } else if (type == "Upper Body") {
             globalVars.upperBody.append(ex)
-        } else if (currentType == "Lower Body") {
+        } else if (type == "Lower Body") {
             globalVars.lowerBody.append(ex)
         } else {
             print("failed appendNewExercise")
         }
     }
     
-    static func findExercise(currentType: String, globalVars: GlobalVars, ex: Exercise, name: String, amount: Int, isTimeBased: Bool, startingPosition: String, description: String) {
+    static func findExercise(globalVars: GlobalVars, ex: Exercise, name: String, amount: Int, isTimeBased: Bool, startingPosition: String, description: String) {
         var index = 0
 
-        if currentType == "Upper Body" {
+        if globalVars.type == "Upper Body" {
             while(ex.id != globalVars.upperBody[index].id) {
                 index += 1
             }
@@ -94,7 +94,7 @@ class LogicUtilites {
             globalVars.upperBody[index].amount = amount
             globalVars.upperBody[index].startingPosition = startingPosition
             globalVars.upperBody[index].description = description
-        } else if currentType == "Lower Body" {
+        } else if globalVars.type == "Lower Body" {
             while(ex.id != globalVars.lowerBody[index].id) {
                 index += 1
             }
@@ -104,7 +104,7 @@ class LogicUtilites {
             globalVars.lowerBody[index].startingPosition = startingPosition
             globalVars.lowerBody[index].description = description
 
-        } else if currentType == "Core" {
+        } else if globalVars.type == "Core" {
             while(ex.id != globalVars.core[index].id) {
                 index += 1
             }
@@ -114,7 +114,7 @@ class LogicUtilites {
             globalVars.core[index].startingPosition = startingPosition
             globalVars.core[index].description = description
 
-        } else if currentType == "Hips" {
+        } else if globalVars.type == "Hips" {
             while(ex.id != globalVars.hips[index].id) {
                 index += 1
             }
@@ -123,33 +123,6 @@ class LogicUtilites {
             globalVars.hips[index].amount = amount
             globalVars.hips[index].startingPosition = startingPosition
             globalVars.hips[index].description = description
-        }
-    }
-    
-    static func removeExercise(currentType: String, globalVars: GlobalVars, ex: Exercise) {
-        var index = 0
-
-        if currentType == "Upper Body" {
-            while(ex.id != globalVars.upperBody[index].id) {
-                index += 1
-            }
-            globalVars.upperBody.remove(at: index)
-        } else if currentType == "Lower Body" {
-            while(ex.id != globalVars.lowerBody[index].id) {
-                index += 1
-            }
-            globalVars.lowerBody.remove(at: index)
-        } else if currentType == "Core" {
-            while(ex.id != globalVars.core[index].id) {
-                index += 1
-            }
-            globalVars.core.remove(at: index)
-
-        } else if currentType == "Hips" {
-            while(ex.id != globalVars.hips[index].id) {
-                index += 1
-            }
-            globalVars.hips.remove(at: index)
         }
     }
     

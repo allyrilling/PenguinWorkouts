@@ -29,10 +29,12 @@ class GlobalVars: ObservableObject {
     @Published var reps = 0
     @Published var setsSliderValue: Double = 0.0
     
-    @Published var accentColor = Color.red
-    @Published var secondaryColor = Color.gray.opacity(0.2)
+    @Published var mainColor = Color(hex: UInt(ColorThemes.summerSplash[0]))
+    @Published var subColor = Color(hex: UInt(ColorThemes.summerSplash[1]))
+    @Published var accentColor = Color(hex: UInt(ColorThemes.summerSplash[2]))
     
     @Published var bodyTS: CGFloat = 17
+    @Published var midTS: CGFloat = 22
     @Published var titleTS: CGFloat = 30
     @Published var bigTitleTS: CGFloat = 50
     
@@ -42,6 +44,20 @@ class GlobalVars: ObservableObject {
         self.upperBody = Logic.upperBody
         self.lowerBody = Logic.lowerBody
         self.hips = Logic.hips
+        
     }
     
+}
+
+
+extension Color {
+    init(hex: UInt, alpha: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: alpha
+        )
+    }
 }

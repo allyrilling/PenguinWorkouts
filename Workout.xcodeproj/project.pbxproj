@@ -11,7 +11,7 @@
 		6B211C6D24DF9BA6007FBE8F /* UpperBody.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B211C6C24DF9BA6007FBE8F /* UpperBody.json */; };
 		6B211C6F24DF9BBD007FBE8F /* LowerBody.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B211C6E24DF9BBD007FBE8F /* LowerBody.json */; };
 		6B211C7124DF9BCA007FBE8F /* Core.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B211C7024DF9BCA007FBE8F /* Core.json */; };
-		6B21E2FE265AA685007A2B70 /* AccentColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21E2FD265AA685007A2B70 /* AccentColorButton.swift */; };
+		6B21E2FE265AA685007A2B70 /* ColorThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21E2FD265AA685007A2B70 /* ColorThemeButton.swift */; };
 		6B21E300265AA710007A2B70 /* SecondaryColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */; };
 		6B21E302265B27BB007A2B70 /* OrgExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21E301265B27BB007A2B70 /* OrgExerciseView.swift */; };
 		6B21E304265D4B40007A2B70 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21E303265D4B40007A2B70 /* AddExerciseView.swift */; };
@@ -22,6 +22,8 @@
 		6B7F4A5F24CA78100058C897 /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F4A5E24CA78100058C897 /* ConfigureView.swift */; };
 		6B7F4A6624CB27E00058C897 /* CountingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F4A6524CB27E00058C897 /* CountingView.swift */; };
 		6B7F721124D439CF00FB37A0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F721024D439CE00FB37A0 /* DetailView.swift */; };
+		6B8555BD266676E60017F134 /* SnazzyBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555BC266676E50017F134 /* SnazzyBS.swift */; };
+		6B8555BF26667D940017F134 /* ColorThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555BE26667D940017F134 /* ColorThemes.swift */; };
 		6BA8806B25AF380D000C1AEA /* NeuButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */; };
 		6BB446C424D1A4DF00AE7F8C /* CountingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */; };
 		6BEC2DE924C7165300C6F6AB /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC2DE824C7165300C6F6AB /* WorkoutApp.swift */; };
@@ -40,7 +42,7 @@
 		6B211C6C24DF9BA6007FBE8F /* UpperBody.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UpperBody.json; sourceTree = "<group>"; };
 		6B211C6E24DF9BBD007FBE8F /* LowerBody.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LowerBody.json; sourceTree = "<group>"; };
 		6B211C7024DF9BCA007FBE8F /* Core.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Core.json; sourceTree = "<group>"; };
-		6B21E2FD265AA685007A2B70 /* AccentColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorButton.swift; sourceTree = "<group>"; };
+		6B21E2FD265AA685007A2B70 /* ColorThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeButton.swift; sourceTree = "<group>"; };
 		6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryColorButton.swift; sourceTree = "<group>"; };
 		6B21E301265B27BB007A2B70 /* OrgExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgExerciseView.swift; sourceTree = "<group>"; };
 		6B21E303265D4B40007A2B70 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		6B7F4A5E24CA78100058C897 /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
 		6B7F4A6524CB27E00058C897 /* CountingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingView.swift; sourceTree = "<group>"; };
 		6B7F721024D439CE00FB37A0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		6B8555BC266676E50017F134 /* SnazzyBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnazzyBS.swift; sourceTree = "<group>"; };
+		6B8555BE26667D940017F134 /* ColorThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemes.swift; sourceTree = "<group>"; };
 		6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuButtonStyle.swift; sourceTree = "<group>"; };
 		6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLogic.swift; sourceTree = "<group>"; };
 		6BEC2DE524C7165300C6F6AB /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,12 +86,13 @@
 			children = (
 				6B364E5E24D72F22000E1435 /* HowToView.swift */,
 				6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */,
-				6B21E2FD265AA685007A2B70 /* AccentColorButton.swift */,
+				6B21E2FD265AA685007A2B70 /* ColorThemeButton.swift */,
 				6B7F4A6524CB27E00058C897 /* CountingView.swift */,
 				6BF7F4B424D0904C0007B8DD /* MainViewTopBar.swift */,
 				6BF9DB8F24EAB180008251FE /* CustomTextFieldView.swift */,
 				6B582CD324F4059C00B21D31 /* SetsRepsView.swift */,
 				6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */,
+				6B8555BC266676E50017F134 /* SnazzyBS.swift */,
 				6B21E301265B27BB007A2B70 /* OrgExerciseView.swift */,
 				6B21E305265FD9AC007A2B70 /* EditExerciseView.swift */,
 				6B21E303265D4B40007A2B70 /* AddExerciseView.swift */,
@@ -114,6 +119,7 @@
 				6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */,
 				6B0DF46425AA98D1004F1D2A /* GlobalVars.swift */,
 				6BF9DB9124EB063B008251FE /* Exercise.swift */,
+				6B8555BE26667D940017F134 /* ColorThemes.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -261,7 +267,9 @@
 				6B21E306265FD9AC007A2B70 /* EditExerciseView.swift in Sources */,
 				6B7F721124D439CF00FB37A0 /* DetailView.swift in Sources */,
 				6BEC2DEB24C7165300C6F6AB /* MainView.swift in Sources */,
+				6B8555BF26667D940017F134 /* ColorThemes.swift in Sources */,
 				6B364E5F24D72F22000E1435 /* HowToView.swift in Sources */,
+				6B8555BD266676E60017F134 /* SnazzyBS.swift in Sources */,
 				6BF7F4B524D0904C0007B8DD /* MainViewTopBar.swift in Sources */,
 				6B7F4A5F24CA78100058C897 /* ConfigureView.swift in Sources */,
 				6BF9DB9024EAB180008251FE /* CustomTextFieldView.swift in Sources */,
@@ -269,7 +277,7 @@
 				6B582CD424F4059C00B21D31 /* SetsRepsView.swift in Sources */,
 				6BEC2DF824C716F500C6F6AB /* Logic.swift in Sources */,
 				6BEC2DE924C7165300C6F6AB /* WorkoutApp.swift in Sources */,
-				6B21E2FE265AA685007A2B70 /* AccentColorButton.swift in Sources */,
+				6B21E2FE265AA685007A2B70 /* ColorThemeButton.swift in Sources */,
 				6BA8806B25AF380D000C1AEA /* NeuButtonStyle.swift in Sources */,
 				6B21E302265B27BB007A2B70 /* OrgExerciseView.swift in Sources */,
 				6B21E300265AA710007A2B70 /* SecondaryColorButton.swift in Sources */,

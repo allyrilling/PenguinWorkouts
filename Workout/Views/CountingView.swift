@@ -16,7 +16,7 @@ struct CountingView: View {
     var countingLogic = CountingLogic()
     
     var body: some View {
-        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[globalVars.index]
         
         if currentExercise.isTimeBased { // show timer view
             VStack {
@@ -34,7 +34,7 @@ struct CountingView: View {
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                     
                     Button(action: { // pause button
                         CountingLogic.stopTimer(globalVars: globalVars)
@@ -45,7 +45,7 @@ struct CountingView: View {
                             .font(.system(.title))
                             .frame(width: 120, height: 20, alignment: .center)
                             .padding()
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                 }.padding(.top)
                 
                 HStack {
@@ -53,23 +53,27 @@ struct CountingView: View {
                         CountingLogic.add15seconds(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
-                        Image(systemName: "plus")
-                            .foregroundColor(.accentColor)
-                            .frame(width: 65, height: 10, alignment: .center)
-                            .font(.system(size: 20))
-                            .padding()
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("15")
+                        }.foregroundColor(.accentColor)
+                        .frame(width: 65, height: 10, alignment: .center)
+                        .font(.system(size: 20))
+                        .padding()
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                     
                     Button(action: { // sub 15 seconds button
                         CountingLogic.sub15seconds(globalVars: globalVars)
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }) {
-                        Image(systemName: "minus")
-                            .foregroundColor(.accentColor)
-                            .frame(width: 65, height: 10, alignment: .center)
-                            .font(.system(size: 20))
-                            .padding()
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                        HStack {
+                            Image(systemName: "minus")
+                            Text("15")
+                        }.foregroundColor(.accentColor)
+                        .frame(width: 65, height: 10, alignment: .center)
+                        .font(.system(size: 20))
+                        .padding()
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                     
                     Button(action: { // reset time button
                         CountingLogic.resetTimer(globalVars: globalVars)
@@ -80,14 +84,12 @@ struct CountingView: View {
                             .frame(width: 65, height: 10, alignment: .center)
                             .font(.system(size: 20))
                             .padding()
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(Color("BackgroundColor"))
-                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+            }.background(RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white))
             .padding()
-            
+            .accentColor(globalVars.mainColor)
         } else { // show sets and reps view
             SetsRepsView(globalVars: globalVars)
         }

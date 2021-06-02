@@ -10,7 +10,6 @@ import SwiftUI
 struct EditExerciseView: View {
     @ObservedObject var globalVars: GlobalVars
     
-    var currentType: String
     @State var isActive: Bool = false
     var ex: Exercise
     
@@ -54,10 +53,10 @@ struct EditExerciseView: View {
                     description = ex.description
                 }
                 .background(RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(globalVars.secondaryColor))
+                                .foregroundColor(globalVars.subColor))
                 
                 Button(action: {
-                    LogicUtilites.findExercise(currentType: currentType, globalVars: globalVars, ex: ex, name: name, amount: Int(amount) ?? 0, isTimeBased: isTimeBased == 0, startingPosition: startingPosition, description: description)
+                    LogicUtilites.findExercise(globalVars: globalVars, ex: ex, name: name, amount: Int(amount) ?? 0, isTimeBased: isTimeBased == 0, startingPosition: startingPosition, description: description)
                 }, label: {
                     HStack {
                         Spacer()
@@ -66,12 +65,12 @@ struct EditExerciseView: View {
                         Spacer()
                     }.padding()
                     .background(RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(globalVars.secondaryColor))
+                                .foregroundColor(globalVars.subColor))
                 })
                 
             }
         }.padding()
-        .accentColor(globalVars.accentColor)
+        .accentColor(globalVars.mainColor)
         
     }
 }

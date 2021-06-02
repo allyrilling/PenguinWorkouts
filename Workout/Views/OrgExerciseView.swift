@@ -9,8 +9,8 @@ import SwiftUI
 
 struct OrgExerciseView: View {
     @ObservedObject var globalVars: GlobalVars
+    var type: String
     
-    var currentType: String
     @State var isActive: Bool = false
     @State var showEditSheet = false
     
@@ -19,41 +19,41 @@ struct OrgExerciseView: View {
     
     @State var editMode: Bool = false
     
-    init(globalVars: GlobalVars, currentType: String) {
+    init(globalVars: GlobalVars, type: String) {
         self.globalVars = globalVars
-        self.currentType = currentType
-        UITableView.appearance().backgroundColor = UIColor(globalVars.secondaryColor)
+        self.type = type
+        UITableView.appearance().backgroundColor = UIColor(globalVars.accentColor)
     }
     
     var body: some View {
         VStack {
             HStack {
-                Text("\(currentType)")
-                    .font(.system(size: globalVars.bigTitleTS))
+                Text("\(type)")
+                    .font(.system(size: globalVars.bigTitleTS, weight: .bold))
                     .padding()
                 Spacer()
             }
             
             List {
-                ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars).count)!, id:\.self) { index in // this is one cell
+                ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count)!, id:\.self) { index in // this is one cell
                     Button(action: {
                         showEditSheet.toggle()
                     }, label: {
                         HStack {
-                            Text(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].name) // exercise name in cell
+                            Text(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].name) // exercise name in cell
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
                                 .multilineTextAlignment(.leading)
-                                .foregroundColor(globalVars.accentColor)
+                                .foregroundColor(globalVars.mainColor)
                             Spacer()
-                            if (LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].isTimeBased) { // time based
-                                Text("\(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].amount) sec")
+                            if (LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].isTimeBased) { // time based
+                                Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) sec")
                             } else { // reps based
-                                Text("\(LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index].amount) reps")
+                                Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) reps")
                             }
                         }
                     }).sheet(isPresented: $showEditSheet) {
-                        EditExerciseView(globalVars: globalVars, currentType: currentType, ex: LogicUtilites.returnCorrectExerciseArray(currentType: currentType, globalVars: globalVars)[index])
+                        EditExerciseView(globalVars: globalVars, ex: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index])
                     }
                 }.onDelete(perform: removeRows)
             }.listStyle(InsetGroupedListStyle())
@@ -95,22 +95,22 @@ struct OrgExerciseView: View {
                 }, label: {
                     Image(systemName: "plus")
                 }).sheet(isPresented: $isActive) {
-                    AddExerciseView(globalVars: globalVars, currentType: currentType)
+                    AddExerciseView(globalVars: globalVars, type: type)
                 }
             }.font(.system(size: globalVars.titleTS))
             .padding()
             
-        }.accentColor(globalVars.accentColor)
+        }.accentColor(globalVars.mainColor)
     }
 
     func removeRows(at offsets: IndexSet) {
-        if(currentType == "Core") {
+        if(type == "Core") {
             globalVars.core.remove(atOffsets: offsets)
-        } else if (currentType == "Hips") {
+        } else if (type == "Hips") {
             globalVars.hips.remove(atOffsets: offsets)
-        } else if (currentType == "Upper Body") {
+        } else if (type == "Upper Body") {
             globalVars.upperBody.remove(atOffsets: offsets)
-        } else if (currentType == "Lower Body") {
+        } else if (type == "Lower Body") {
             globalVars.lowerBody.remove(atOffsets: offsets)
         }
     }

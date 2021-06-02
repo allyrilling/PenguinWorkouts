@@ -34,7 +34,7 @@ class CountingLogic {
     }
     
     static func resetTimer(globalVars: GlobalVars) { // resets timer to original value, pauses it
-        globalVars.timeRemaining = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index].amount
+        globalVars.timeRemaining = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[globalVars.index].amount
         stopTimer(globalVars: globalVars)
     }
     

@@ -11,7 +11,7 @@ struct SetsRepsView: View {
     @ObservedObject var globalVars: GlobalVars
     
     var body: some View {
-        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[globalVars.index]
         
         VStack {
             HStack {
@@ -33,7 +33,7 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                     
                     Button(action: { // minus button
                         if globalVars.reps > 0 {
@@ -45,7 +45,7 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                     
                     Button(action: { // reset button
                         globalVars.reps = currentExercise.amount
@@ -55,12 +55,12 @@ struct SetsRepsView: View {
                             .foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 100, height: 40, alignment: .center)
-                    }.buttonStyle(NeuButtonStyle(isRoundRect: true))
+                    }.buttonStyle(SnazzyBS(globalVars: globalVars))
                 }.padding()
-            }.background(RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(Color("BackgroundColor"))
-                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+            }//.background(RoundedRectangle(cornerRadius: 15)
+//                            .foregroundColor(Color("BackgroundColor"))
+//                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+//                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
             .padding()
             
             VStack {
@@ -70,10 +70,10 @@ struct SetsRepsView: View {
                     .font(.system(size: 30, weight: .bold))
                 Text("Sets Completed")
                     .padding(.bottom)
-            }.background(RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(Color("BackgroundColor"))
-                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+            }//.background(RoundedRectangle(cornerRadius: 15)
+//                            .foregroundColor(Color("BackgroundColor"))
+//                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
+//                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
             .padding()
         }
     }

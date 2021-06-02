@@ -14,10 +14,10 @@ struct DetailView: View {
     @State var howToIsActive = false
     
     var body: some View {
-        let currentExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+        let currentExercise = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[globalVars.index]
         
         // number of exercises set by user
-        let currentTypeUserConfigVar: Int = Int(LogicUtilites.returnCorrectExerciseInt(currentType: globalVars.type, globalVars: globalVars))
+        let currentTypeUserConfigVar: Int = Int(LogicUtilites.returnCorrectExerciseInt( globalVars: globalVars))
         
         ScrollView {
             VStack {
@@ -27,9 +27,7 @@ struct DetailView: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(nil)
                     .background(RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("BackgroundColor"))
-                                    .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
-                                    .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
+                                    .foregroundColor(.white))
                     .padding()
                 
                 let countingView = CountingView(globalVars: globalVars)
@@ -47,7 +45,7 @@ struct DetailView: View {
                                 Text("Directions")
                             }.foregroundColor(.accentColor)
                             .padding()
-                        }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                        }).buttonStyle(SnazzyBS(globalVars: globalVars))
                         .padding(.bottom)
                         .sheet(isPresented: $howToIsActive) {
                             HowToView(globalVars: globalVars, howToIsActive: $howToIsActive)
@@ -64,7 +62,7 @@ struct DetailView: View {
                             }.foregroundColor(.accentColor)
                             .padding()
                             .frame(width: 145)
-                        }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                        }).buttonStyle(SnazzyBS(globalVars: globalVars))
                         
                     }
                     
@@ -73,7 +71,7 @@ struct DetailView: View {
                     if (globalVars.index < currentTypeUserConfigVar - 1) { // next button
                         Button(action: {
                             globalVars.index = globalVars.index + 1
-                            let nextExercise = LogicUtilites.returnCorrectExerciseArray(currentType: globalVars.type, globalVars: globalVars)[globalVars.index]
+                            let nextExercise = LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: globalVars.type)[globalVars.index]
                             if(nextExercise.isTimeBased) {
                                 CountingLogic.resetTimer(globalVars: globalVars)
                             } else {
@@ -86,10 +84,14 @@ struct DetailView: View {
                                 Image(systemName: "arrow.right")
                             }.foregroundColor(.accentColor)
                             .padding()
-                            }).buttonStyle(NeuButtonStyle(isRoundRect: true))
+                            }).buttonStyle(SnazzyBS(globalVars: globalVars))
                         }
                 }.padding()
+                .background(RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.white))
+                .padding()
             }.padding(.vertical)
-        }.background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
+        }.accentColor(globalVars.mainColor)
+        .background(globalVars.accentColor.edgesIgnoringSafeArea(.all))
     }
 }
