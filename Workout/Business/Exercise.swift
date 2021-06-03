@@ -24,3 +24,9 @@ struct Exercise: Decodable {
         self.description = description
     }
 }
+
+/*
+ use the third option that only regeneratest he keys
+ "category/extention" for codegen
+ bc the only custom thing i need in the class is the init method
+ */

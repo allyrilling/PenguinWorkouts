@@ -7,8 +7,12 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 class GlobalVars: ObservableObject {
+    var context: NSManagedObjectContext
+    var col: Collections
+    
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
     @Published var core: [Exercise] = []
@@ -38,12 +42,44 @@ class GlobalVars: ObservableObject {
     @Published var titleTS: CGFloat = 30
     @Published var bigTitleTS: CGFloat = 50
     
-    init() {
+    init(context: NSManagedObjectContext) {
         Logic()
+//        self.core = Logic.core
+//        self.upperBody = Logic.upperBody
+//        self.lowerBody = Logic.lowerBody
+//        self.hips = Logic.hips
+        
+        self.context = context
+        self.col = Collections(context: context)
+        
+        col.core = []
+        for i in 0..<Logic.core.count {
+            let eDB = LogicUtilites.wrapEx(e: Logic.core[i], context: context)
+            col.core?.append(eDB)
+        }
+        
+        col.upperBody = []
+        for i in 0..<Logic.upperBody.count {
+            let eDB = LogicUtilites.wrapEx(e: Logic.upperBody[i], context: context)
+            col.upperBody?.append(eDB)
+        }
+        
+        col.lowerBody = []
+        for i in 0..<Logic.lowerBody.count {
+            let eDB = LogicUtilites.wrapEx(e: Logic.lowerBody[i], context: context)
+            col.lowerBody?.append(eDB)
+        }
+        
+        col.hips = []
+        for i in 0..<Logic.hips.count {
+            let eDB = LogicUtilites.wrapEx(e: Logic.hips[i], context: context)
+            col.hips?.append(eDB)
+        }
+        
         self.core = Logic.core
         self.upperBody = Logic.upperBody
         self.lowerBody = Logic.lowerBody
-        self.hips = Logic.hips
+//        self.hips = Logic.hips
         
     }
     

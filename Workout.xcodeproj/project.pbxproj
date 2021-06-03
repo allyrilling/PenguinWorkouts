@@ -24,6 +24,8 @@
 		6B7F721124D439CF00FB37A0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F721024D439CE00FB37A0 /* DetailView.swift */; };
 		6B8555BD266676E60017F134 /* SnazzyBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555BC266676E50017F134 /* SnazzyBS.swift */; };
 		6B8555BF26667D940017F134 /* ColorThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555BE26667D940017F134 /* ColorThemes.swift */; };
+		6B8555C22667CB090017F134 /* Workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555C02667CB070017F134 /* Workout.xcdatamodeld */; };
+		6B8555E42667CD480017F134 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8555E32667CD480017F134 /* PersistenceController.swift */; };
 		6BA8806B25AF380D000C1AEA /* NeuButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */; };
 		6BB446C424D1A4DF00AE7F8C /* CountingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */; };
 		6BEC2DE924C7165300C6F6AB /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC2DE824C7165300C6F6AB /* WorkoutApp.swift */; };
@@ -55,6 +57,8 @@
 		6B7F721024D439CE00FB37A0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		6B8555BC266676E50017F134 /* SnazzyBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnazzyBS.swift; sourceTree = "<group>"; };
 		6B8555BE26667D940017F134 /* ColorThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemes.swift; sourceTree = "<group>"; };
+		6B8555C12667CB070017F134 /* Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout.xcdatamodel; sourceTree = "<group>"; };
+		6B8555E32667CD480017F134 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuButtonStyle.swift; sourceTree = "<group>"; };
 		6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLogic.swift; sourceTree = "<group>"; };
 		6BEC2DE524C7165300C6F6AB /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,7 @@
 				6B0DF46425AA98D1004F1D2A /* GlobalVars.swift */,
 				6BF9DB9124EB063B008251FE /* Exercise.swift */,
 				6B8555BE26667D940017F134 /* ColorThemes.swift */,
+				6B8555E32667CD480017F134 /* PersistenceController.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				6BEC2DE824C7165300C6F6AB /* WorkoutApp.swift */,
+				6B8555C02667CB070017F134 /* Workout.xcdatamodeld */,
 				6B7F4A6024CB1BE70058C897 /* Views */,
 				6B7F4A6224CB1C140058C897 /* Business */,
 				6BEC2E0524CA078700C6F6AB /* Exercise JSON Files */,
@@ -273,9 +279,11 @@
 				6BF7F4B524D0904C0007B8DD /* MainViewTopBar.swift in Sources */,
 				6B7F4A5F24CA78100058C897 /* ConfigureView.swift in Sources */,
 				6BF9DB9024EAB180008251FE /* CustomTextFieldView.swift in Sources */,
+				6B8555C22667CB090017F134 /* Workout.xcdatamodeld in Sources */,
 				6BF9DB9224EB063C008251FE /* Exercise.swift in Sources */,
 				6B582CD424F4059C00B21D31 /* SetsRepsView.swift in Sources */,
 				6BEC2DF824C716F500C6F6AB /* Logic.swift in Sources */,
+				6B8555E42667CD480017F134 /* PersistenceController.swift in Sources */,
 				6BEC2DE924C7165300C6F6AB /* WorkoutApp.swift in Sources */,
 				6B21E2FE265AA685007A2B70 /* ColorThemeButton.swift in Sources */,
 				6BA8806B25AF380D000C1AEA /* NeuButtonStyle.swift in Sources */,
@@ -474,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B8555C02667CB070017F134 /* Workout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B8555C12667CB070017F134 /* Workout.xcdatamodel */,
+			);
+			currentVersion = 6B8555C12667CB070017F134 /* Workout.xcdatamodel */;
+			path = Workout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6BEC2DDD24C7165300C6F6AB /* Project object */;
 }

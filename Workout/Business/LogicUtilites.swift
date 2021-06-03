@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class LogicUtilites {
     
@@ -147,5 +148,18 @@ class LogicUtilites {
         globalVars.hips = globalVars.hips.sorted { $0.amount > $1.amount }
     }
     
+    static func wrapEx(e: Exercise, context: NSManagedObjectContext) -> ExerciseDB {
+        var eDB = ExerciseDB(context: context)
+        eDB.name = e.name
+        eDB.amount = Int64(e.amount)
+        eDB.directions = e.description
+        eDB.startingPosition = e.startingPosition
+        eDB.isTimeBased = e.isTimeBased
+        eDB.isUserIncluded = e.isUserIncluded
+        return eDB
+    }
+    
 }
+
+
 

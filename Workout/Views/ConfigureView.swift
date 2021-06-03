@@ -220,7 +220,7 @@ struct ConfigureView: View {
                         showHipsOrg = true
                     }, label: {
                         VStack {
-                            Text("\(globalVars.hips.count)")
+                            Text("\(globalVars.col.hips!.count)")
                                 .font(.system(size: globalVars.bigTitleTS))
                             Text("Total")
                                 .font(.system(size: globalVars.bodyTS))

@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 // launch screen of app
 struct MainView: View {
     @ObservedObject var globalVars: GlobalVars
+    
+    @Environment(\.managedObjectContext) var context
     
     @State var isActive: Bool = false
     
