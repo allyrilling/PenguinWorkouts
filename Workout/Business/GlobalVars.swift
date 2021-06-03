@@ -79,7 +79,7 @@ class GlobalVars: ObservableObject {
         self.core = Logic.core
         self.upperBody = Logic.upperBody
         self.lowerBody = Logic.lowerBody
-//        self.hips = Logic.hips
+        self.hips = Logic.hips
         
     }
     
