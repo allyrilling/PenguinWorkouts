@@ -43,7 +43,6 @@ class GlobalVars: ObservableObject {
     @Published var bigTitleTS: CGFloat = 50
     
     init(context: NSManagedObjectContext) {
-        
         // new stuff, not yet doing anytihng
         self.context = context
         self.exStore = ExStore(context: context)

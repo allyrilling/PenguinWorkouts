@@ -12,8 +12,6 @@ import CoreData
 struct MainView: View {
     @ObservedObject var globalVars: GlobalVars
     
-    @Environment(\.managedObjectContext) var context
-    
     @State var isActive: Bool = false
     
     init(globalVars: GlobalVars) {
