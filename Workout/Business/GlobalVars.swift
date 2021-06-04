@@ -43,14 +43,6 @@ class GlobalVars: ObservableObject {
     @Published var bigTitleTS: CGFloat = 50
     
     init(context: NSManagedObjectContext) {
-        // old stuff, still doing all the work
-        Logic()
-
-        self.core = Logic.core
-        self.upperBody = Logic.upperBody
-        self.lowerBody = Logic.lowerBody
-        self.hips = Logic.hips
-        // old stuff
         
         // new stuff, not yet doing anytihng
         self.context = context
