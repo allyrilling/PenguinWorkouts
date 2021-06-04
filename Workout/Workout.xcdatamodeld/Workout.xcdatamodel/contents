@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F5055c" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Collections" representedClassName="Collections" syncable="YES" codeGenerationType="class">
-        <attribute name="core" optional="YES" attributeType="Transformable" customClassName="[ExerciseDB]"/>
-        <attribute name="hips" optional="YES" attributeType="Transformable" customClassName="[ExerciseDB]"/>
-        <attribute name="lowerBody" optional="YES" attributeType="Transformable" customClassName="[ExerciseDB]"/>
-        <attribute name="upperBody" optional="YES" attributeType="Transformable" customClassName="[ExerciseDB]"/>
-    </entity>
     <entity name="ExerciseDB" representedClassName="ExerciseDB" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="directions" optional="YES" attributeType="String"/>
@@ -14,8 +8,16 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="startingPosition" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ExGroup" representedClassName="ExGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="exercises" optional="YES" attributeType="Transformable" customClassName="[ExerciseDB]"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ExStore" representedClassName="ExStore" syncable="YES" codeGenerationType="class">
+        <attribute name="main" optional="YES" attributeType="Transformable" customClassName="[ExGroup]"/>
+    </entity>
     <elements>
-        <element name="Collections" positionX="0" positionY="99" width="128" height="89"/>
         <element name="ExerciseDB" positionX="-9" positionY="36" width="128" height="119"/>
+        <element name="ExGroup" positionX="36" positionY="117" width="128" height="59"/>
+        <element name="ExStore" positionX="18" positionY="117" width="128" height="44"/>
     </elements>
 </model>

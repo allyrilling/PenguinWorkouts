@@ -11,7 +11,7 @@ import CoreData
 
 class GlobalVars: ObservableObject {
     var context: NSManagedObjectContext
-    var col: Collections
+    var exStore: ExStore
     
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
@@ -43,44 +43,25 @@ class GlobalVars: ObservableObject {
     @Published var bigTitleTS: CGFloat = 50
     
     init(context: NSManagedObjectContext) {
+        // old stuff, still doing all the work
         Logic()
-//        self.core = Logic.core
-//        self.upperBody = Logic.upperBody
-//        self.lowerBody = Logic.lowerBody
-//        self.hips = Logic.hips
-        
-        self.context = context
-        self.col = Collections(context: context)
-        
-        col.core = []
-        for i in 0..<Logic.core.count {
-            let eDB = LogicUtilites.wrapEx(e: Logic.core[i], context: context)
-            col.core?.append(eDB)
-        }
-        
-        col.upperBody = []
-        for i in 0..<Logic.upperBody.count {
-            let eDB = LogicUtilites.wrapEx(e: Logic.upperBody[i], context: context)
-            col.upperBody?.append(eDB)
-        }
-        
-        col.lowerBody = []
-        for i in 0..<Logic.lowerBody.count {
-            let eDB = LogicUtilites.wrapEx(e: Logic.lowerBody[i], context: context)
-            col.lowerBody?.append(eDB)
-        }
-        
-        col.hips = []
-        for i in 0..<Logic.hips.count {
-            let eDB = LogicUtilites.wrapEx(e: Logic.hips[i], context: context)
-            col.hips?.append(eDB)
-        }
-        
+
         self.core = Logic.core
         self.upperBody = Logic.upperBody
         self.lowerBody = Logic.lowerBody
         self.hips = Logic.hips
+        // old stuff
         
+        // new stuff, not yet doing anytihng
+        self.context = context
+        self.exStore = ExStore(context: context)
+        exStore.main = []
+        
+        LogicUtilites.exInit(context: context, exStore: exStore)
+        
+        // i think it would be ideal to not have any @published arrays, and read from only the database, ie not have that middle layer
+        // however,i am not entirly sure how to do that without having a shit ton of optionals and force unwrapping which ik is bad
+        // i think there should be a way to read the json directly into the core data store, and from there make all changes and updates directly do the core data store (ie have no intermediate arrays) i just dont know how to do that rn
     }
     
 }
