@@ -48,7 +48,7 @@ class GlobalVars: ObservableObject {
         self.exStore = ExStore(context: context)
         exStore.main = []
         
-        LogicUtilites.exInit(context: context, exStore: exStore)
+//        InitLogic.exInit(context: context, exStore: exStore)
         
         // i think it would be ideal to not have any @published arrays, and read from only the database, ie not have that middle layer
         // however,i am not entirly sure how to do that without having a shit ton of optionals and force unwrapping which ik is bad

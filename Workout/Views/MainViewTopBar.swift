@@ -15,6 +15,14 @@ struct MainViewTopBar: View {
         
         HStack {
             Menu(content: { // sort menu
+                ForEach(globalVars.exStore.main!) { group in // workign here
+                    Button(action: {
+                        globalVars.type = "Core"
+                    }, label: {
+                        Text(group.name!)
+                    })
+                }
+                
                 Button(action: {
                     globalVars.type = "Core"
                 }, label: {
