@@ -66,6 +66,8 @@ class GlobalVars: ObservableObject {
         self.amtExUpperBody = defaults.string(forKey: "amtExUpperBody") ?? "5"
         self.amtExHips = defaults.string(forKey: "amtExHips") ?? "5"
         
+        self.type = defaults.string(forKey: "type") ?? "Core"
+        
         // new stuff, not yet doing anytihng
         self.context = context
         self.exStore = ExStore(context: context)
