@@ -45,8 +45,8 @@ struct CustomTextFieldView: View {
                     if varToUpdate != "" && LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 { // makes sure legal input
                         LogicUtilites.updateUserConfigureVars(globalVars: globalVars, varToUpdate: varToUpdate, type: type)
                     }
+                    updateNumberOfEx(exType: type, valToSet: varToUpdate) // calls function to update userdefaults
                     varToUpdate = ""
-                    
                     self.endEditing(force: true) // to dismiss keyboard
                 }, label: {
                     Text("Change")
@@ -62,5 +62,22 @@ struct CustomTextFieldView: View {
             Spacer()
         }.accentColor(globalVars.mainColor)
     }
+
+    // updates the user defaults for the amount of the exercise
+    func updateNumberOfEx(exType: String, valToSet: String) {
+        var amtEx = ""
+        if (exType == "Core") {
+            amtEx = "amtExCore"
+        } else if (exType == "Upper Body") {
+            amtEx = "amtExUpperBody"
+        } else if (exType == "Lower Body") {
+            amtEx = "amtExLowerBody"
+        } else if (exType == "Hips") {
+            amtEx = "amtExHips"
+        }
+        globalVars.defaults.set(valToSet, forKey: amtEx)
+    }
     
 }
+
+

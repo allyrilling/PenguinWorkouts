@@ -13,15 +13,19 @@ class GlobalVars: ObservableObject {
     var context: NSManagedObjectContext
     var exStore: ExStore
     
+    var groups: [Group] = [] // here is wehre all the groups of exericses can be stored
+    
+    var defaults: UserDefaults
+    
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
     @Published var core: [Exercise] = []
     @Published var hips: [Exercise] = []
 
-    @Published var amtExUpperBody: String = "5"
-    @Published var amtExLowerBody: String = "5"
-    @Published var amtExCore: String = "10"
-    @Published var amtExHips: String = "5"
+    @Published var amtExUpperBody: String
+    @Published var amtExLowerBody: String
+    @Published var amtExCore: String
+    @Published var amtExHips: String
     
     @Published var index = 0
     @Published var type = "Core"
@@ -33,9 +37,9 @@ class GlobalVars: ObservableObject {
     @Published var reps = 0
     @Published var setsSliderValue: Double = 0.0
     
-    @Published var mainColor = Color(hex: UInt(ColorThemes.summerSplash[0]))
-    @Published var subColor = Color(hex: UInt(ColorThemes.summerSplash[1]))
-    @Published var accentColor = Color(hex: UInt(ColorThemes.summerSplash[2]))
+    @Published var mainColor: Color
+    @Published var subColor: Color
+    @Published var accentColor: Color
     
     @Published var bodyTS: CGFloat = 17
     @Published var midTS: CGFloat = 22
@@ -51,6 +55,16 @@ class GlobalVars: ObservableObject {
         self.lowerBody = Logic.lowerBody
         self.hips = Logic.hips
         // old stuff
+        
+        self.defaults = UserDefaults.standard
+        self.mainColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? (ColorThemes.summerSplash as? [UInt]))![0])
+        self.subColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? (ColorThemes.summerSplash as? [UInt]))![1])
+        self.accentColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? (ColorThemes.summerSplash as? [UInt]))![2])
+        
+        self.amtExCore = defaults.string(forKey: "amtExCore") ?? "10"
+        self.amtExLowerBody = defaults.string(forKey: "amtExLowerBody") ?? "5"
+        self.amtExUpperBody = defaults.string(forKey: "amtExUpperBody") ?? "5"
+        self.amtExHips = defaults.string(forKey: "amtExHips") ?? "5"
         
         // new stuff, not yet doing anytihng
         self.context = context

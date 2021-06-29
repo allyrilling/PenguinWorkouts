@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercise: Decodable {
+struct Exercise: Codable {
     var name: String
     var amount: Int
     var isTimeBased: Bool
