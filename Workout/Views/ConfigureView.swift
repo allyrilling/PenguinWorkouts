@@ -20,6 +20,8 @@ struct ConfigureView: View {
     @State var numHipsEditable = false
     @State var showHipsOrg = false
     
+    @State var showColorThemesView = false
+    
     var tileCR: CGFloat = 20
     
     var body: some View {
@@ -39,13 +41,51 @@ struct ConfigureView: View {
                         .font(.system(size: globalVars.titleTS, weight: .semibold))
                     Spacer()
                 }
-                Text("Choose your color scheme!")
+                Text("Current theme is...")
                     .font(.system(size: globalVars.bodyTS))
                 HStack {
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash)
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams)
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade)
+                    Text("Summer Splash")
+                        .font(.system(size: globalVars.midTS, weight: .bold))
+                        .padding()
+                    
+                    VStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(height: 20)
+                            .foregroundColor(globalVars.mainColor)
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(height: 20)
+                            .foregroundColor(globalVars.subColor)
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(height: 20)
+                            .foregroundColor(globalVars.accentColor)
+                    }.padding()
+                    .background(ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 3)
+                            .foregroundColor(.black)
+                    })
+                    .padding(.bottom)
                 }
+                
+                Button(action: {
+                    showColorThemesView = true
+                }, label: {
+                    HStack {
+                        Spacer()
+                        Text("All color themes")
+                        Image(systemName: "chevron.right")
+                        Spacer()
+                    }.padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.white)
+                    )
+                }).sheet(isPresented: $showColorThemesView) {
+                    ColorThemePickerView(globalVars: globalVars)
+                }
+                
             }.padding()
             .background(RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(globalVars.subColor))

@@ -37,7 +37,7 @@ struct ColorThemeButton: View {
                                 .foregroundColor(.white)
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(lineWidth: 3)
-                    .foregroundColor(globalVars.mainColor == Color(hex: UInt(theme[0])) ? .black : .clear)
+                    .foregroundColor(globalVars.mainColor == Color(hex: UInt(theme[0])) ? .black : .gray.opacity(0.2))
             })
         })
     }
