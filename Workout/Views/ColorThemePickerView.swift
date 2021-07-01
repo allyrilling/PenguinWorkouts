@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorThemePickerView: View {
-    var globalVars: GlobalVars
+    @ObservedObject var globalVars: GlobalVars
     
     var columns: [GridItem] = [
         GridItem(.fixed(100), spacing: 16),
@@ -29,8 +29,8 @@ struct ColorThemePickerView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Preview")
-                        Text("Theme")
+                        Text(globalVars.themeName.split(separator: " ")[0])
+                        Text(globalVars.themeName.split(separator: " ")[1])
                     }.font(.system(size: globalVars.midTS, weight: .bold))
                     .padding()
                     Spacer()
@@ -65,13 +65,13 @@ struct ColorThemePickerView: View {
                     pinnedViews: [.sectionHeaders, .sectionFooters]
                 ) {
                     Section() {
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash)
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams)
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash, themeName: ColorThemeNames.summerSplash.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams, themeName: ColorThemeNames.pastelDreams.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade, themeName: ColorThemeNames.lusciousLemonade.rawValue)
                     }
 
                     Section() {
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank, themeName: ColorThemeNames.fernBank.rawValue)
                     }
                 }
             }

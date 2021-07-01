@@ -32,6 +32,8 @@ class GlobalVars: ObservableObject {
     @Published var reps = 0
     @Published var setsSliderValue: Double = 0.0
     
+    @Published var themeName: String
+    
     @Published var mainColor: Color
     @Published var subColor: Color
     @Published var accentColor: Color
@@ -50,6 +52,8 @@ class GlobalVars: ObservableObject {
         self.hips = Logic.hips
         
         self.defaults = UserDefaults.standard
+        
+        self.themeName = defaults.string(forKey: "themeName") ?? ColorThemeNames.summerSplash.rawValue
         
         self.mainColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![0])
         self.subColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![1])

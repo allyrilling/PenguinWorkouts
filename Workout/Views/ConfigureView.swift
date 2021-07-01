@@ -37,14 +37,14 @@ struct ConfigureView: View {
             
             VStack(alignment: .leading) { // color scheme
                 HStack {
-                    Text("Color Scheme")
+                    Text("Color Theme")
                         .font(.system(size: globalVars.titleTS, weight: .semibold))
                     Spacer()
                 }
                 Text("Current theme is...")
                     .font(.system(size: globalVars.bodyTS))
                 HStack {
-                    Text("Summer Splash")
+                    Text("\(globalVars.themeName)")
                         .font(.system(size: globalVars.midTS, weight: .bold))
                         .padding()
                     

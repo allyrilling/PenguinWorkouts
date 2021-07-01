@@ -10,6 +10,7 @@ import SwiftUI
 struct ColorThemeButton: View {
     @ObservedObject var globalVars: GlobalVars
     var theme: [Int]
+    var themeName: String
     
     var frameHeight: CGFloat = 20
     var cr: CGFloat = 5
@@ -20,6 +21,8 @@ struct ColorThemeButton: View {
             globalVars.subColor = Color(hex: UInt(theme[1]))
             globalVars.accentColor = Color(hex: UInt(theme[2]))
             globalVars.defaults.set(theme, forKey: "theme")
+            globalVars.themeName = themeName
+            globalVars.defaults.set(themeName, forKey: "themeName")
         }, label: {
             VStack {
                 RoundedRectangle(cornerRadius: cr)
