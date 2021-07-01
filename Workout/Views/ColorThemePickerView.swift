@@ -27,16 +27,36 @@ struct ColorThemePickerView: View {
                     Spacer()
                 }
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundColor(globalVars.accentColor)
-                        .padding()
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding()
-                    Text("HELLOOOOOOO")
-                }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Preview")
+                        Text("Theme")
+                    }.font(.system(size: globalVars.midTS, weight: .bold))
+                    .padding()
+                    Spacer()
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(globalVars.mainColor)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(globalVars.subColor))
+                            .padding()
+                    })
+                        
+                }.padding()
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.white)
+                                .padding()
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 20)
+                                                .foregroundColor(globalVars.accentColor)))
+                .padding()
+                
+                Spacer()
+                    .frame(height: 50)
                 
                 LazyVGrid(
                     columns: columns,
@@ -49,7 +69,7 @@ struct ColorThemePickerView: View {
                         ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams)
                         ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade)
                     }
-                    
+
                     Section() {
                         ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank)
                     }
