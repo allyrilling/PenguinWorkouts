@@ -18,28 +18,41 @@ struct ColorThemePickerView: View {
     
     var body: some View {
         ScrollView {
-            HStack { // color themes text
-                Text("Themes")
-                    .font(.system(size: globalVars.bigTitleTS, weight: .bold))
-                    .padding(.top, 30)
-                    .padding(.leading, 20)
-                Spacer()
-            }
-            
-            LazyVGrid(
-                columns: columns,
-                alignment: .center,
-                spacing: 16,
-                pinnedViews: [.sectionHeaders, .sectionFooters]
-            ) {
-                Section() {
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash)
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams)
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade)
+            VStack {
+                HStack { // color themes text
+                    Text("Themes")
+                        .font(.system(size: globalVars.bigTitleTS, weight: .bold))
+                        .padding(.top, 30)
+                        .padding(.leading, 20)
+                    Spacer()
                 }
                 
-                Section() {
-                    ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundColor(globalVars.accentColor)
+                        .padding()
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding()
+                    Text("HELLOOOOOOO")
+                }
+                
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .center,
+                    spacing: 16,
+                    pinnedViews: [.sectionHeaders, .sectionFooters]
+                ) {
+                    Section() {
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade)
+                    }
+                    
+                    Section() {
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank)
+                    }
                 }
             }
         }
