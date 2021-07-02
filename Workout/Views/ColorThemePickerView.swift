@@ -31,7 +31,7 @@ struct ColorThemePickerView: View {
                     VStack(alignment: .leading) {
                         Text(globalVars.themeName.split(separator: " ")[0])
                         Text(globalVars.themeName.split(separator: " ")[1])
-                    }.font(.system(size: globalVars.midTS, weight: .bold))
+                    }.font(.system(size: globalVars.midTS))
                     .padding()
                     Spacer()
                     Button(action: {
@@ -44,19 +44,20 @@ struct ColorThemePickerView: View {
                                             .foregroundColor(globalVars.subColor))
                             .padding()
                     })
-                        
                 }.padding()
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.white)
-                                .padding()
-                                .padding()
-                                .background(RoundedRectangle(cornerRadius: 20)
-                                                .foregroundColor(globalVars.accentColor)))
+                .background(HStack {
+                    RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .padding()
+                                    .background(RoundedRectangle(cornerRadius: 20)
+                                                    .foregroundColor(globalVars.accentColor))
+                })
                 .padding()
                 
-                Spacer()
-                    .frame(height: 50)
+//                Spacer()
+//                    .frame(height: 50)
                 
                 LazyVGrid(
                     columns: columns,
@@ -65,13 +66,21 @@ struct ColorThemePickerView: View {
                     pinnedViews: [.sectionHeaders, .sectionFooters]
                 ) {
                     Section() {
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.summerSplash, themeName: ColorThemeNames.summerSplash.rawValue)
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.pastelDreams, themeName: ColorThemeNames.pastelDreams.rawValue)
-                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.lusciousLemonade, themeName: ColorThemeNames.lusciousLemonade.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.oceanSplash, themeName: ColorThemeNames.oceanSplash.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.dreamState, themeName: ColorThemeNames.dreamState.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.goldenLemonade, themeName: ColorThemeNames.goldenLemonade.rawValue)
                     }
 
                     Section() {
                         ColorThemeButton(globalVars: globalVars, theme: ColorThemes.fernBank, themeName: ColorThemeNames.fernBank.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.roseyCream, themeName: ColorThemeNames.roseyCream.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.mossySlate, themeName: ColorThemeNames.mossySlate.rawValue)
+                    }
+                    
+                    Section() {
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.watermelonSugar, themeName: ColorThemeNames.watermelonSugar.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.sandyBeach, themeName: ColorThemeNames.sandyBeach.rawValue)
+                        ColorThemeButton(globalVars: globalVars, theme: ColorThemes.hazelnutCoffee, themeName: ColorThemeNames.hazelnutCoffee.rawValue)
                     }
                 }
             }

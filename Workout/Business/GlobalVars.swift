@@ -53,7 +53,7 @@ class GlobalVars: ObservableObject {
         
         self.defaults = UserDefaults.standard
         
-        self.themeName = defaults.string(forKey: "themeName") ?? ColorThemeNames.summerSplash.rawValue
+        self.themeName = defaults.string(forKey: "themeName") ?? ColorThemeNames.oceanSplash.rawValue
         
         self.mainColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![0])
         self.subColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![1])
