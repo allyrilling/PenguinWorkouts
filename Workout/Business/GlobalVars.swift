@@ -12,6 +12,10 @@ import CoreData
 class GlobalVars: ObservableObject {
     var defaults: UserDefaults
     
+    @Published var groups: [Group] = []
+    
+    var isFirstLaunch: String
+    
     @Published var upperBody: [Exercise] = []
     @Published var lowerBody: [Exercise] = []
     @Published var core: [Exercise] = []
@@ -44,13 +48,6 @@ class GlobalVars: ObservableObject {
     @Published var bigTitleTS: CGFloat = 50
     
     init() {
-        Logic()
-
-        self.core = Logic.core
-        self.upperBody = Logic.upperBody
-        self.lowerBody = Logic.lowerBody
-        self.hips = Logic.hips
-        
         self.defaults = UserDefaults.standard
         
         self.themeName = defaults.string(forKey: "themeName") ?? ColorThemeNames.oceanSplash.rawValue
@@ -66,6 +63,53 @@ class GlobalVars: ObservableObject {
         
         self.type = defaults.string(forKey: "type") ?? "Core"
         
+        self.isFirstLaunch = defaults.string(forKey: "isFirstLaunch") ?? "true"
+        
+        if (isFirstLaunch == "true") {
+            print("isfirstlaunch")
+            
+            Logic()
+
+            self.core = Logic.core
+            self.upperBody = Logic.upperBody
+            self.lowerBody = Logic.lowerBody
+            self.hips = Logic.hips
+            
+            self.groups[0].members.append(contentsOf: self.core)
+            self.groups[1].members.append(contentsOf: self.upperBody)
+            self.groups[2].members.append(contentsOf: self.lowerBody)
+            self.groups[3].members.append(contentsOf: self.hips)
+            
+            defaults.set(self.groups, forKey: "groups")
+            
+            defaults.set("false", forKey: "isFirstLaunch")
+            
+        } else {
+            print("isNOTfirstlaunch")
+            
+            self.groups = defaults.object(forKey: "groups") as! [Group]
+            
+            self.core = self.groups[0].members
+            self.upperBody = self.groups[1].members
+            self.lowerBody = self.groups[2].members
+            self.hips = self.groups[3].members
+            
+        }
+        
+        
+        
+    }
+    
+    func encodeExercise(group: [Exercise]) {
+        
+        
+        let encoder = JSONEncoder()
+        
+        for exercise in group {
+            if let encodedExercise = try? encoder.encode(exercise) {
+                defaults.set(encodedExercise, forKey: exercise.name)
+            }
+        }
     }
     
 }
