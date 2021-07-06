@@ -60,7 +60,7 @@ struct OrgExerciseView: View {
             .environment(\.editMode, .constant(self.editMode ? EditMode.active : EditMode.inactive))
             
             HStack {
-                Button(action: {
+                Button(action: { // edit button
                     self.editMode = !self.editMode
                 }, label: {
                     Image(systemName: !self.editMode ? "pencil" : "checkmark" )
