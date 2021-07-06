@@ -112,6 +112,7 @@ class GlobalVars: ObservableObject {
                 upperBody = decodedGroups[1].members
                 lowerBody = decodedGroups[2].members
                 hips = decodedGroups[3].members
+                groups = [Group(members: core, perWorkout: core.count), Group(members: upperBody, perWorkout: upperBody.count), Group(members: lowerBody, perWorkout: lowerBody.count), Group(members: hips, perWorkout: hips.count)]
             }
         }
         

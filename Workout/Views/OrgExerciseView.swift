@@ -105,14 +105,37 @@ struct OrgExerciseView: View {
 
     func removeRows(at offsets: IndexSet) {
         if(type == "Core") {
+            for e in globalVars.groups[0].members {
+                if e.name == globalVars.core[offsets.first!].name {
+                    globalVars.groups[0].members.remove(at: offsets.first!)
+                }
+            }
             globalVars.core.remove(atOffsets: offsets)
         } else if (type == "Hips") {
+            for e in globalVars.groups[3].members {
+                if e.name == globalVars.hips[offsets.first!].name {
+                    globalVars.groups[3].members.remove(at: offsets.first!)
+                }
+            }
             globalVars.hips.remove(atOffsets: offsets)
         } else if (type == "Upper Body") {
+            for e in globalVars.groups[1].members {
+                if e.name == globalVars.upperBody[offsets.first!].name {
+                    globalVars.groups[1].members.remove(at: offsets.first!)
+                }
+            }
             globalVars.upperBody.remove(atOffsets: offsets)
         } else if (type == "Lower Body") {
+            for e in globalVars.groups[2].members {
+                if e.name == globalVars.lowerBody[offsets.first!].name {
+                    globalVars.groups[2].members.remove(at: offsets.first!)
+                }
+            }
             globalVars.lowerBody.remove(atOffsets: offsets)
         }
+        
+        globalVars.encodeGroups(groups: globalVars.groups)
+        
     }
     
 
