@@ -74,7 +74,7 @@ class GlobalVars: ObservableObject {
             self.upperBody = Logic.upperBody
             self.lowerBody = Logic.lowerBody
             self.hips = Logic.hips
-            
+
             self.groups.append(Group(members: self.core, perWorkout: self.core.count))
             self.groups.append(Group(members: self.upperBody, perWorkout: self.upperBody.count))
             self.groups.append(Group(members: self.lowerBody, perWorkout: self.lowerBody.count))
@@ -82,22 +82,12 @@ class GlobalVars: ObservableObject {
             
             encodeGroups(groups: groups)
             
-//            encodeExercise(group: self.groups[0].members, groupName: "core")
-//            encodeExercise(group: self.groups[1].members, groupName: "upperBody")
-//            encodeExercise(group: self.groups[2].members, groupName: "lowerBody")
-//            encodeExercise(group: self.groups[3].members, groupName: "hips")
-            
             defaults.set("false", forKey: "isFirstLaunch")
             
         } else {
             print("isNOTfirstlaunch")
             
-            self.groups = defaults.object(forKey: "groups") as! [Group]
-            
-            self.core = self.groups[0].members
-            self.upperBody = self.groups[1].members
-            self.lowerBody = self.groups[2].members
-            self.hips = self.groups[3].members
+            decodeGroups()
             
         }
         
@@ -114,25 +104,17 @@ class GlobalVars: ObservableObject {
         
     }
     
-    func decodeGroups(groups: [Group]) {
-        
+    func decodeGroups() {
         if let savedGroups = defaults.object(forKey: "groups") as? Data {
             let decoder = JSONDecoder()
-            if let savedGroups = try? decoder.decode([Group.self], from: groups) {
-//                print("Saved user: \(savedUser)")
+            if let decodedGroups = try? decoder.decode([Group].self, from: savedGroups) {
+                core = decodedGroups[0].members
+                upperBody = decodedGroups[1].members
+                lowerBody = decodedGroups[2].members
+                hips = decodedGroups[3].members
             }
         }
         
-    }
-    
-    func encodeExercise(group: [Exercise], groupName: String) {
-        let encoder = JSONEncoder()
-        
-        for exercise in group {
-            if let encodedExercise = try? encoder.encode(exercise) {
-                defaults.set(encodedExercise, forKey: exercise.name)
-            }
-        }
     }
     
 }
