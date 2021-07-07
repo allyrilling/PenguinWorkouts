@@ -50,20 +50,20 @@ class GlobalVars: ObservableObject {
     init() {
         self.defaults = UserDefaults.standard
         
-        self.themeName = defaults.string(forKey: "themeName") ?? ColorThemeNames.oceanSplash.rawValue
+        self.themeName = defaults.string(forKey: DefaultsKeys.themeName.rawValue) ?? ColorThemeNames.oceanSplash.rawValue
         
-        self.mainColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![0])
-        self.subColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![1])
-        self.accentColor = Color(hex: (defaults.object(forKey: "theme") as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![2])
+        self.mainColor = Color(hex: (defaults.object(forKey: DefaultsKeys.theme.rawValue) as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![0])
+        self.subColor = Color(hex: (defaults.object(forKey: DefaultsKeys.theme.rawValue) as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![1])
+        self.accentColor = Color(hex: (defaults.object(forKey: DefaultsKeys.theme.rawValue) as? [UInt] ?? [0x05445E, 0x189AB4, 0x75E6DA])![2])
         
-        self.amtExCore = defaults.string(forKey: "amtExCore") ?? "10"
-        self.amtExLowerBody = defaults.string(forKey: "amtExLowerBody") ?? "5"
-        self.amtExUpperBody = defaults.string(forKey: "amtExUpperBody") ?? "5"
-        self.amtExHips = defaults.string(forKey: "amtExHips") ?? "5"
+        self.amtExCore = defaults.string(forKey: DefaultsKeys.amtExCore.rawValue) ?? "10"
+        self.amtExLowerBody = defaults.string(forKey: DefaultsKeys.amtExLowerBody.rawValue) ?? "5"
+        self.amtExUpperBody = defaults.string(forKey: DefaultsKeys.amtExUpperBody.rawValue) ?? "5"
+        self.amtExHips = defaults.string(forKey: DefaultsKeys.amtExHips.rawValue) ?? "5"
         
-        self.type = defaults.string(forKey: "type") ?? "Core"
+        self.type = defaults.string(forKey: DefaultsKeys.type.rawValue) ?? "Core"
         
-        self.isFirstLaunch = defaults.string(forKey: "isFirstLaunch") ?? "true"
+        self.isFirstLaunch = defaults.string(forKey: DefaultsKeys.isFirstLaunch.rawValue) ?? "true"
         
         if (isFirstLaunch == "true") {
             print("isfirstlaunch")
@@ -82,7 +82,7 @@ class GlobalVars: ObservableObject {
             
             encodeGroups(groups: groups)
             
-            defaults.set("false", forKey: "isFirstLaunch")
+            defaults.set("false", forKey: DefaultsKeys.isFirstLaunch.rawValue)
             
         } else {
             print("isNOTfirstlaunch")
@@ -99,13 +99,13 @@ class GlobalVars: ObservableObject {
         let encoder = JSONEncoder()
         
         if let encodedGroups = try? encoder.encode(groups) {
-            defaults.set(encodedGroups, forKey: "groups")
+            defaults.set(encodedGroups, forKey: DefaultsKeys.groups.rawValue)
         }
         
     }
     
     func decodeGroups() {
-        if let savedGroups = defaults.object(forKey: "groups") as? Data {
+        if let savedGroups = defaults.object(forKey: DefaultsKeys.groups.rawValue) as? Data {
             let decoder = JSONDecoder()
             if let decodedGroups = try? decoder.decode([Group].self, from: savedGroups) {
                 core = decodedGroups[0].members

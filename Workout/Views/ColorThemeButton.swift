@@ -20,9 +20,9 @@ struct ColorThemeButton: View {
             globalVars.mainColor = Color(hex: UInt(theme[0]))
             globalVars.subColor = Color(hex: UInt(theme[1]))
             globalVars.accentColor = Color(hex: UInt(theme[2]))
-            globalVars.defaults.set(theme, forKey: "theme")
+            globalVars.defaults.set(theme, forKey: DefaultsKeys.theme.rawValue)
             globalVars.themeName = themeName
-            globalVars.defaults.set(themeName, forKey: "themeName")
+            globalVars.defaults.set(themeName, forKey: DefaultsKeys.themeName.rawValue)
         }, label: {
             VStack {
                 RoundedRectangle(cornerRadius: cr)

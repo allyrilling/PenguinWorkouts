@@ -148,7 +148,7 @@ class LogicUtilites {
         globalVars.hips = globalVars.hips.sorted { $0.amount > $1.amount }
     }
     
-    static func wrapEx(e: Exercise, context: NSManagedObjectContext) -> ExerciseDB { // converts type Exercise to type ExerciseDB
+    /*static func wrapEx(e: Exercise, context: NSManagedObjectContext) -> ExerciseDB { // converts type Exercise to type ExerciseDB
         let eDB = ExerciseDB(context: context)
         eDB.name = e.name
         eDB.amount = Int64(e.amount)
@@ -203,7 +203,7 @@ class LogicUtilites {
         }
         
         return wrappedExArray
-    }
+    }*/
     
 }
 

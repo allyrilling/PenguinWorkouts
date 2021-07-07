@@ -109,7 +109,7 @@ struct OrgExerciseView: View {
             if (globalVars.groups[0].perWorkout == globalVars.groups[0].members.count) {
                 // have to do this too until get rid of the 4 array construct and move to all group objects
                 globalVars.amtExCore = "\(Int(globalVars.amtExCore)! - 1)"
-                globalVars.defaults.set(globalVars.amtExCore, forKey: "amtExCore")
+                globalVars.defaults.set(globalVars.amtExCore, forKey: DefaultsKeys.amtExCore.rawValue)
                 
                 globalVars.groups[0].perWorkout = globalVars.groups[0].perWorkout - 1
             }
@@ -127,7 +127,7 @@ struct OrgExerciseView: View {
             if (globalVars.groups[1].perWorkout == globalVars.groups[1].members.count) {
                 // have to do this too until get rid of the 4 array construct and move to all group objects
                 globalVars.amtExUpperBody = "\(Int(globalVars.amtExUpperBody)! - 1)"
-                globalVars.defaults.set(globalVars.amtExUpperBody, forKey: "amtExUpperBody")
+                globalVars.defaults.set(globalVars.amtExUpperBody, forKey: DefaultsKeys.amtExUpperBody.rawValue)
                 
                 globalVars.groups[1].perWorkout = globalVars.groups[1].perWorkout - 1
             }
@@ -145,7 +145,7 @@ struct OrgExerciseView: View {
             if (globalVars.groups[2].perWorkout == globalVars.groups[2].members.count) {
                 // have to do this too until get rid of the 4 array construct and move to all group objects
                 globalVars.amtExLowerBody = "\(Int(globalVars.amtExLowerBody)! - 1)"
-                globalVars.defaults.set(globalVars.amtExLowerBody, forKey: "amtExLowerBody")
+                globalVars.defaults.set(globalVars.amtExLowerBody, forKey: DefaultsKeys.amtExLowerBody.rawValue)
                 
                 globalVars.groups[2].perWorkout = globalVars.groups[2].perWorkout - 1
             }
@@ -163,7 +163,7 @@ struct OrgExerciseView: View {
             if (globalVars.groups[3].perWorkout == globalVars.groups[3].members.count) {
                 // have to do this too until get rid of the 4 array construct and move to all group objects
                 globalVars.amtExHips = "\(Int(globalVars.amtExHips)! - 1)"
-                globalVars.defaults.set(globalVars.amtExHips, forKey: "amtExHips")
+                globalVars.defaults.set(globalVars.amtExHips, forKey: DefaultsKeys.amtExHips.rawValue)
                 
                 globalVars.groups[3].perWorkout = globalVars.groups[3].perWorkout - 1
             }

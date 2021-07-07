@@ -17,25 +17,25 @@ struct MainViewTopBar: View {
             Menu(content: { // sort menu
                 Button(action: {
                     globalVars.type = "Core"
-                    globalVars.defaults.set("Core", forKey: "type")
+                    globalVars.defaults.set("Core", forKey: DefaultsKeys.type.rawValue)
                 }, label: {
                     Text("Core")
                 })
                 Button(action: {
                     globalVars.type = "Upper Body"
-                    globalVars.defaults.set("Upper Body", forKey: "type")
+                    globalVars.defaults.set("Upper Body", forKey: DefaultsKeys.type.rawValue)
                 }, label: {
                     Text("Upper Body")
                 })
                 Button(action: {
                     globalVars.type = "Lower Body"
-                    globalVars.defaults.set("Lower Body", forKey: "type")
+                    globalVars.defaults.set("Lower Body", forKey: DefaultsKeys.type.rawValue)
                 }, label: {
                     Text("Lower Body")
                 })
                 Button(action: {
                     globalVars.type = "Hips"
-                    globalVars.defaults.set("Hips", forKey: "type")
+                    globalVars.defaults.set("Hips", forKey: DefaultsKeys.type.rawValue)
                 }, label: {
                     Text("Hips")
                 })
