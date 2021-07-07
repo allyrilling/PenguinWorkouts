@@ -11,7 +11,7 @@ struct OrgExerciseView: View {
     @ObservedObject var globalVars: GlobalVars
     var type: String
     
-    @State var isActive: Bool = false
+    @State var showAddNewExercise: Bool = false
     @State var showEditSheet = false
     
     @State private var sortStyle: Int = 0
@@ -37,7 +37,7 @@ struct OrgExerciseView: View {
             List {
                 ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count)!, id:\.self) { index in // this is one cell
                     Button(action: {
-                        showEditSheet.toggle()
+                        showEditSheet = true
                     }, label: {
                         HStack {
                             Text(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].name) // exercise name in cell
@@ -91,10 +91,10 @@ struct OrgExerciseView: View {
                 Spacer()
                 
                 Button(action: { // add new exercise
-                    isActive = true
+                    showAddNewExercise = true
                 }, label: {
                     Image(systemName: "plus")
-                }).sheet(isPresented: $isActive) {
+                }).sheet(isPresented: $showAddNewExercise) {
                     AddExerciseView(globalVars: globalVars, type: type)
                 }
             }.font(.system(size: globalVars.titleTS))
@@ -105,33 +105,77 @@ struct OrgExerciseView: View {
 
     func removeRows(at offsets: IndexSet) {
         if(type == "Core") {
+            
+            if (globalVars.groups[0].perWorkout == globalVars.groups[0].members.count) {
+                // have to do this too until get rid of the 4 array construct and move to all group objects
+                globalVars.amtExCore = "\(Int(globalVars.amtExCore)! - 1)"
+                globalVars.defaults.set(globalVars.amtExCore, forKey: "amtExCore")
+                
+                globalVars.groups[0].perWorkout = globalVars.groups[0].perWorkout - 1
+            }
+            
             for e in globalVars.groups[0].members {
                 if e.name == globalVars.core[offsets.first!].name {
                     globalVars.groups[0].members.remove(at: offsets.first!)
                 }
             }
+            
             globalVars.core.remove(atOffsets: offsets)
-        } else if (type == "Hips") {
-            for e in globalVars.groups[3].members {
-                if e.name == globalVars.hips[offsets.first!].name {
-                    globalVars.groups[3].members.remove(at: offsets.first!)
-                }
-            }
-            globalVars.hips.remove(atOffsets: offsets)
+            
         } else if (type == "Upper Body") {
+            
+            if (globalVars.groups[1].perWorkout == globalVars.groups[1].members.count) {
+                // have to do this too until get rid of the 4 array construct and move to all group objects
+                globalVars.amtExUpperBody = "\(Int(globalVars.amtExUpperBody)! - 1)"
+                globalVars.defaults.set(globalVars.amtExUpperBody, forKey: "amtExUpperBody")
+                
+                globalVars.groups[1].perWorkout = globalVars.groups[1].perWorkout - 1
+            }
+            
             for e in globalVars.groups[1].members {
                 if e.name == globalVars.upperBody[offsets.first!].name {
                     globalVars.groups[1].members.remove(at: offsets.first!)
                 }
             }
+            
             globalVars.upperBody.remove(atOffsets: offsets)
+            
         } else if (type == "Lower Body") {
+            
+            if (globalVars.groups[2].perWorkout == globalVars.groups[2].members.count) {
+                // have to do this too until get rid of the 4 array construct and move to all group objects
+                globalVars.amtExLowerBody = "\(Int(globalVars.amtExLowerBody)! - 1)"
+                globalVars.defaults.set(globalVars.amtExLowerBody, forKey: "amtExLowerBody")
+                
+                globalVars.groups[2].perWorkout = globalVars.groups[2].perWorkout - 1
+            }
+            
             for e in globalVars.groups[2].members {
                 if e.name == globalVars.lowerBody[offsets.first!].name {
                     globalVars.groups[2].members.remove(at: offsets.first!)
                 }
             }
+            
             globalVars.lowerBody.remove(atOffsets: offsets)
+            
+        } else if (type == "Hips") {
+            
+            if (globalVars.groups[3].perWorkout == globalVars.groups[3].members.count) {
+                // have to do this too until get rid of the 4 array construct and move to all group objects
+                globalVars.amtExHips = "\(Int(globalVars.amtExHips)! - 1)"
+                globalVars.defaults.set(globalVars.amtExHips, forKey: "amtExHips")
+                
+                globalVars.groups[3].perWorkout = globalVars.groups[3].perWorkout - 1
+            }
+            
+            for e in globalVars.groups[3].members {
+                if e.name == globalVars.hips[offsets.first!].name {
+                    globalVars.groups[3].members.remove(at: offsets.first!)
+                }
+            }
+            
+            globalVars.hips.remove(atOffsets: offsets)
+            
         }
         
         globalVars.encodeGroups(groups: globalVars.groups)

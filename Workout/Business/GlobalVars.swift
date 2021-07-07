@@ -75,10 +75,10 @@ class GlobalVars: ObservableObject {
             self.lowerBody = Logic.lowerBody
             self.hips = Logic.hips
 
-            self.groups.append(Group(members: self.core, perWorkout: self.core.count))
-            self.groups.append(Group(members: self.upperBody, perWorkout: self.upperBody.count))
-            self.groups.append(Group(members: self.lowerBody, perWorkout: self.lowerBody.count))
-            self.groups.append(Group(members: self.hips, perWorkout: self.hips.count))
+            self.groups.append(Group(members: self.core, perWorkout: Int(amtExCore)!))
+            self.groups.append(Group(members: self.upperBody, perWorkout: Int(amtExUpperBody)!))
+            self.groups.append(Group(members: self.lowerBody, perWorkout: Int(amtExLowerBody)!))
+            self.groups.append(Group(members: self.hips, perWorkout: Int(amtExHips)!))
             
             encodeGroups(groups: groups)
             
@@ -112,7 +112,7 @@ class GlobalVars: ObservableObject {
                 upperBody = decodedGroups[1].members
                 lowerBody = decodedGroups[2].members
                 hips = decodedGroups[3].members
-                groups = [Group(members: core, perWorkout: core.count), Group(members: upperBody, perWorkout: upperBody.count), Group(members: lowerBody, perWorkout: lowerBody.count), Group(members: hips, perWorkout: hips.count)]
+                groups = [Group(members: core, perWorkout: Int(amtExCore)!), Group(members: upperBody, perWorkout: Int(amtExUpperBody)!), Group(members: lowerBody, perWorkout: Int(amtExLowerBody)!), Group(members: hips, perWorkout: Int(amtExHips)!)]
             }
         }
         
