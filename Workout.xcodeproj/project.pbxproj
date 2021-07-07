@@ -94,13 +94,11 @@
 			children = (
 				6B85B254268CDB9A00DCCC16 /* ColorThemePickerView.swift */,
 				6B364E5E24D72F22000E1435 /* HowToView.swift */,
-				6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */,
 				6B21E2FD265AA685007A2B70 /* ColorThemeButton.swift */,
 				6B7F4A6524CB27E00058C897 /* CountingView.swift */,
 				6BF7F4B424D0904C0007B8DD /* MainViewTopBar.swift */,
 				6BF9DB8F24EAB180008251FE /* CustomTextFieldView.swift */,
 				6B582CD324F4059C00B21D31 /* SetsRepsView.swift */,
-				6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */,
 				6B8555BC266676E50017F134 /* SnazzyBS.swift */,
 				6B21E301265B27BB007A2B70 /* OrgExerciseView.swift */,
 				6B21E305265FD9AC007A2B70 /* EditExerciseView.swift */,
@@ -154,6 +152,16 @@
 			name = "DO NOT TOUCH";
 			sourceTree = "<group>";
 		};
+		6BE82D8F2695FEF9000B9F2F /* Old Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */,
+				6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */,
+			);
+			name = "Old Files";
+			path = "Exercise JSON Files";
+			sourceTree = "<group>";
+		};
 		6BEC2DDC24C7165300C6F6AB = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +184,7 @@
 				6BEC2DE824C7165300C6F6AB /* WorkoutApp.swift */,
 				6B7F4A6024CB1BE70058C897 /* Views */,
 				6B7F4A6224CB1C140058C897 /* Business */,
+				6BE82D8F2695FEF9000B9F2F /* Old Files */,
 				6BEC2E0524CA078700C6F6AB /* Exercise JSON Files */,
 				6B7F4A6424CB22880058C897 /* DO NOT TOUCH */,
 			);
