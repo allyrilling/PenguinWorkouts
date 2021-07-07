@@ -9,6 +9,7 @@ import Foundation
 
 struct Group: Codable {
     
+    var name: String
     var members: [Exercise]
     var perWorkout: Int
     

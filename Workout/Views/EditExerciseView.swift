@@ -57,7 +57,7 @@ struct EditExerciseView: View {
                 
                 Button(action: {
                     LogicUtilites.findExercise(globalVars: globalVars, ex: ex, name: name, amount: Int(amount) ?? 0, isTimeBased: isTimeBased == 0, startingPosition: startingPosition, description: description)
-                    globalVars.groups = [Group(members: globalVars.core, perWorkout: Int(globalVars.amtExCore)!), Group(members: globalVars.upperBody, perWorkout: Int(globalVars.amtExUpperBody)!), Group(members: globalVars.lowerBody, perWorkout: Int(globalVars.amtExLowerBody)!), Group(members: globalVars.hips, perWorkout: Int(globalVars.amtExHips)!)]
+                    globalVars.groups = [Group(name: "Core", members: globalVars.core, perWorkout: Int(globalVars.amtExCore)!), Group(name: "Upper Body", members: globalVars.upperBody, perWorkout: Int(globalVars.amtExUpperBody)!), Group(name: "Lower Body", members: globalVars.lowerBody, perWorkout: Int(globalVars.amtExLowerBody)!), Group(name: "Hips", members: globalVars.hips, perWorkout: Int(globalVars.amtExHips)!)]
                     globalVars.encodeGroups(groups: globalVars.groups)
                 }, label: {
                     HStack {
