@@ -121,15 +121,11 @@
 		6B7F4A6224CB1C140058C897 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				6BEC2DF724C716F400C6F6AB /* Logic.swift */,
-				6BD3C1CF267FE97500C11869 /* Group.swift */,
-				6BEC2E0824CA129D00C6F6AB /* LogicUtilites.swift */,
-				6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */,
 				6B0DF46425AA98D1004F1D2A /* GlobalVars.swift */,
-				6B85B252268CDB2F00DCCC16 /* ColorThemeNames.swift */,
-				6BF9DB9124EB063B008251FE /* Exercise.swift */,
 				6B8555BE26667D940017F134 /* ColorThemes.swift */,
-				6B8555E32667CD480017F134 /* PersistenceController.swift */,
+				6BE82D9326960045000B9F2F /* Enums */,
+				6BE82D9226960017000B9F2F /* Classes */,
+				6BE82D912695FFB2000B9F2F /* Logic */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -155,11 +151,39 @@
 		6BE82D8F2695FEF9000B9F2F /* Old Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B8555E32667CD480017F134 /* PersistenceController.swift */,
 				6B21E2FF265AA710007A2B70 /* SecondaryColorButton.swift */,
 				6BA8806A25AF380D000C1AEA /* NeuButtonStyle.swift */,
 			);
 			name = "Old Files";
 			path = "Exercise JSON Files";
+			sourceTree = "<group>";
+		};
+		6BE82D912695FFB2000B9F2F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6BEC2DF724C716F400C6F6AB /* Logic.swift */,
+				6BB446C324D1A4DF00AE7F8C /* CountingLogic.swift */,
+				6BEC2E0824CA129D00C6F6AB /* LogicUtilites.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		6BE82D9226960017000B9F2F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6BF9DB9124EB063B008251FE /* Exercise.swift */,
+				6BD3C1CF267FE97500C11869 /* Group.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		6BE82D9326960045000B9F2F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6B85B252268CDB2F00DCCC16 /* ColorThemeNames.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 		6BEC2DDC24C7165300C6F6AB = {
