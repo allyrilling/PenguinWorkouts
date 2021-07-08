@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SnazzyBS: ButtonStyle {
-    var globalVars: GlobalVars
+    @ObservedObject var globalVars: GlobalVars
     
     @ViewBuilder func makeBody(configuration: Configuration) -> some View {
         configuration.label
