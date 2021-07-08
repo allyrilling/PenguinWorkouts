@@ -90,9 +90,6 @@ class GlobalVars: ObservableObject {
             decodeGroups()
             
         }
-        
-        
-        
     }
     
     func encodeGroups(groups: [Group]) {

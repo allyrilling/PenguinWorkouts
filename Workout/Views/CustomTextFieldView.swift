@@ -46,6 +46,15 @@ struct CustomTextFieldView: View {
                         LogicUtilites.updateUserConfigureVars(globalVars: globalVars, varToUpdate: varToUpdate, type: type)
                     }
                     updateNumberOfEx(exType: type, valToSet: varToUpdate) // calls function to update userdefaults
+                    if type == "Core" {
+                        globalVars.groups[0].perWorkout = Int(varToUpdate)!
+                    } else if type == "Upper Body" {
+                        globalVars.groups[1].perWorkout = Int(varToUpdate)!
+                    } else if type == "Lower Body" {
+                        globalVars.groups[2].perWorkout = Int(varToUpdate)!
+                    } else if type == "Hips" {
+                        globalVars.groups[3].perWorkout = Int(varToUpdate)!
+                    }
                     varToUpdate = ""
                     self.endEditing(force: true) // to dismiss keyboard
                 }, label: {

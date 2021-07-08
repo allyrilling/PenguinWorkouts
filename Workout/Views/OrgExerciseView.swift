@@ -117,24 +117,36 @@ struct OrgExerciseView: View {
             for e in globalVars.groups[0].members {
                 if e.name == globalVars.core[offsets.first!].name {
                     globalVars.groups[0].members.remove(at: offsets.first!)
+                    break
                 }
             }
             
             globalVars.core.remove(atOffsets: offsets)
             
         } else if (type == "Upper Body") {
-            
+            print("perworkout: \(globalVars.groups[1].perWorkout) | members.count \(globalVars.groups[1].members.count)")
             if (globalVars.groups[1].perWorkout == globalVars.groups[1].members.count) {
+                print("first")
                 // have to do this too until get rid of the 4 array construct and move to all group objects
                 globalVars.amtExUpperBody = "\(Int(globalVars.amtExUpperBody)! - 1)"
                 globalVars.defaults.set(globalVars.amtExUpperBody, forKey: DefaultsKeys.amtExUpperBody.rawValue)
                 
                 globalVars.groups[1].perWorkout = globalVars.groups[1].perWorkout - 1
+            } else if (globalVars.groups[1].perWorkout > globalVars.groups[1].members.count) {
+                print("second")
+                // have to do this too until get rid of the 4 array construct and move to all group objects
+                globalVars.amtExUpperBody = "\(globalVars.groups[1].members.count)"
+                globalVars.defaults.set(globalVars.groups[1].members.count, forKey: DefaultsKeys.amtExUpperBody.rawValue)
+                
+                globalVars.groups[1].perWorkout = globalVars.groups[1].members.count
             }
+            
+            // HERE its getting here bc perworkout is not being reset correctly, stil thinks its zero
             
             for e in globalVars.groups[1].members {
                 if e.name == globalVars.upperBody[offsets.first!].name {
                     globalVars.groups[1].members.remove(at: offsets.first!)
+                    break
                 }
             }
             
@@ -153,6 +165,7 @@ struct OrgExerciseView: View {
             for e in globalVars.groups[2].members {
                 if e.name == globalVars.lowerBody[offsets.first!].name {
                     globalVars.groups[2].members.remove(at: offsets.first!)
+                    break
                 }
             }
             
@@ -171,6 +184,7 @@ struct OrgExerciseView: View {
             for e in globalVars.groups[3].members {
                 if e.name == globalVars.hips[offsets.first!].name {
                     globalVars.groups[3].members.remove(at: offsets.first!)
+                    break
                 }
             }
             
