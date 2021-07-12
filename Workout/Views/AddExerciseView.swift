@@ -52,7 +52,7 @@ struct AddExerciseView: View {
             }.padding()
             .font(.system(size: globalVars.bodyTS))
             .background(RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(globalVars.subColor))
+                            .foregroundColor(globalVars.accentColor))
             
             Button(action: {
                 let newEx = Exercise(name: name == "" ? "New Exercise \(LogicUtilites.newExerciseNumberIncrement(globalVars: globalVars))" : name, amount: Int(amount) ?? 0, isTimeBased: (isTimeBased == 0), description: description, startingPosition: startingPosition)

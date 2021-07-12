@@ -55,7 +55,7 @@ struct EditExerciseView: View {
                     description = ex.description
                 }
                 .background(RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(globalVars.subColor))
+                                .foregroundColor(globalVars.accentColor))
                 
                 Button(action: {
                     LogicUtilites.findExercise(globalVars: globalVars, ex: ex, name: name, amount: Int(amount) ?? 0, isTimeBased: isTimeBased == 0, startingPosition: startingPosition, description: description, type: type)

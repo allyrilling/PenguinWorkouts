@@ -64,7 +64,8 @@ struct OrgExerciseView: View {
                     self.editMode = !self.editMode
                 }, label: {
                     Image(systemName: !self.editMode ? "pencil" : "checkmark" )
-                })
+                        .padding()
+                }).buttonStyle(SnazzyBS(globalVars: globalVars))
                 
                 Spacer()
                 
@@ -86,6 +87,10 @@ struct OrgExerciseView: View {
                     })
                 }, label: {
                     Image(systemName: "arrow.up.arrow.down")
+                        .padding()
+                        .foregroundColor(globalVars.mainColor)
+                        .background(RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(globalVars.subColor))
                 })
                 
                 Spacer()
@@ -94,11 +99,13 @@ struct OrgExerciseView: View {
                     showAddNewExercise = true
                 }, label: {
                     Image(systemName: "plus")
+                        .padding()
                 }).sheet(isPresented: $showAddNewExercise) {
                     AddExerciseView(globalVars: globalVars, type: type)
-                }
-            }.font(.system(size: globalVars.titleTS))
+                }.buttonStyle(SnazzyBS(globalVars: globalVars))
+            }.font(.system(size: globalVars.midTS))
             .padding()
+//            .background(globalVars.subColor.edgesIgnoringSafeArea(.all))
             
         }.accentColor(globalVars.mainColor)
     }
@@ -198,43 +205,3 @@ struct OrgExerciseView: View {
     
 
 }
-
-/*
- List {
-     ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count)!, id:\.self) { index in // this is one cell
-         Button(action: {
-             showEditSheet = true
-         }, label: {
-             HStack {
-                 Text(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].name) // exercise name in cell
-                     .fontWeight(.semibold)
-                     .font(.system(size: 20))
-                     .multilineTextAlignment(.leading)
-                     .foregroundColor(globalVars.mainColor)
-                 Spacer()
-                 if (LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].isTimeBased) { // time based
-                     Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) sec")
-                 } else { // reps based
-                     Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) reps")
-                 }
-             }
-         }).sheet(isPresented: $showEditSheet) {
-             // this works
-             // this doesnt use the index var
-//                        Text("index \(index)")
-//                        Text("\(globalVars.lowerBody[0].name)")
-//                        Text("LU \((LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count))")
-//                        ForEach (0 ..< LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count) { i in
-//                            Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[i].name)")
-//                        }
-             
-             // this does not
-             Text("\(globalVars.lowerBody[index].name)")
-//                        Text("LU \((LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index]).name)")
-             
-//                        EditExerciseView(globalVars: globalVars, ex: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index], type: type)
-         }
-     }.onDelete(perform: removeRows)
- }.listStyle(InsetGroupedListStyle())
- .environment(\.editMode, .constant(self.editMode ? EditMode.active : EditMode.inactive))
- */
