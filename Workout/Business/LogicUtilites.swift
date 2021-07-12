@@ -56,17 +56,20 @@ class LogicUtilites {
     }
     
     static func returnCorrectExerciseArray(globalVars: GlobalVars, type: String) -> [Exercise] { // based on the text passed into the function returns the corresponding array
-        var returnArray: [Exercise] = []
+        
         if (type == "Upper Body") {
-            returnArray = globalVars.upperBody
+            return globalVars.upperBody
         } else if (type == "Lower Body") {
-            returnArray = globalVars.lowerBody
+            return globalVars.lowerBody
         } else if (type == "Core") {
-            returnArray = globalVars.core
+            return globalVars.core
         } else if (type == "Hips") {
-            returnArray = globalVars.hips
+            return globalVars.hips
+        } else {
+            // should never happen
+            return globalVars.core
         }
-        return returnArray
+        
     }
     
     static func appendNewExercise(globalVars: GlobalVars, ex: Exercise, type: String) {
@@ -83,10 +86,10 @@ class LogicUtilites {
         }
     }
     
-    static func findExercise(globalVars: GlobalVars, ex: Exercise, name: String, amount: Int, isTimeBased: Bool, startingPosition: String, description: String) {
+    static func findExercise(globalVars: GlobalVars, ex: Exercise, name: String, amount: Int, isTimeBased: Bool, startingPosition: String, description: String, type: String) {
         var index = 0
 
-        if globalVars.type == "Upper Body" {
+        if type == "Upper Body" {
             while(ex.id != globalVars.upperBody[index].id) {
                 index += 1
             }
@@ -95,7 +98,7 @@ class LogicUtilites {
             globalVars.upperBody[index].amount = amount
             globalVars.upperBody[index].startingPosition = startingPosition
             globalVars.upperBody[index].description = description
-        } else if globalVars.type == "Lower Body" {
+        } else if type == "Lower Body" {
             while(ex.id != globalVars.lowerBody[index].id) {
                 index += 1
             }
@@ -105,7 +108,7 @@ class LogicUtilites {
             globalVars.lowerBody[index].startingPosition = startingPosition
             globalVars.lowerBody[index].description = description
 
-        } else if globalVars.type == "Core" {
+        } else if type == "Core" {
             while(ex.id != globalVars.core[index].id) {
                 index += 1
             }
@@ -115,7 +118,7 @@ class LogicUtilites {
             globalVars.core[index].startingPosition = startingPosition
             globalVars.core[index].description = description
 
-        } else if globalVars.type == "Hips" {
+        } else if type == "Hips" {
             while(ex.id != globalVars.hips[index].id) {
                 index += 1
             }
@@ -146,6 +149,12 @@ class LogicUtilites {
         globalVars.lowerBody = globalVars.lowerBody.sorted { $0.amount > $1.amount }
         globalVars.core = globalVars.core.sorted { $0.amount > $1.amount }
         globalVars.hips = globalVars.hips.sorted { $0.amount > $1.amount }
+    }
+    
+    static func newExerciseNumberIncrement(globalVars: GlobalVars) -> Int {
+        globalVars.newExerciseNumber += 1
+        globalVars.defaults.set(globalVars.newExerciseNumber, forKey: "newExerciseNumber")
+        return globalVars.newExerciseNumber
     }
     
     /*static func wrapEx(e: Exercise, context: NSManagedObjectContext) -> ExerciseDB { // converts type Exercise to type ExerciseDB

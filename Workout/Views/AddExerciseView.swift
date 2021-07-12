@@ -16,8 +16,8 @@ struct AddExerciseView: View {
     @State var name = ""
     @State var isTimeBased = 0
     @State var amount = ""
-    @State var startingPosition = ""
-    @State var description = ""
+    @State var startingPosition = "Starting Position"
+    @State var description = "Description"
     
     var body: some View {
         VStack(alignment: .leading) { // all should be textbox inputs that fill out the Exercise.swift form
@@ -29,24 +29,33 @@ struct AddExerciseView: View {
                 .padding(.bottom)
             
             VStack(alignment: .leading) {
-                TextField("Exercise name", text: $name)
+                TextField("Exercise Name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Picker(selection: $isTimeBased, label: Text("Is the exercise time or reps based?")) {
-                        Text("Time based").tag(0)
-                        Text("Reps based").tag(1)
+                        Text("Time Based").tag(0)
+                        Text("Reps Based").tag(1)
                 }.pickerStyle(SegmentedPickerStyle())
                 TextField(isTimeBased == 0 ? "How many seconds per exercise?" : "How many reps per exercise?", text: $amount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Exercise starting position", text: $startingPosition)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Exercise description", text: $description)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextEditor(text: $startingPosition)
+                    .onTapGesture {
+                        startingPosition = ""
+                    }
+                    .frame(height: 60)
+                    .cornerRadius(5)
+                TextEditor(text: $description)
+                    .onTapGesture {
+                        description = ""
+                    }
+                    .frame(height: 100)
+                    .cornerRadius(5)
             }.padding()
+            .font(.system(size: globalVars.bodyTS))
             .background(RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(globalVars.subColor))
             
             Button(action: {
-                let newEx = Exercise(name: name == "" ? "New Exercise" : name, amount: Int(amount) ?? 0, isTimeBased: (isTimeBased == 0), description: description, startingPosition: startingPosition)
+                let newEx = Exercise(name: name == "" ? "New Exercise \(LogicUtilites.newExerciseNumberIncrement(globalVars: globalVars))" : name, amount: Int(amount) ?? 0, isTimeBased: (isTimeBased == 0), description: description, startingPosition: startingPosition)
                 LogicUtilites.appendNewExercise(globalVars: globalVars, ex: newEx, type: type)
                 globalVars.groups = [Group(name: "Core", members: globalVars.core, perWorkout: Int(globalVars.amtExCore)!), Group(name: "Upper Body", members: globalVars.upperBody, perWorkout: Int(globalVars.amtExUpperBody)!), Group(name: "Lower Body", members: globalVars.lowerBody, perWorkout: Int(globalVars.amtExLowerBody)!), Group(name: "Hips", members: globalVars.hips, perWorkout: Int(globalVars.amtExHips)!)]
                 globalVars.encodeGroups(groups: globalVars.groups)

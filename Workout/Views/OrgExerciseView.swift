@@ -35,25 +35,25 @@ struct OrgExerciseView: View {
             }
             
             List {
-                ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count)!, id:\.self) { index in // this is one cell
+                ForEach(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type), id: \.self) { index in  // this is one cell
                     Button(action: {
                         showEditSheet = true
                     }, label: {
                         HStack {
-                            Text(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].name) // exercise name in cell
+                            Text(index.name) // exercise name in cell
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(globalVars.mainColor)
                             Spacer()
-                            if (LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].isTimeBased) { // time based
-                                Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) sec")
+                            if (index.isTimeBased) { // time based
+                                Text("\(index.amount) sec")
                             } else { // reps based
-                                Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) reps")
+                                Text("\(index.amount) reps")
                             }
                         }
                     }).sheet(isPresented: $showEditSheet) {
-                        EditExerciseView(globalVars: globalVars, ex: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index])
+                        EditExerciseView(globalVars: globalVars, ex: index, type: type)
                     }
                 }.onDelete(perform: removeRows)
             }.listStyle(InsetGroupedListStyle())
@@ -124,7 +124,7 @@ struct OrgExerciseView: View {
             globalVars.core.remove(atOffsets: offsets)
             
         } else if (type == "Upper Body") {
-            print("perworkout: \(globalVars.groups[1].perWorkout) | members.count \(globalVars.groups[1].members.count)")
+            
             if (globalVars.groups[1].perWorkout == globalVars.groups[1].members.count) {
                 print("first")
                 // have to do this too until get rid of the 4 array construct and move to all group objects
@@ -141,8 +141,6 @@ struct OrgExerciseView: View {
                 globalVars.groups[1].perWorkout = globalVars.groups[1].members.count
             }
             
-            // HERE its getting here bc perworkout is not being reset correctly, stil thinks its zero
-            
             for e in globalVars.groups[1].members {
                 if e.name == globalVars.upperBody[offsets.first!].name {
                     globalVars.groups[1].members.remove(at: offsets.first!)
@@ -151,6 +149,8 @@ struct OrgExerciseView: View {
             }
             
             globalVars.upperBody.remove(atOffsets: offsets)
+            print("perworkout: \(globalVars.groups[1].perWorkout) | members.count \(globalVars.groups[1].members.count)")
+
             
         } else if (type == "Lower Body") {
             
@@ -198,3 +198,43 @@ struct OrgExerciseView: View {
     
 
 }
+
+/*
+ List {
+     ForEach(0 ..< Int(exactly: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count)!, id:\.self) { index in // this is one cell
+         Button(action: {
+             showEditSheet = true
+         }, label: {
+             HStack {
+                 Text(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].name) // exercise name in cell
+                     .fontWeight(.semibold)
+                     .font(.system(size: 20))
+                     .multilineTextAlignment(.leading)
+                     .foregroundColor(globalVars.mainColor)
+                 Spacer()
+                 if (LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].isTimeBased) { // time based
+                     Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) sec")
+                 } else { // reps based
+                     Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index].amount) reps")
+                 }
+             }
+         }).sheet(isPresented: $showEditSheet) {
+             // this works
+             // this doesnt use the index var
+//                        Text("index \(index)")
+//                        Text("\(globalVars.lowerBody[0].name)")
+//                        Text("LU \((LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count))")
+//                        ForEach (0 ..< LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count) { i in
+//                            Text("\(LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[i].name)")
+//                        }
+             
+             // this does not
+             Text("\(globalVars.lowerBody[index].name)")
+//                        Text("LU \((LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index]).name)")
+             
+//                        EditExerciseView(globalVars: globalVars, ex: LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type)[index], type: type)
+         }
+     }.onDelete(perform: removeRows)
+ }.listStyle(InsetGroupedListStyle())
+ .environment(\.editMode, .constant(self.editMode ? EditMode.active : EditMode.inactive))
+ */

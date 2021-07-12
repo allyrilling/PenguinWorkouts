@@ -29,6 +29,8 @@ class GlobalVars: ObservableObject {
     @Published var index = 0
     @Published var type = "Core"
     
+    @Published var newExerciseNumber: Int
+    
     @Published var timeRemaining = 0
     @Published var timerIsPaused = true
     @Published var timer: Timer? = nil
@@ -64,6 +66,8 @@ class GlobalVars: ObservableObject {
         self.type = defaults.string(forKey: DefaultsKeys.type.rawValue) ?? "Core"
         
         self.isFirstLaunch = defaults.string(forKey: DefaultsKeys.isFirstLaunch.rawValue) ?? "true"
+        
+        self.newExerciseNumber = defaults.integer(forKey: "newExerciseNumber") 
         
         if (isFirstLaunch == "true") {
             print("isfirstlaunch")
