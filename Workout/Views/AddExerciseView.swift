@@ -37,6 +37,7 @@ struct AddExerciseView: View {
                 }.pickerStyle(SegmentedPickerStyle())
                 TextField(isTimeBased == 0 ? "How many seconds per exercise?" : "How many reps per exercise?", text: $amount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
                 TextEditor(text: $startingPosition)
                     .onTapGesture {
                         startingPosition = ""

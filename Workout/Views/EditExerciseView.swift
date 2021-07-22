@@ -40,6 +40,7 @@ struct EditExerciseView: View {
                     }.pickerStyle(SegmentedPickerStyle())
                     TextField(ex.isTimeBased ? "\(ex.amount) seconds" : "\(ex.amount) reps", text: $amount)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
                     TextEditor(text: $startingPosition)
                         .frame(height: 60)
                         .cornerRadius(5)
