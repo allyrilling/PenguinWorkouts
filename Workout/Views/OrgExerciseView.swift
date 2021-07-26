@@ -53,7 +53,7 @@ struct OrgExerciseView: View {
                             }
                         }
                     }).sheet(isPresented: $showEditSheet) {
-                        EditExerciseView(globalVars: globalVars, ex: index, type: type)
+                        EditExerciseView(globalVars: globalVars, isActive: $showEditSheet, ex: index, type: type)
                     }
                 }.onDelete(perform: removeRows)
             }.listStyle(InsetGroupedListStyle())
@@ -101,11 +101,11 @@ struct OrgExerciseView: View {
                     Image(systemName: "plus")
                         .padding()
                 }).sheet(isPresented: $showAddNewExercise) {
-                    AddExerciseView(globalVars: globalVars, type: type)
+                    AddExerciseView(globalVars: globalVars, type: type, isActive: $showAddNewExercise)
                 }.buttonStyle(SnazzyBS(globalVars: globalVars))
             }.font(.system(size: globalVars.midTS))
             .padding()
-//            .background(globalVars.subColor.edgesIgnoringSafeArea(.all))
+//            .background(globalVars.subColÍor.edgesIgnoringSafeArea(.all))
             
         }.accentColor(globalVars.mainColor)
     }

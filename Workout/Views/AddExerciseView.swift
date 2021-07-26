@@ -11,7 +11,7 @@ struct AddExerciseView: View {
     @ObservedObject var globalVars: GlobalVars
     var type: String
     
-    @State var isActive: Bool = false
+    @Binding var isActive: Bool
     
     @State var name = ""
     @State var isTimeBased = 0
@@ -60,6 +60,7 @@ struct AddExerciseView: View {
                 LogicUtilites.appendNewExercise(globalVars: globalVars, ex: newEx, type: type)
                 globalVars.groups = [Group(name: "Core", members: globalVars.core, perWorkout: Int(globalVars.amtExCore)!), Group(name: "Upper Body", members: globalVars.upperBody, perWorkout: Int(globalVars.amtExUpperBody)!), Group(name: "Lower Body", members: globalVars.lowerBody, perWorkout: Int(globalVars.amtExLowerBody)!), Group(name: "Hips", members: globalVars.hips, perWorkout: Int(globalVars.amtExHips)!)]
                 globalVars.encodeGroups(groups: globalVars.groups)
+                self.isActive = false
             }, label: {
                 HStack {
                     Spacer()
