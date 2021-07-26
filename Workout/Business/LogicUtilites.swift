@@ -88,9 +88,9 @@ class LogicUtilites {
     
     static func findExercise(globalVars: GlobalVars, ex: Exercise, name: String, amount: Int, isTimeBased: Bool, startingPosition: String, description: String, type: String) {
         var index = 0
-
+        
         if type == "Upper Body" {
-            while(ex.id != globalVars.upperBody[index].id) {
+            while(ex.name != globalVars.upperBody[index].name) {
                 index += 1
             }
             globalVars.upperBody[index].name = name
@@ -99,7 +99,7 @@ class LogicUtilites {
             globalVars.upperBody[index].startingPosition = startingPosition
             globalVars.upperBody[index].description = description
         } else if type == "Lower Body" {
-            while(ex.id != globalVars.lowerBody[index].id) {
+            while(ex.name != globalVars.lowerBody[index].name) {
                 index += 1
             }
             globalVars.lowerBody[index].name = name
@@ -109,7 +109,7 @@ class LogicUtilites {
             globalVars.lowerBody[index].description = description
 
         } else if type == "Core" {
-            while(ex.id != globalVars.core[index].id) {
+            while(ex.name != globalVars.core[index].name) {
                 index += 1
             }
             globalVars.core[index].name = name
@@ -119,7 +119,7 @@ class LogicUtilites {
             globalVars.core[index].description = description
 
         } else if type == "Hips" {
-            while(ex.id != globalVars.hips[index].id) {
+            while(ex.name != globalVars.hips[index].name) {
                 index += 1
             }
             globalVars.hips[index].name = name
