@@ -367,5 +367,14 @@
         "description" : "1. Engage abs so that head, shoulders, and upper back lift off ground and upper body forms a C-shape and reach opposite hand to the foot reaching towards the sky \n2. Return back to floor \n3. Repeat",
         "isUserIncluded" : true,
         "id" : "uuid"
+    },
+    {
+        "name" : "Windshield Wipers",
+        "amount" : 45,
+        "isTimeBased" : true,
+        "startingPosition" : "Laying on back with knees at 90 degrees, shins parallel to ground",
+        "description" : "1. Lower both legs to the left (while keeping them together with a 90 degree bend in knees) so that they hover a few inches over the ground  \n2. Return starting position \n3. Repeat on other side",
+        "isUserIncluded" : true,
+        "id" : "uuid"
     }
 ]
