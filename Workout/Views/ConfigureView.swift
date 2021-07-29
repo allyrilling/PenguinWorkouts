@@ -30,10 +30,19 @@ struct ConfigureView: View {
             HStack { // settings text
                 Text("Settings")
                     .font(.system(size: globalVars.bigTitleTS, weight: .bold))
-                    .padding(.top, 30)
                     .padding(.leading, 20)
                 Spacer()
-            }
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "house.fill")
+                        .font(.system(size: globalVars.midTS))
+                        .padding()
+                }).buttonStyle(SnazzyBS(globalVars: globalVars))
+                    .padding(.trailing, 20)
+                
+            }.padding(.top, 30)
             
             VStack(alignment: .leading) { // color scheme
                 HStack {

@@ -17,12 +17,48 @@ struct CustomTextFieldView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            
             VStack(alignment: .leading) {
-                Text("\(type)")
-                    .font(.system(size: globalVars.bigTitleTS))
-                Text("Edit the amount of exercises to be shown in each \(type.lowercased()) workout.")
-                    .font(.system(size: globalVars.bodyTS))
-            }.padding()
+                
+                HStack { // settings text
+                    Text("\(type)")
+                        .font(.system(size: globalVars.bigTitleTS, weight: .bold))
+                        .padding(.leading, 20)
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: globalVars.midTS))
+                            .padding()
+                    }).buttonStyle(SnazzyBS(globalVars: globalVars))
+                        .padding(.trailing, 20)
+                    
+                }.padding(.top, 30)
+                
+                // here
+//                HStack {
+//                    Text("\(type)")
+//                        .font(.system(size: globalVars.bigTitleTS))
+//
+//                    Button(action: {
+//
+//                    }, label: {
+//                        Image(systemName: "checkmark.circle.fill")
+//                            .font(.system(size: globalVars.midTS))
+//                            .padding()
+//                    }).buttonStyle(SnazzyBS(globalVars: globalVars))
+//                        .padding(.trailing, 20)
+//                }
+                // end
+                
+                
+            }
+            
+            Text("Edit the amount of exercises to be shown in each \(type.lowercased()) workout.")
+                .font(.system(size: globalVars.bodyTS))
+                .padding()
             
             HStack {
                 TextField(LogicUtilites.returnCorrectExerciseString(globalVars: globalVars, currentType: type), text: $varToUpdate)
@@ -45,6 +81,12 @@ struct CustomTextFieldView: View {
                     if varToUpdate != "" && LogicUtilites.returnCorrectExerciseArray(globalVars: globalVars, type: type).count >= Int(varToUpdate)! && Int(varToUpdate)! > 0 { // makes sure legal input
                         LogicUtilites.updateUserConfigureVars(globalVars: globalVars, varToUpdate: varToUpdate, type: type)
                     }
+                    
+                    // this is here to fatal bug where just pressing the change button without entering anything would crash the app
+                    if(varToUpdate == "") {
+                        varToUpdate = "10"
+                    }
+                    
                     updateNumberOfEx(exType: type, valToSet: varToUpdate) // calls function to update userdefaults
                     if type == "Core" {
                         globalVars.groups[0].perWorkout = Int(varToUpdate)!

@@ -22,10 +22,19 @@ struct ColorThemePickerView: View {
                 HStack { // color themes text
                     Text("Themes")
                         .font(.system(size: globalVars.bigTitleTS, weight: .bold))
-                        .padding(.top, 30)
                         .padding(.leading, 20)
                     Spacer()
-                }
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: globalVars.midTS))
+                            .padding()
+                    }).buttonStyle(SnazzyBS(globalVars: globalVars))
+                        .padding(.trailing, 20)
+                    
+                }.padding(.top, 30)
                 
                 HStack {
                     VStack(alignment: .leading) {
