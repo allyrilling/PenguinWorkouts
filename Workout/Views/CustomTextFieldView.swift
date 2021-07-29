@@ -18,24 +18,25 @@ struct CustomTextFieldView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            VStack(alignment: .leading) {
+            HStack { // title text
+                Text("\(type)")
+                    .font(.system(size: globalVars.bigTitleTS, weight: .bold))
+                    .padding(.leading, 20)
+                Spacer()
                 
-                HStack { // settings text
-                    Text("\(type)")
-                        .font(.system(size: globalVars.bigTitleTS, weight: .bold))
-                        .padding(.leading, 20)
-                    Spacer()
+                Button(action: {
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.system(size: globalVars.midTS))
-                            .padding()
-                    }).buttonStyle(SnazzyBS(globalVars: globalVars))
-                        .padding(.trailing, 20)
-                    
-                }.padding(.top, 30)
+                }, label: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: globalVars.midTS))
+                        .padding()
+                }).buttonStyle(SnazzyBS(globalVars: globalVars))
+                    .padding(.trailing, 20)
+                
+            }.padding(.top, 30)
+            
+//            VStack(alignment: .leading) {
+                
                 
                 // here
 //                HStack {
@@ -54,11 +55,11 @@ struct CustomTextFieldView: View {
                 // end
                 
                 
-            }
+//            }
             
             Text("Edit the amount of exercises to be shown in each \(type.lowercased()) workout.")
                 .font(.system(size: globalVars.bodyTS))
-                .padding()
+                .padding(.horizontal)
             
             HStack {
                 TextField(LogicUtilites.returnCorrectExerciseString(globalVars: globalVars, currentType: type), text: $varToUpdate)

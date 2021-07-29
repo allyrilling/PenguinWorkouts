@@ -32,6 +32,16 @@ struct OrgExerciseView: View {
                     .font(.system(size: globalVars.bigTitleTS, weight: .bold))
                     .padding()
                 Spacer()
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: globalVars.midTS))
+                        .padding()
+                }).buttonStyle(SnazzyBS(globalVars: globalVars))
+                    .padding(.trailing, 20)
+                
             }
             
             List {
