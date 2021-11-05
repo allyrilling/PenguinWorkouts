@@ -75,6 +75,9 @@ struct SetsRepsView: View {
 //                            .shadow(color: Color("NeuDark"), radius: 5, x: 5, y: 5)
 //                            .shadow(color: Color("NeuLight"), radius: 10, x: -5, y: -5))
             .padding()
-        }
+        }.background(RoundedRectangle(cornerRadius: 20)
+                        .foregroundColor(.white))
+        .padding()
+        .accentColor(globalVars.mainColor)
     }
 }

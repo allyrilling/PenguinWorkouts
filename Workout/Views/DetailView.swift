@@ -95,3 +95,12 @@ struct DetailView: View {
         .background(globalVars.accentColor.edgesIgnoringSafeArea(.all))
     }
 }
+
+struct DetailViewPreview: PreviewProvider {
+    @State static var isActive: Bool = false
+    
+    static var previews: some View {
+        DetailView(globalVars: GlobalVars(), rootIsActive: $isActive)
+    }
+}
+
